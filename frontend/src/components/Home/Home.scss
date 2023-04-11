@@ -1,0 +1,65 @@
+$darkerGradient: #9b59b6;
+$lighterGradient: #c695dd;
+$mainTypo: "Cookies";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient($lighterGradient, $darkerGradient);
+}
+
+.boiteFanion {
+  position: relative;
+  overflow: hidden;
+  height: 90px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+  .fanion {
+    height: 100%;
+  }
+  .catchphrase {
+    position: absolute;
+    height: 35px;
+    bottom: 10px;
+  }
+}
+
+.popcorn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+
+  img {
+    height: 500px;
+    position: absolute;
+    left: -220px;
+    bottom: -60px;
+  }
+}
+
+h1 {
+  color: white;
+  font-family: $mainTypo;
+  font-weight: 800;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+h1:nth-child(1) {
+  padding-top: 100px;
+
+  transform: rotate(-8.5deg);
+}

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;700;800;900&display=swap");
+
+$buttonColor: #783c8f;
+$mainTypo: "Cookies";
+
+.StartButton {
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  color: $buttonColor;
+  font-family: $mainTypo;
+  font-weight: 600;
+  font-size: 3em;
+  padding: 20px 40px;
+  border-radius: 50px;
+  border: 8px solid $buttonColor;
+  box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-5.42deg);
+}
