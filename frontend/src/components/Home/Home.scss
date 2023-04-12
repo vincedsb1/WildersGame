@@ -2,20 +2,6 @@ $darkerGradient: #9b59b6;
 $lighterGradient: #c695dd;
 $mainTypo: "Cookies";
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  background: linear-gradient($lighterGradient, $darkerGradient);
-}
-
 .boiteFanion {
   position: relative;
   overflow: hidden;

@@ -1,0 +1,28 @@
+$darkerGradient: #9b59b6;
+$lighterGradient: #c695dd;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient($lighterGradient, $darkerGradient);
+}
+
+@font-face {
+  font-family: "CherryBird";
+  src: local("CustomFont1Name"),
+    url("./assets/fonts/Cherry Bird.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Cookies";
+  src: local("CustomFont1Name"),
+    url("./assets/fonts/Cookies.ttf") format("woff");
+}

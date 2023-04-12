@@ -1,5 +1,5 @@
 import Home from "@components/Home/Home";
-import "./fonts.scss";
+import "./App.scss";
 
 function App() {
   return (
