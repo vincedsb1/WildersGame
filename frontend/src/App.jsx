@@ -1,14 +1,11 @@
-import Home from "./pages/Home";
-
-import "./App.css";
+import Home from "@components/Home/Home";
+import "./fonts.scss";
 
 function App() {
   return (
     <div className="App">
       <Home />
-      <p>coucou</p>
     </div>
   );
 }
-
 export default App;
