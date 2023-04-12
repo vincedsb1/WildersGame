@@ -44,8 +44,9 @@ body {
   img {
     height: 500px;
     position: absolute;
-    left: -220px;
-    bottom: -60px;
+    left: -270px;
+    bottom: -110px;
+    opacity: 40%;
   }
 }
 
@@ -53,13 +54,13 @@ h1 {
   color: white;
   font-family: $mainTypo;
   font-weight: 800;
-  font-size: 5em;
+  font-size: 5.5em;
   text-align: center;
   text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
 
 h1:nth-child(1) {
   padding-top: 100px;
-
   transform: rotate(-8.5deg);
+  margin-bottom: -15px;
 }

@@ -9,7 +9,7 @@ function Home() {
   return (
     <div>
       <h1>Wilder</h1>
-      <h1>&nbsp;Game</h1>
+      <h1>&nbsp;&nbsp;Game</h1>
       <div className="boiteFanion">
         <img className="fanion" src={fanion} alt="fanion" />
         <img className="catchphrase" src={catchphrase} alt="catchphrase" />
