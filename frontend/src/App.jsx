@@ -1,3 +1,4 @@
+
 import Home from "@components/Home/Home";
 // import axios from "axios";
 // import { useState } from "react";
@@ -43,6 +44,7 @@ function App() {
       <Route path="/leaderBoard" element={<LeaderBoard />} />
     </Routes>
   );
+
 }
 
 export default App;

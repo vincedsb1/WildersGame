@@ -1,0 +1,29 @@
+$buttonColor: #783c8f;
+$mainTypo: "Cookies";
+
+.Reponse-container {
+  background-color: rgb(245, 230, 230);
+  border: 2px solid $buttonColor;
+  padding: 8px;
+  width: fit-content;
+  min-width: 250px;
+  min-height: 100px;
+  border-radius: 10px;
+  color: $buttonColor;
+  font-family: $mainTypo;
+  box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bloc-response {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.bloc-response h3 {
+  text-align: center;
+  margin: 30px;
+  font-size: larger;
+}
