@@ -2,6 +2,7 @@ import Home from "@components/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Countdown from "./components/Countdown/Countdown";
 import Game from "./components/Game/Game";
+import "./App.scss";
 
 function App() {
   return (
