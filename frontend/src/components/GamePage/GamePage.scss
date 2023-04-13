@@ -6,7 +6,7 @@
     margin-top: 70px;
     width: 100%;
     height: 95px;
-    background-color: #eadaf4;
+    background-color: $buttonBackColor;
     border: 8px solid $buttonColor;
     color: #552e61;
     padding: 0px 40px;
@@ -16,6 +16,10 @@
     align-items: center;
     font-family: $mainTypo;
     font-size: 2em;
+
+    .timer-rouge {
+      color: red;
+    }
   }
 
   .afficheContainer {
