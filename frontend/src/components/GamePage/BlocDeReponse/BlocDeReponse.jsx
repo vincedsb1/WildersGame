@@ -1,17 +1,16 @@
 import React from "react";
-import "./BlocDeReponse.scss";
 
 function BlocDeReponse() {
-  const bonneReponse = 2015;
+  const bonneReponse = 1970;
   const minYear = bonneReponse - 20;
   const maxYear = bonneReponse + 20;
 
   const tableauDeReponse = [bonneReponse];
+
   while (tableauDeReponse.length < 4) {
     const MauvaiseReponse = Math.floor(
       Math.random() * (maxYear - minYear + 1) + minYear
     );
-
     if (
       tableauDeReponse.find((el) => el === MauvaiseReponse) === undefined &&
       MauvaiseReponse < 2024
@@ -20,14 +19,20 @@ function BlocDeReponse() {
     }
   }
 
+  const handleClick = () => {};
+
   const createReponse = () =>
     tableauDeReponse
       .sort((a, b) => a - b)
       .map((ele) => {
         return (
-          <div className="Reponse-container">
+          <button
+            className="Reponse-container"
+            onClick={() => handleClick()}
+            type="button"
+          >
             <h3>{ele}</h3>
-          </div>
+          </button>
         );
       });
 
