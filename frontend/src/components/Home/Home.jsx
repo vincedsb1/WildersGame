@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import popcorn from "../../assets/Home/popcorn.svg";
@@ -20,7 +20,7 @@ function Home() {
       </div>
       <div>
         <Link to="/countdown">
-            <StartButton />
+          <StartButton />
         </Link>
       </div>
     </div>
