@@ -1,0 +1,26 @@
+.bloc-response {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+  padding: 15px 5% 0px 5%;
+
+  .Reponse-container {
+    margin-bottom: 25px;
+    background-color: $buttonBackColor;
+    border: 8px solid $buttonColor;
+    border-radius: 20px;
+    padding: 8px;
+    min-width: 35%;
+    color: #552e61;
+    font-family: $mainTypo;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+
+  h3 {
+    text-align: center;
+    margin: 0px 20px;
+    font-size: larger;
+  }
+}
