@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.scss";
+
 import StartButton from "./StartButton/StartButton";
 import popcorn from "../../assets/Home/popcorn.svg";
 import fanion from "../../assets/Home/fanion.svg";

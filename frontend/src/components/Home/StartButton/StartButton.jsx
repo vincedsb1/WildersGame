@@ -1,5 +1,4 @@
 import React from "react";
-import "./StartButton.scss";
 
 function StartButton() {
   return (
