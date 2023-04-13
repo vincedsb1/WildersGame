@@ -4,6 +4,7 @@ import Countdown from "./components/Countdown/Countdown";
 import Game from "./components/Game/Game";
 import "./App.scss";
 
+
 function App() {
   return (
     <Routes>
@@ -13,4 +14,5 @@ function App() {
     </Routes>
   );
 }
+
 export default App;
