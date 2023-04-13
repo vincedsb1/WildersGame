@@ -1,11 +1,17 @@
 import React from "react";
+import Score from "./Header/Score";
+import Timer from "./Header/Timer";
 
 function GamePage() {
   return (
     <div className="GamePage">
       <nav>
-        <div className="navScore">0 pts</div>
-        <div className="navTimer">00:19</div>{" "}
+        <div className="navScore">
+          <Score />
+        </div>
+        <div className="navTimer">
+          <Timer />
+        </div>{" "}
       </nav>
       <div className="afficheContainer">
         <img

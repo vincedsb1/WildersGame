@@ -1,73 +1,59 @@
-$darkerGradient: #9b59b6;
-$lighterGradient: #c695dd;
-$buttonColor: #783c8f;
-$mainTypo: "Cookies";
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  box-sizing: border-box;
-}
-
-body {
+.leaderBoard {
   font-family: $mainTypo;
-  height: 100vh;
-  background: linear-gradient($lighterGradient, $darkerGradient);
-}
 
-.results {
-  color: $buttonColor;
-  background-color: $lighterGradient;
-  height: 70vh;
-  margin-top: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border-radius: 50px;
-  border: 8px solid $buttonColor;
-
-  h1 {
+  .results {
     color: $buttonColor;
+    background-color: $buttonBackColor;
+    height: 70vh;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    border-radius: 50px;
+    border: 8px solid $buttonColor;
+
+    h1 {
+      color: $buttonColor;
+      font-weight: 600;
+      font-size: 3em;
+      text-align: center;
+    }
+
+    img {
+      height: 50%;
+      width: auto;
+      align-self: center;
+    }
+
+    .result1,
+    .result2,
+    .result3,
+    .result4 {
+      display: flex;
+      justify-content: space-around;
+      font-size: 1.5rem;
+    }
+  }
+
+  .restart {
+    height: 30vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    color: $buttonColor;
+    background: $buttonBackColor;
     font-weight: 600;
     font-size: 3em;
-    text-align: center;
+    border-radius: 50px;
+    border: 8px solid $buttonColor;
+    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+    width: 70vw;
+    height: 100px;
   }
-
-  img {
-    height: 50%;
-    width: auto;
-    align-self: center;
-  }
-
-  .result1,
-  .result2,
-  .result3,
-  .result4 {
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5rem;
-  }
-}
-
-.restart {
-  height: 30vh;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
-  color: $buttonColor;
-  font-weight: 600;
-  font-size: 3em;
-  border-radius: 50px;
-  border: 8px solid $buttonColor;
-  box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-  width: 70vw;
-  height: 100px;
 }
