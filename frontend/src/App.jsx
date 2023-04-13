@@ -1,7 +1,11 @@
 import Home from "@components/Home/Home";
-import "./fonts.scss";
 // import axios from "axios";
 // import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
+import GamePage from "@components/GamePage/GamePage";
+import Countdown from "./components/Countdown/Countdown";
+import "./App.scss";
 
 function App() {
   // const [movie, setMovie] = useState({ title: "", overview: "" });
@@ -32,9 +36,13 @@ function App() {
   // const poster = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
 
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} className="App" />
+      <Route path="/countdown" element={<Countdown />} />
+      <Route path="/game" element={<GamePage />} />
+      <Route path="/leaderBoard" element={<LeaderBoard />} />
+    </Routes>
   );
 }
+
 export default App;
