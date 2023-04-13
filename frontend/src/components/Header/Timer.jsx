@@ -16,8 +16,9 @@ function Timer() {
     };
   });
 
+
   return (
-    <div className="timer">
+    <div className= {secs > 5 ? "timer-violet" : "timer-rouge"}>
       <p>00:{secs < 10 ? `0${secs}` : secs}</p>
     </div>
   );
