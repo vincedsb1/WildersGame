@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Score from "./Header/Score";
 import Timer from "./Header/Timer";
+import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
 function GamePage({ title, date, getMovie }) {
   return (
@@ -21,16 +22,9 @@ function GamePage({ title, date, getMovie }) {
         />
       </div>
       <h2>It's a me, mario !</h2>
-      <button type="button" onClick={getMovie}>
-        {" "}
-        {/* TEST BOUTON */}
-        TEST
-      </button>
-      <p>
-        {title}
-        {date}
-      </p>{" "}
-      {/* TEST BOUTON */}
+
+      <BlocDeReponse />
+
     </div>
   );
 }
