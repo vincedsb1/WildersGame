@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import popcorn from "../../assets/Home/popcorn.svg";
@@ -17,7 +18,11 @@ function Home() {
       <div className="popcorn">
         <img src={popcorn} alt="" />
       </div>
-      <StartButton />
+      <div>
+        <Link to="/countdown">
+            <StartButton />
+        </Link>
+      </div>
     </div>
   );
 }
