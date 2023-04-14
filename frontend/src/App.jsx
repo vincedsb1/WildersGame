@@ -19,7 +19,7 @@ function App() {
       .get(
         `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${rdmNum(
           100
-        )}&adult=false`
+        )}&adult=false&original_language=en`
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
