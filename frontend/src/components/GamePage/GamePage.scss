@@ -19,6 +19,30 @@
 
     .timer-rouge {
       color: red;
+      animation-duration: 6s, 0.4s;
+      animation-name: size, warning;
+      animation-iteration-count: 1, 15;
+    }
+
+    @keyframes size {
+      from {
+        font-size: 2rem;
+      }
+      to {
+        font-size: 3.5rem;
+      }
+    }
+
+    @keyframes warning {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 
@@ -28,6 +52,7 @@
 
     img {
       width: 100%;
+      border-radius: 10px;
     }
   }
   h2 {
