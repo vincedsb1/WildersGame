@@ -4,9 +4,7 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-
 function GamePage({ title, date, poster }) {
-
   return (
     <div className="GamePage">
       <nav>
@@ -34,6 +32,5 @@ GamePage.propTypes = {
 
   poster: PropTypes.string.isRequired,
 };
-
 
 export default GamePage;
