@@ -15,8 +15,15 @@ a:link {
   text-decoration: none;
 }
 
+body,
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-  height: 100vh;
   background: linear-gradient($lighterGradient, $darkerGradient);
 }
 
@@ -44,6 +51,7 @@ body {
   width: 100%;
   height: 500px;
   overflow: hidden;
+  margin: 0px;
 
   img {
     height: 500px;
