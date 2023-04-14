@@ -9,7 +9,6 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
     border-radius: 50px;
     border: 8px solid $buttonColor;
@@ -44,6 +43,13 @@
     justify-content: center;
     align-items: center;
   }
+  .ragequit {
+    height: 30vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   button {
     color: $buttonColor;
@@ -53,7 +59,7 @@
     border-radius: 50px;
     border: 8px solid $buttonColor;
     box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-    width: 70vw;
+    width: 35vw;
     height: 100px;
     transition: 0.15s;
 
@@ -63,5 +69,10 @@
     &:active {
       transform: scale(1.15);
     }
+  }
+  .bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
