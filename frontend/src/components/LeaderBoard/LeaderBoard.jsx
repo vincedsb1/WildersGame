@@ -10,7 +10,6 @@ function LeaderBoard() {
       <Link to="/">
         <Restart />
       </Link>
-      
     </div>
   );
 }

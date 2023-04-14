@@ -16,7 +16,7 @@
     align-items: center;
     font-family: $mainTypo;
     font-size: 2em;
-  
+
     .timer-rouge {
       color: red;
       animation-duration: 6s, 0.4s;
@@ -25,21 +25,30 @@
     }
 
     @keyframes size {
-      from   {font-size : 2rem;}
-      to   {font-size : 3.5rem;}
+      from {
+        font-size: 2rem;
+      }
+      to {
+        font-size: 3.5rem;
+      }
     }
 
     @keyframes warning {
-      0%   {opacity:1;}
-      50%   {opacity:0;}
-      100%   {opacity:1;}
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
-}
+  }
 
   .afficheContainer {
     margin: 20px 18% 10px 18%;
     overflow: hidden;
-    
 
     img {
       width: 100%;

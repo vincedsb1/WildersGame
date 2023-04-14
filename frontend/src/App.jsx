@@ -1,6 +1,6 @@
 import Home from "@components/Home/Home";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import GamePage from "@components/GamePage/GamePage";
@@ -32,8 +32,12 @@ function App() {
 
   const { title } = movie;
   // const { overview } = movie;
-  const date = new Date(`${movie.release_date}`).getFullYear();
+  const date = Number(new Date(`${movie.release_date}`).getFullYear());
   const poster = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+
+  useEffect(() => {
+    getMovie();
+  }, []);
 
   return (
     <Routes>
