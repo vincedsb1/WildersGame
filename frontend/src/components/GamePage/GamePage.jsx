@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-function GamePage({ title, date, getMovie }) {
+function GamePage() {
   return (
     <div className="GamePage">
       <nav>
@@ -24,15 +24,14 @@ function GamePage({ title, date, getMovie }) {
       <h2>It's a me, mario !</h2>
 
       <BlocDeReponse />
-
     </div>
   );
 }
-GamePage.propTypes = {
-  title: PropTypes.string.isRequired,
-  // overview: PropTypes.string.isRequired,
-  date: PropTypes.number.isRequired,
-  getMovie: PropTypes.func.isRequired,
-};
+// GamePage.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   // overview: PropTypes.string.isRequired,
+//   date: PropTypes.number.isRequired,
+//   getMovie: PropTypes.func.isRequired,
+// };
 
 export default GamePage;
