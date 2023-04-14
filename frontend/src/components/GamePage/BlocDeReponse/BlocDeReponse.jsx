@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function BlocDeReponse() {
-  const bonneReponse = 1970;
+function BlocDeReponse({ date }) {
+  const bonneReponse = date;
   const minYear = bonneReponse - 20;
   const maxYear = bonneReponse + 20;
 
@@ -19,7 +20,9 @@ function BlocDeReponse() {
     }
   }
 
-  const handleClick = () => {};
+  // const handleClick = (e) => {
+  //    console.log(e.target.id);
+  // };
 
   const createReponse = () =>
     tableauDeReponse
@@ -28,10 +31,12 @@ function BlocDeReponse() {
         return (
           <button
             className="Reponse-container"
-            onClick={() => handleClick()}
+            // onClick={handleClick}
             type="button"
+            id={ele.toString()}
+            key={ele}
           >
-            <h3>{ele}</h3>
+            {ele}
           </button>
         );
       });
@@ -41,5 +46,9 @@ function BlocDeReponse() {
     <div className="bloc-response">{createReponse()}</div>
   );
 }
+
+BlocDeReponse.propTypes = {
+  date: PropTypes.number.isRequired,
+};
 
 export default BlocDeReponse;
