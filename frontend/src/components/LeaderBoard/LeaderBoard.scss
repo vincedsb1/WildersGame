@@ -1,5 +1,9 @@
 .leaderBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: $mainTypo;
+  height: 100%;
 
   .results {
     color: $buttonColor;
@@ -38,14 +42,14 @@
 
   .restart {
     height: 30vh;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .ragequit {
     height: 30vh;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +74,13 @@
       transform: scale(1.15);
     }
   }
+
+  @media screen and (min-width: 800px) {
+    button {
+      width: 20vw;
+    }
+  }
+
   .bouton {
     display: flex;
     flex-direction: row;
