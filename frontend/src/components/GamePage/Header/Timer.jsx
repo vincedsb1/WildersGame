@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Timer() {
-  const [secs, setSeconds] = useState(5000);
+  const [secs, setSeconds] = useState(20);
   const navigate = useNavigate();
 
   useEffect(() => {
