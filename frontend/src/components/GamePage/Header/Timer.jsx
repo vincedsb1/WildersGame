@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Timer() {
   const [secs, setSeconds] = useState(50);
-  //  const navigate = useNavigate();
+   const navigate = useNavigate();
 
   useEffect(() => {
     const sampleInterval = setInterval(() => {
@@ -11,7 +11,7 @@ function Timer() {
         setSeconds(secs - 1);
       } else if (secs === 0) {
         clearInterval(sampleInterval);
-        // navigate("/leaderBoard");
+        navigate("/leaderBoard");
       }
     }, 1000);
     return () => {

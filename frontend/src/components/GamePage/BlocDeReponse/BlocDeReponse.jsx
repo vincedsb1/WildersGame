@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function BlocDeReponse({ date }) {
+function BlocDeReponse({ date, getMovie, setResultat, resultat }) {
   const bonneReponse = date;
   const minYear = bonneReponse - 20;
   const maxYear = bonneReponse + 20;
@@ -20,9 +20,16 @@ function BlocDeReponse({ date }) {
     }
   }
 
-  // const handleClick = (e) => {
-  //    console.log(e.target.id);
-  // };
+  const handleClick = (e) => {
+    if (Number(e.target.id) === bonneReponse) {
+      e.target.style.background = "green";
+      setResultat(resultat + 1);
+    } else {
+      e.target.style.background = "red";
+    }
+
+    return getMovie();
+  };
 
   const createReponse = () =>
     tableauDeReponse
@@ -31,7 +38,7 @@ function BlocDeReponse({ date }) {
         return (
           <button
             className="Reponse-container"
-            // onClick={handleClick}
+            onClick={handleClick}
             type="button"
             id={ele.toString()}
             key={ele}
@@ -42,13 +49,16 @@ function BlocDeReponse({ date }) {
       });
 
   return (
-    // bloc des 4 bulles ou les reponses vont s'afficher.
+    
     <div className="bloc-response">{createReponse()}</div>
   );
 }
 
 BlocDeReponse.propTypes = {
+  getMovie: PropTypes.func.isRequired,
+  setResultat: PropTypes.func.isRequired,
   date: PropTypes.number.isRequired,
+  resultat: PropTypes.number.isRequired,
 };
 
 export default BlocDeReponse;
