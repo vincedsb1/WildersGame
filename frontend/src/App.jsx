@@ -41,7 +41,15 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} className="App" />
+      <Route
+        path="/"
+        element={
+          <div>
+            <Home />
+          </div>
+        }
+        className="App"
+      />
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"

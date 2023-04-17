@@ -6,15 +6,17 @@ import Quit from "./Quit/Quit";
 
 function LeaderBoard() {
   return (
-    <div className="leaderBoard">
-      <Results />
-      <div className="bouton">
-        <Link to="/game">
-          <Restart />
-        </Link>
-        <Link to="/">
-          <Quit />
-        </Link>
+    <div className="mainContainer">
+      <div className="leaderBoard">
+        <Results />
+        <div className="bouton">
+          <Link to="/game">
+            <Restart />
+          </Link>
+          <Link to="/">
+            <Quit />
+          </Link>
+        </div>
       </div>
     </div>
   );

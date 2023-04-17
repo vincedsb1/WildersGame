@@ -1,63 +1,86 @@
 .GamePage {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  nav {
-    margin-top: 70px;
-    width: 100%;
-    height: 95px;
-    background-color: $buttonBackColor;
-    border: 8px solid $buttonColor;
-    color: #552e61;
-    padding: 0px 40px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: $mainTypo;
-    font-size: 2em;
+  margin-top: 5%;
+  width: 100%;
+  height: 10%;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  color: #552e61;
+  padding: 0px 40px;
+  border-radius: 20px;
+  font-family: $mainTypo;
+  font-size: 2em;
+}
 
-    .timer-rouge {
-      color: red;
-      animation-duration: 6s, 0.4s;
-      animation-name: size, warning;
-      animation-iteration-count: 1, 15;
-    }
+.timer-rouge {
+  color: red;
+  animation-duration: 6s, 0.4s;
+  animation-name: size, warning;
+  animation-iteration-count: 1, 15;
+}
 
-    @keyframes size {
-      from {
-        font-size: 2rem;
-      }
-      to {
-        font-size: 3.5rem;
-      }
-    }
-
-    @keyframes warning {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
+@keyframes size {
+  from {
+    font-size: 2rem;
   }
-
-  .afficheContainer {
-    margin: 20px 18% 10px 18%;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
+  to {
+    font-size: 3.5rem;
   }
-  h2 {
-    color: white;
-    font-size: 1.5em;
-    font-family: $secondaryTypo;
+}
+
+@keyframes warning {
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.afficheContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 60vh;
+  flex-grow: 0;
+}
+
+.afficheContainer img {
+  border-radius: 10px;
+  max-height: 90%;
+  box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+}
+
+.movieTitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  font-family: $secondaryTypo;
+  padding-bottom: 2vh;
+}
+
+.responses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+  flex-grow: 3;
 }
