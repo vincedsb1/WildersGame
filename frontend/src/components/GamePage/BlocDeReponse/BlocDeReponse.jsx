@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-function BlocDeReponse({ bonneReponse, handleClick, disableButton }) {
+
+function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
   const minYear = bonneReponse - 20;
   const maxYear = bonneReponse + 20;
 
+
   const [tableauDeReponse, setTableauDeReponse] = useState([bonneReponse]);
+
 
   useEffect(
     function createResponse() {

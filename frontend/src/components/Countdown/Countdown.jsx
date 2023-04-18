@@ -19,12 +19,14 @@ function Countdown() {
   }, [count, navigate]);
 
   return (
-    <div className="Countdown">
-      <div className="Rules">What is the release year ?</div>
-      <div className="Countdown-numbers">{count}</div>
-      <div className="Circle1" />
-      <div className="Circle2" />
-      <div className="Ready">Ready ?</div>
+    <div className="mainContainer">
+      <div className="Countdown">
+        <div className="Rules">What is the release year ?</div>
+        <div className="Countdown-numbers">{count}</div>
+        <div className="Circle1" />
+        <div className="Circle2" />
+        <div className="Ready">Ready ?</div>
+      </div>
     </div>
   );
 }
