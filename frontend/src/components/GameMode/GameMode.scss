@@ -1,64 +1,64 @@
 .gameMode {
+  font-family: $mainTypo;
+
+  h1 {
+    color: white;
     font-family: $mainTypo;
+    font-weight: 800;
+    font-size: 5.5em;
+    text-align: center;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+  }
 
-    h1 {
-        color: white;
-        font-family: $mainTypo;
-        font-weight: 800;
-        font-size: 5.5em;
-        text-align: center;
-        text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
-      }
-      
-      h1:nth-child(1) {
-        padding-top: 100px;
-        transform: rotate(-8.5deg);
-        margin-bottom: -15px;
-      }
+  h1:nth-child(1) {
+    padding-top: 100px;
+    transform: rotate(-8.5deg);
+    margin-bottom: -15px;
+  }
 
-      .pseudo {
-        height: 20vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
+  .pseudo {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 
-            p {
-                color:white;
-                align-self: left;
-                font-size: 1.8rem;
-            }
-
-            input {
-            color: #552e61;
-            font-size: 1.5rem;
-            padding: 16px;
-            background: white;
-            height: 50px;
-            width: 60vw;
-            border-radius: 50px;
-            border: 8px solid $buttonColor;
-            box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-            outline: none;
-            }
-        }
-
-      .difficulty {
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      button {
-        color: #552e61;
-        background-color: $buttonBackColor;
-        font-weight: 600;
-        font-size: 2em;
-        border-radius: 30px;
-        border: 8px solid $buttonColor;
-        width: 50vw;
-        height: 70px;
+    p {
+      color: white;
+      align-self: left;
+      font-size: 1.8rem;
     }
+
+    input {
+      color: #552e61;
+      font-size: 1.5rem;
+      padding: 16px;
+      background: white;
+      height: 50px;
+      width: 60vw;
+      border-radius: 50px;
+      border: 8px solid $buttonColor;
+      box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+      outline: none;
+    }
+  }
+
+  .difficulty {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 600;
+    font-size: 2em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    height: 70px;
+  }
 }

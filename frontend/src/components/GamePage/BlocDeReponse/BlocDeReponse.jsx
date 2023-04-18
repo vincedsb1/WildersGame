@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
+function BlocDeReponse({ date, getMovie, mode }) {
+  const bonneReponse = date;
+  const minYear = bonneReponse - mode;
+  const maxYear = bonneReponse + mode;
 
-function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
-  const minYear = bonneReponse - 20;
-  const maxYear = bonneReponse + 20;
 
 
   const [tableauDeReponse, setTableauDeReponse] = useState([bonneReponse]);
@@ -54,6 +55,9 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
 }
 
 BlocDeReponse.propTypes = {
+  date: PropTypes.number.isRequired,
+  getMovie: PropTypes.func.isRequired,
+  mode: PropTypes.number.isRequired,
   bonneReponse: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired,
   disableButton: PropTypes.bool.isRequired,
