@@ -31,10 +31,6 @@ function App() {
       });
   };
 
-  const { title } = movie;
-  const date = Number(new Date(`${movie.release_date}`).getFullYear());
-  const poster = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
-
   useEffect(() => {
     getMovie();
   }, []);
@@ -47,10 +43,10 @@ function App() {
         path="/game"
         element={
           <GamePage
-            title={title}
+            title={movie.title}
             // overwiew={overview}
-            date={date}
-            poster={poster}
+            date={Number(new Date(`${movie.release_date}`).getFullYear())}
+            poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
             useState={useState}
           />
