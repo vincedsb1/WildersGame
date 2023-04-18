@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 function BlocDeReponse({ date, getMovie, mode }) {
   const bonneReponse = date;
   const minYear = bonneReponse - mode;
@@ -61,6 +60,7 @@ function BlocDeReponse({ date, getMovie, mode }) {
 BlocDeReponse.propTypes = {
   date: PropTypes.number.isRequired,
   getMovie: PropTypes.func.isRequired,
+  mode: PropTypes.number.isRequired,
 };
 
 export default BlocDeReponse;
