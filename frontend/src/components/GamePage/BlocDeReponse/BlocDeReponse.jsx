@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function BlocDeReponse({ date, getMovie }) {
+
+function BlocDeReponse({ date, getMovie, mode }) {
   const bonneReponse = date;
-  const minYear = bonneReponse - 20;
-  const maxYear = bonneReponse + 20;
+  const minYear = bonneReponse - mode;
+  const maxYear = bonneReponse + mode;
 
   const tableauDeReponse = [bonneReponse];
 

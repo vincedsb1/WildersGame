@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import GamePage from "@components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
+import GameMode from  './components/GameMode/GameMode'
 import "./App.scss";
 
 function App() {
@@ -39,17 +40,13 @@ function App() {
     getMovie();
   }, []);
 
+  const [mode, setMode] = useState (20);
+
+
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <div>
-            <Home />
-          </div>
-        }
-        className="App"
-      />
+      <Route path="/" element={<Home />} className="App" />
+      <Route path="/GameMode" element={<GameMode setMode={setMode}/>}/>
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -60,7 +57,7 @@ function App() {
             date={date}
             poster={poster}
             getMovie={getMovie}
-            useState={useState}
+            mode={mode}
           />
         }
       />

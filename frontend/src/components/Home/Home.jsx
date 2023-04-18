@@ -25,7 +25,7 @@ function Home() {
             </div>
           </div>
           <div className="startButton">
-            <Link to="/countdown">
+            <Link to="/gameMode">
               <StartButton />
             </Link>
           </div>
