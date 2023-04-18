@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
 
 function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
@@ -6,41 +7,49 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
   const maxYear = bonneReponse + 20;
 
 
-  const tableauDeReponse = [bonneReponse];
+  const [tableauDeReponse, setTableauDeReponse] = useState([bonneReponse]);
 
-  while (tableauDeReponse.length < 4) {
-    const MauvaiseReponse = Math.floor(
-      Math.random() * (maxYear - minYear + 1) + minYear
-    );
-    if (
-      tableauDeReponse.find((el) => el === MauvaiseReponse) === undefined &&
-      MauvaiseReponse < 2024
-    ) {
-      tableauDeReponse.push(MauvaiseReponse);
-    }
-  }
 
-  const createReponse = () =>
-    tableauDeReponse
-      .sort((a, b) => a - b)
-      .map((ele) => {
-        return (
-          <button
-            disabled={disableButton}
-            className="Reponse-container"
-            onClick={handleClick}
-            type="button"
-            id={ele.toString()}
-            key={ele}
-          >
-            {ele}
-          </button>
+  useEffect(
+    function createResponse() {
+      setTableauDeReponse([bonneReponse]);
+      const tab = [bonneReponse];
+      while (tab.length < 4) {
+        const MauvaiseReponse = Math.floor(
+          Math.random() * (maxYear - minYear + 1) + minYear
         );
-      });
+        if (
+          tableauDeReponse.find((el) => el === MauvaiseReponse) === undefined &&
+          MauvaiseReponse < 2024
+        ) {
+          tab.push(MauvaiseReponse);
+        }
+      }
+      setTableauDeReponse(tab);
+    },
+    [bonneReponse]
+  );
 
   return (
     // bloc des 4 bulles ou les reponses vont s'afficher.
-    <div className="bloc-response">{createReponse()}</div>
+    <div className="bloc-response">
+      {tableauDeReponse
+        .sort((a, b) => a - b)
+        .map((ele) => {
+          return (
+            <button
+              disabled={disableButton}
+              className="Reponse-container"
+              onClick={handleClick}
+              type="button"
+              id={ele.toString()}
+              key={ele}
+            >
+              {ele}
+            </button>
+          );
+        })}
+    </div>
   );
 }
 

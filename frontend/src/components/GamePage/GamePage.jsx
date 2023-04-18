@@ -8,22 +8,21 @@ import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 function GamePage({ title, date, poster, getMovie,mode }) {
   const [disableButton, setDisableButton] = useState(false);
 
-  const bonneReponse = date;
-
-  console.info(bonneReponse);
+  console.info(date);
   console.info(title);
+
   const generateNewQuestion = (e) => {
     getMovie();
     e.target.className = "Reponse-container";
     setDisableButton(false);
   };
   const handleClick = (e) => {
-    // setDisableButton(true)
+    setDisableButton(true);
 
-    if (Number(e.target.id) === bonneReponse) {
+    if (Number(e.target.id) === date) {
       e.target.className = "Reponse-container goodAnswer";
     }
-    if (Number(e.target.id) !== bonneReponse) {
+    if (Number(e.target.id) !== date) {
       e.target.className = "Reponse-container wrongAnswer";
     }
 
@@ -56,7 +55,7 @@ function GamePage({ title, date, poster, getMovie,mode }) {
 
 <div className="responses">
       <BlocDeReponse
-        bonneReponse={bonneReponse}
+        bonneReponse={date}
         handleClick={handleClick}
         disableButton={disableButton}
       />
