@@ -1,11 +1,10 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 
-function BlocDeReponse({ date, getMovie, mode }) {
-  const bonneReponse = date;
-  const minYear = bonneReponse - mode;
-  const maxYear = bonneReponse + mode;
+function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
+  const minYear = bonneReponse - 20;
+  const maxYear = bonneReponse + 20;
+
 
   const tableauDeReponse = [bonneReponse];
 
@@ -21,26 +20,13 @@ function BlocDeReponse({ date, getMovie, mode }) {
     }
   }
 
-  // function delay(time) {
-  //  return new Promise((resolve) => setTimeout(resolve, time));
-  // }
-
-  const handleClick = (e) => {
-    if (Number(e.target.id) === bonneReponse) {
-      e.target.style.background = "green";
-    } else {
-      e.target.style.background = "red";
-    }
-    // delay(1000).then(() => getMovie());
-    return getMovie();
-  };
-
   const createReponse = () =>
     tableauDeReponse
       .sort((a, b) => a - b)
       .map((ele) => {
         return (
           <button
+            disabled={disableButton}
             className="Reponse-container"
             onClick={handleClick}
             type="button"
@@ -59,8 +45,9 @@ function BlocDeReponse({ date, getMovie, mode }) {
 }
 
 BlocDeReponse.propTypes = {
-  date: PropTypes.number.isRequired,
-  getMovie: PropTypes.func.isRequired,
+  bonneReponse: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  disableButton: PropTypes.bool.isRequired,
 };
 
 export default BlocDeReponse;
