@@ -52,12 +52,14 @@ function GamePage({ title, date, poster, getMovie,mode }) {
           <h2>{title}</h2>
         </div>
 
+
 <div className="responses">
       <BlocDeReponse
         bonneReponse={date}
         handleClick={handleClick}
         disableButton={disableButton}
         mode={mode}
+        getMovie={getMovie}
       />
       </div> 
      </div>

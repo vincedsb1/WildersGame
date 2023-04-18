@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
+
 function BlocDeReponse({ date, getMovie, mode }) {
   const bonneReponse = date;
   const minYear = bonneReponse - mode;

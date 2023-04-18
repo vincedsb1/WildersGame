@@ -38,9 +38,9 @@ function App() {
     getMovie();
   }, []);
 
-
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
+
 
   return (
     <Routes>
@@ -49,6 +49,7 @@ function App() {
         path="/GameMode"
         element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
       />
+
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"

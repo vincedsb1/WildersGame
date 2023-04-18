@@ -6,6 +6,7 @@ function Pseudo({ setPseudo }) {
     setPseudo(event.target.value);
   };
 
+
   return (
     <div className="pseudo">
       <p>Your name</p>
@@ -18,5 +19,6 @@ function Pseudo({ setPseudo }) {
 Pseudo.propTypes = {
   setPseudo: PropTypes.func.isRequired,
 };
+
 
 export default Pseudo;
