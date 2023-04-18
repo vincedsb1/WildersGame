@@ -1,13 +1,17 @@
 import React from 'react';
 
-const Difficulty = () => {
+const Difficulty = ({setMode}) => {
+
+const handleClick = (num) => {setMode(num);}
+
+
     return (
         <div className = "difficulty">
-            <button>Easy 🐣</button>
+            <button type="button" onClick={() => handleClick(20)} >Easy 🐣</button>
             <br />
-            <button>Normal 🍵</button>
+            <button type="button" onClick={() => handleClick(10)}>Normal 🍵</button>
             <br />
-            <button>Hard 🤖</button>
+            <button type="button" onClick={() => handleClick(5)}>Hard 🤖</button>
         </div>
     );
 };

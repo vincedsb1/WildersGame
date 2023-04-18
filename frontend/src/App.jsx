@@ -40,10 +40,13 @@ function App() {
     getMovie();
   }, []);
 
+  const [mode, setMode] = useState (20);
+
+
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
-      <Route path="/GameMode" element={<GameMode />}/>
+      <Route path="/GameMode" element={<GameMode setMode={setMode}/>}/>
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -54,7 +57,7 @@ function App() {
             date={date}
             poster={poster}
             getMovie={getMovie}
-            useState={useState}
+            mode={mode}
           />
         }
       />

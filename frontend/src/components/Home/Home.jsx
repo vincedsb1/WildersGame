@@ -19,7 +19,7 @@ function Home() {
         <img src={popcorn} alt="" />
       </div>
       <div>
-        <Link to="/countdown">
+        <Link to="/gameMode">
           <StartButton />
         </Link>
       </div>

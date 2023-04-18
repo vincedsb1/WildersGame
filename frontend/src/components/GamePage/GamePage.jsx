@@ -4,7 +4,8 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-function GamePage({ title, date, poster }) {
+function GamePage({ title, date, poster, mode }) {
+
   return (
     <div className="GamePage">
       <nav>
@@ -21,7 +22,7 @@ function GamePage({ title, date, poster }) {
 
       <h2>{title}</h2>
 
-      <BlocDeReponse date={date} />
+      <BlocDeReponse date={date} mode={mode}/>
     </div>
   );
 }

@@ -5,7 +5,7 @@ const Pseudo = () => {
         <div className = "pseudo">
             <p>Your name</p>
             <br />
-            <input type="text" id="name" required maxlength= "16"/>
+            <input type="text" id="name" maxLength= "16"/>
         </div>
     );
 };
