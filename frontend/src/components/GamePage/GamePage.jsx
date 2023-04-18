@@ -25,7 +25,7 @@ function GamePage({ title, date, poster, getMovie, mode }) {
         </div>
 
         <div className="responses">
-          <BlocDeReponse date={date} getMovie={getMovie} mode={mode}/>
+          <BlocDeReponse date={date} getMovie={getMovie} mode={mode} />
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@ GamePage.propTypes = {
   getMovie: PropTypes.func.isRequired,
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
+  mode: PropTypes.number.isRequired,
 };
 
 export default GamePage;
