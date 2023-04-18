@@ -6,15 +6,38 @@
   align-items: center;
 }
 
-.Reponse-container {
-  margin-bottom: 1%;
-  background-color: $buttonBackColor;
-  border: 8px solid $buttonColor;
-  border-radius: 20px;
-  padding: 1%;
-  min-width: 31%;
-  color: #552e61;
-  font-family: $mainTypo;
-  font-size: 1.3em;
-  cursor: pointer;
-}
+
+  .Reponse-container {
+    margin-bottom: 25px;
+    background-color: $buttonBackColor;
+    border: 8px solid $buttonColor;
+    border-radius: 20px;
+    padding: 8px;
+    min-width: 35%;
+    color: #552e61;
+    font-family: $mainTypo;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+
+  .goodAnswer {
+    position: relative;
+    border-color: green;
+  }
+  .goodAnswer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .wrongAnswer {
+    position: relative;
+    border-color: red;
+  }
+  .wrongAnswer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+

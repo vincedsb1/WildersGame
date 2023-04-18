@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
@@ -7,6 +7,7 @@ import catchphrase from "../../assets/Home/catchphrase.svg";
 
 function Home() {
   return (
+
     <div className="background-class">
       <div className="mainContainer">
         <div className="popcornBackground">
@@ -30,6 +31,7 @@ function Home() {
             </Link>
           </div>
         </div>
+
       </div>
     </div>
   );
