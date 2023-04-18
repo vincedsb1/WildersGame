@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 
-function BlocDeReponse({ bonneReponse, handleClick, disableButton }) {
+
+function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
   const minYear = bonneReponse - 20;
   const maxYear = bonneReponse + 20;
+
 
   const tableauDeReponse = [bonneReponse];
 
