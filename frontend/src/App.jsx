@@ -5,7 +5,10 @@ import { Route, Routes } from "react-router-dom";
 import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import GamePage from "@components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
-import GameMode from  './components/GameMode/GameMode'
+
+import GameMode from "./components/GameMode/GameMode";
+
+
 import "./App.scss";
 
 function App() {
@@ -18,7 +21,7 @@ function App() {
   const getMovie = () => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${rdmNum(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US&page=${rdmNum(
           100
         )}&adult=false&original_language=en`
       )
@@ -40,13 +43,15 @@ function App() {
     getMovie();
   }, []);
 
-  const [mode, setMode] = useState (20);
+  // const [mode, setMode] = useState(20);
 
 
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
-      <Route path="/GameMode" element={<GameMode setMode={setMode}/>}/>
+
+      {/* <Route path="/GameMode" element={<GameMode setMode={setMode} />} /> */}
+
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -57,7 +62,8 @@ function App() {
             date={date}
             poster={poster}
             getMovie={getMovie}
-            mode={mode}
+ mode={mode}
+
           />
         }
       />
