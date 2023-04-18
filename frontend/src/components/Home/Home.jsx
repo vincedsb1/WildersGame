@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import popcorn from "../../assets/Home/popcorn.svg";
@@ -19,9 +19,9 @@ function Home() {
         <img src={popcorn} alt="" />
       </div>
       <div>
-        <Link to="/countdown">
+        <NavLink to="/countdown">
           <StartButton />
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
