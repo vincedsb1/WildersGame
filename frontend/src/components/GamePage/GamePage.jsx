@@ -4,6 +4,7 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
+
 function GamePage({ title, date, poster, getMovie, mode }) {
   const [resultat, setResultat] = useState(0);
 

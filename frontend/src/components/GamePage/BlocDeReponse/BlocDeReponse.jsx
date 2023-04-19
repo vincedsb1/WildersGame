@@ -65,6 +65,9 @@ BlocDeReponse.propTypes = {
   handleClick: PropTypes.func.isRequired,
   disableButton: PropTypes.bool.isRequired,
   mode: PropTypes.number.isRequired,
+  bonneReponse: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  disableButton: PropTypes.bool.isRequired,
 };
 
 export default BlocDeReponse;
