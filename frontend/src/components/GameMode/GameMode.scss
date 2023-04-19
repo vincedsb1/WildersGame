@@ -1,27 +1,37 @@
 .gameMode {
   font-family: $mainTypo;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-  h1 {
-    color: white;
-    font-family: $mainTypo;
-    font-weight: 800;
-    font-size: 5.5em;
-    text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
-  }
+.maintTitleModeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
 
-  h1:nth-child(1) {
-    padding-top: 100px;
-    transform: rotate(-8.5deg);
-    margin-bottom: -15px;
-  }
+.mainTitleMode {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // padding: 15% 0 5% 0;
+}
 
-  .pseudo {
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+@media screen and (max-height: 600px) {
+  .h1GameMode {
+      font-size: 4em;
+    }
+}
+
+.pseudo {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 5% 0;
 
     p {
       color: white;
@@ -34,31 +44,60 @@
       font-size: 1.5rem;
       padding: 16px;
       background: white;
-      height: 50px;
-      width: 60vw;
-      border-radius: 50px;
+      height: 70px;
+      width: 50vw;
+      max-width: 300px;
+      border-radius: 30px;
       border: 8px solid $buttonColor;
       box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
       outline: none;
     }
-  }
+}
 
-  .difficulty {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+@media screen and (max-height: 600px) {
+  .pseudo {
+      padding: 3vh 0 0 0;
+    }
+}
+
+.difficultyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+
+.difficulty {
+  // height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-height: 600px) {
+
+    .difficulty {
+      flex-direction: row;
+    }
+}
+
+button {
+  color: #552e61;
+  background-color: $buttonBackColor;
+  font-weight: 200;
+  font-size: 1.5em;
+  border-radius: 30px;
+  border: 8px solid $buttonColor;
+  width: 50vw;
+  max-width: 300px;
+  height: 70px;
+}
+
+@media screen and (max-height: 600px) {
 
   button {
-    color: #552e61;
-    background-color: $buttonBackColor;
-    font-weight: 600;
-    font-size: 2em;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
-    height: 70px;
+    width: 170px;
+    margin: 0 10px 0 10px;
   }
 }

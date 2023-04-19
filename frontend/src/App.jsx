@@ -41,7 +41,6 @@ function App() {
   }, []);
 
   const [mode, setMode] = useState(20);
-
   const [pseudo, setPseudo] = useState("joueur");
 
   return (

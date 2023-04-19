@@ -1,6 +1,7 @@
 .StartButton {
   display: flex;
   justify-content: center;
+  align-items: center;
   transition: 0.15s;
 
   &:hover {
@@ -11,6 +12,9 @@
   }
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $buttonColor;
     background-color: $buttonBackColor;
     font-family: $mainTypo;
@@ -21,5 +25,6 @@
     border: 8px solid $buttonColor;
     box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
     transform: rotate(-5.42deg);
+    height: 100px;
   }
 }
