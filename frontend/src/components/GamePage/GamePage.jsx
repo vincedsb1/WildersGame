@@ -25,7 +25,7 @@ function GamePage({ title, date, poster, getMovie, mode }) {
         </div>
 
         <div className="responses">
-          <BlocDeReponse date={date} getMovie={getMovie} mode={mode}/>
+          <BlocDeReponse date={date} getMovie={getMovie} mode={mode} />
         </div>
       </div>
     </div>

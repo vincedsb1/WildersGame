@@ -66,14 +66,35 @@
   box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media screen and (max-height: 600px) {
+  .afficheContainer {
+    width: 100%;
+    max-height: 45vh;
+    // background-color: yellow;
+  }
+}
+
 .movieTitle {
   display: flex;
   width: 100%;
   justify-content: center;
+  text-align: center;
   color: white;
   font-size: 2.5em;
   font-family: $backupTypo;
   padding-bottom: 2vh;
+}
+
+@media screen and (max-height: 600px) {
+  .movieTitle {
+    padding-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movieTitle {
+    font-size: 2em;
+  }
 }
 
 .responses {

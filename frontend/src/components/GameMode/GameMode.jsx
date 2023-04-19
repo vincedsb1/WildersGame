@@ -1,19 +1,31 @@
-import React from 'react';
-import Pseudo from './Pseudo/Pseudo';
-import Difficulty from './Difficulty/Difficulty';
+import React from "react";
 import { Link } from "react-router-dom";
+import Pseudo from "./Pseudo/Pseudo";
+import Difficulty from "./Difficulty/Difficulty";
 
-const GameMode = ({setMode}) => {
-    return (
-        <div className ="gameMode">
-            <h1>Wilder</h1>
-            <h1>&nbsp;&nbsp;Game</h1>
-           <Pseudo/>
-           <Link to="/countdown">
-           <Difficulty setMode={setMode}/> 
-           </Link>
+function GameMode({ setMode }) {
+  return (
+    <div className="mainContainer">
+      <div className="gameMode">
+        <div className="maintTitleModeContainer">
+            <div className="mainTitleMode">
+            <h1 className="h1GameMode">Wilder</h1>
+            <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
+            </div>
         </div>
-    );
-};
+        <div className="pseudo">
+          <Pseudo />
+        </div>
+        <div className="difficultyContainer">
+            <div className="difficulty">
+            <Link to="/countdown">
+                <Difficulty setMode={setMode} />
+            </Link>
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default GameMode;

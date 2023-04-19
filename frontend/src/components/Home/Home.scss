@@ -46,6 +46,12 @@ a:link {
   background-position: left -100px bottom -10px;
 }
 
+@media screen and (max-height: 600px) {
+  .popcornBackground {
+    background-position: left -100px bottom -200px;
+  }
+}
+
 .mainTop {
   display: flex;
   flex-direction: column;
@@ -83,25 +89,24 @@ a:link {
   height: 35%;
 }
 
-.popcorn {
-  position: absolute;
-  bottom: 0;
+// .popcorn {
+//   position: absolute;
+//   bottom: 0;
+//   width: 60%;
+//   height: 100%;
+//   overflow: hidden;
+//   margin: 0px;
+//   background-color: red; 
 
-  width: 60%;
-  height: 100%;
-  overflow: hidden;
-  margin: 0px;
-  background-color: red;
-
-  img {
-    height: 70%;
-    position: absolute;
-    left: -270px;
-    bottom: -110px;
-    opacity: 40%;
-    z-index: 0;
-  }
-}
+//   img {
+//     height: 70%;
+//     position: absolute;
+//     left: -270px;
+//     bottom: -310px;
+//     opacity: 40%;
+//     z-index: 0;
+//   }
+// }
 
 h1 {
   color: white;
