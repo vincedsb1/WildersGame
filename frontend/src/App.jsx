@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import GamePage from "@components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
-// import GameMode from "./components/GameMode/GameMode";
+import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
 
 function App() {
@@ -40,12 +40,17 @@ function App() {
     getMovie();
   }, []);
 
-  // const [mode, setMode] = useState(20);
+  const [mode, setMode] = useState(20);
+  const [pseudo, setPseudo] = useState("joueur");
+
 
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
-      {/* <Route path="/GameMode" element={<GameMode setMode={setMode} />} /> */}
+      <Route
+        path="/GameMode"
+        element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
+      />
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -56,11 +61,11 @@ function App() {
             date={date}
             poster={poster}
             getMovie={getMovie}
-            // mode={mode}
+            mode={mode}
           />
         }
       />
-      <Route path="/leaderBoard" element={<LeaderBoard />} />
+      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
     </Routes>
   );
 }
