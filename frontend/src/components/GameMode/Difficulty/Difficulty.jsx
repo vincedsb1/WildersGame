@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Difficulty({ setMode }) {
   const handleClick = (num) => {
@@ -21,5 +22,9 @@ function Difficulty({ setMode }) {
     </div>
   );
 }
+
+Difficulty.propTypes = {
+  setMode: PropTypes.func.isRequired,
+};
 
 export default Difficulty;

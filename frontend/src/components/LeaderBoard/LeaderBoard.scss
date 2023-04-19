@@ -8,7 +8,7 @@
   .results {
     color: $buttonColor;
     background-color: $buttonBackColor;
-    height: 70vh;
+    height: 75vh;
     margin-top: 20px;
     padding: 20px;
     display: flex;
@@ -35,22 +35,37 @@
     .result3,
     .result4 {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1.5rem;
+    }
+
+    .result1 {
+      color: #4caf50;
+    }
+
+    .opacity {
+      opacity: 0.5;
     }
   }
 
   .restart {
-    height: 30vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .ragequit {
-    height: 30vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   button {
@@ -77,11 +92,13 @@
     button {
       width: 20vw;
     }
-  }
-
-  .bouton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    .results {
+      .result1,
+      .result2,
+      .result3,
+      .result4 {
+        font-size: 0.8rem;
+      }
+    }
   }
 }

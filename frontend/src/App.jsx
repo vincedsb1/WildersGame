@@ -41,11 +41,15 @@ function App() {
   }, []);
 
   const [mode, setMode] = useState(20);
+  const [pseudo, setPseudo] = useState("joueur");
 
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
-      <Route path="/GameMode" element={<GameMode setMode={setMode} />} />
+      <Route
+        path="/GameMode"
+        element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
+      />
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -60,7 +64,7 @@ function App() {
           />
         }
       />
-      <Route path="/leaderBoard" element={<LeaderBoard />} />
+      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
     </Routes>
   );
 }

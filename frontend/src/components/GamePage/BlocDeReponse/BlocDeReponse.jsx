@@ -60,6 +60,7 @@ function BlocDeReponse({ date, getMovie, mode }) {
 BlocDeReponse.propTypes = {
   date: PropTypes.number.isRequired,
   getMovie: PropTypes.func.isRequired,
+  mode: PropTypes.number.isRequired,
 };
 
 export default BlocDeReponse;

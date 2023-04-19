@@ -36,6 +36,7 @@ GamePage.propTypes = {
   getMovie: PropTypes.func.isRequired,
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
+  mode: PropTypes.number.isRequired,
 };
 
 export default GamePage;

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 
-function GameMode({ setMode }) {
+function GameMode({ setMode, setPseudo }) {
   return (
     <div className="mainContainer">
       <div className="gameMode">
@@ -14,7 +15,7 @@ function GameMode({ setMode }) {
             </div>
         </div>
         <div className="pseudo">
-          <Pseudo />
+          <Pseudo setPseudo={setPseudo} />
         </div>
         <div className="difficultyContainer">
             <div className="difficulty">
@@ -27,5 +28,10 @@ function GameMode({ setMode }) {
     </div>
   );
 }
+
+GameMode.propTypes = {
+  setMode: PropTypes.func.isRequired,
+  setPseudo: PropTypes.func.isRequired,
+};
 
 export default GameMode;
