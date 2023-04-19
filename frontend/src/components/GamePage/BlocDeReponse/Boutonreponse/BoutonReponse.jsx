@@ -1,30 +1,27 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function BoutonReponse({
-  ele,
-  handleClick,
-  disableButton,
-
-  bonneReponse,
-}) {
+function BoutonReponse({ ele, handleClick, disableButton, bonneReponse }) {
   const [classe, setClasse] = useState("Reponse-container");
 
   useEffect(() => {
     setClasse("Reponse-container");
   }, [bonneReponse]);
 
-  function handleClass(el) {
-    if (el === bonneReponse) {
-      setClasse("Reponse-container goodAnswer");
-    } else {
-      setClasse("Reponse-container wrongAnswer");
-    }
-  }
+  useEffect(() => {
+    if (ele === bonneReponse) setClasse("Reponse-container goodAnswer");
+  }, [handleClick]);
+
   const handleClicked = (e) => {
     handleClick(e);
-    handleClass(ele);
+    if (ele !== bonneReponse) {
+      setClasse("Reponse-container wrongAnswer");
+    }
   };
+
+  useEffect(() => {
+    setClasse("Reponse-container");
+  }, []);
 
   return (
     <button
