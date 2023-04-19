@@ -19,9 +19,9 @@ function App() {
     console.info("getmovie");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US,EU&page=${rdmNum(
-          100 + 1
-        )}&adult=false&original_language=en`
+        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${
+          rdmNum(100) + 1
+        }`
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
@@ -56,8 +56,7 @@ function App() {
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
             poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
- mode={mode}
-
+            mode={mode}
           />
         }
       />
