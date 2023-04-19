@@ -2,103 +2,160 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: $mainTypo;
   height: 100%;
+  width: 100%;
+}
 
-  .results {
-    color: $buttonColor;
-    background-color: $buttonBackColor;
-    height: 75vh;
-    margin-top: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-    h1 {
-      color: $buttonColor;
-      font-weight: 600;
-      font-size: 3em;
-      text-align: center;
-    }
+.resultsCongratsCupScores {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+  border: 8px solid $buttonColor;
+  width: 80%;
+  background-color: $buttonBackColor;
+  height: 80%;
+  margin: 10% 0 0 0;
+}
 
-    img {
-      height: 50%;
-      width: auto;
-      align-self: center;
-    }
+.congratulation {
+  width: 100%;
+  text-align: center;
+  padding: 1%;
+}
 
-    .result1,
-    .result2,
-    .result3,
-    .result4 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.5rem;
-    }
+.congratulation h1 {
+  font-size: 3.5em;
+  width: 100%;
+  color: $buttonColor;
+}
 
-    .result1 {
-      color: #4caf50;
-    }
+.cupImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.cupImage img {
+  max-height: 200px;
+}
 
-    .opacity {
-      opacity: 0.5;
-    }
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $buttonColor;
+  padding: 20px 5 0 5;
+  width: 100%;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 0 0 2% 0;
+  font-size: 1.5em;
+}
+
+#top1 {
+  color: #4caf50;
+  font-size: 1.9em;
+}
+.resultName {
+}
+
+.resultTime {
+  opacity: 0.65;
+}
+
+.resultPoints {
+}
+
+.endButons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  gap: 100px;
+  height: 20%;
+  align-items: center;
+}
+
+#restart {
+  font-size: 1.5em;
+  width: 150px;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  border-radius: 20px;
+  padding: 1%;
+  color: #552e61;
+  font-family: $mainTypo;
+  height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+  .congratulation h1 {
+    font-size: 1.5em;
   }
 
-  .restart {
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .ragequit {
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #top1 {
+    font-size: 1.2em;
   }
 
-  .bouton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  .result {
+    font-size: 1em;
   }
 
-  button {
-    color: $buttonColor;
-    background: $buttonBackColor;
-    font-weight: 600;
-    font-size: 2em;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
-    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-    width: 40vw;
-    height: 100px;
-    transition: 0.15s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(1.15);
-    }
+  .endButons {
+    gap: 10%;
   }
 
-  @media screen and (min-width: 800px) {
-    button {
-      width: 20vw;
-    }
-    .results {
-      .result1,
-      .result2,
-      .result3,
-      .result4 {
-        font-size: 0.8rem;
-      }
-    }
+  #restart {
+    font-size: 1em;
+    height: 50px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .congratulation h1 {
+    font-size: 1.5em;
+  }
+
+  #top1 {
+    font-size: 1.2em;
+  }
+
+  .result {
+    font-size: 1em;
+  }
+
+  .endButons {
+    gap: 10%;
+  }
+
+  #restart {
+    font-size: 1em;
+    height: 50px;
+    width: 100px;
+  }
+
+  .cupImage img {
+    max-height: 100px;
   }
 }

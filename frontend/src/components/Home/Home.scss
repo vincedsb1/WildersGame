@@ -96,7 +96,7 @@ a:link {
 //   height: 100%;
 //   overflow: hidden;
 //   margin: 0px;
-//   background-color: red; 
+//   background-color: red;
 
 //   img {
 //     height: 70%;
@@ -108,7 +108,7 @@ a:link {
 //   }
 // }
 
-h1 {
+.mainTitle {
   color: white;
   font-family: $mainTypo;
   font-weight: 800;
@@ -117,7 +117,7 @@ h1 {
   text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
 }
 
-h1:nth-child(1) {
+.mainTitle h1:nth-child(1) {
   position: relative;
   transform: rotate(-8.5deg);
   margin-bottom: -15px;
