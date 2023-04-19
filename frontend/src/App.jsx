@@ -19,7 +19,7 @@ function App() {
     console.info("getmovie");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US&page=${rdmNum(
+        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US,EU&page=${rdmNum(
           100 + 1
         )}&adult=false&original_language=en`
       )
