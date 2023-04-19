@@ -19,11 +19,9 @@ function App() {
     console.info("getmovie");
     axios
       .get(
-
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${
-          rdmNum(100) + 1
-        }`
-
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US&page=${rdmNum(
+          100 + 1
+        )}&adult=false&original_language=en`
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
@@ -37,7 +35,6 @@ function App() {
   useEffect(() => {
     getMovie();
   }, []);
-
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");

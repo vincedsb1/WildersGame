@@ -1,0 +1,19 @@
+.Music {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.MusicOn {
+  width: 40px;
+  height: 40px;
+  background-image: url("./SonOnImg.png");
+  background-size: 100%;
+}
+
+.MusicOff {
+  width: 40px;
+  height: 40px;
+  background-image: url("./SonOffImg.png");
+  background-size: 100%;
+}

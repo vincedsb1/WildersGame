@@ -4,7 +4,6 @@
   justify-content: space-around;
   height: 100%;
 }
-
 .header {
   display: flex;
   flex-direction: row;
@@ -21,14 +20,12 @@
   font-family: $mainTypo;
   font-size: 2em;
 }
-
 .timer-rouge {
   color: red;
   animation-duration: 6s, 0.4s;
   animation-name: size, warning;
   animation-iteration-count: 1, 15;
 }
-
 @keyframes size {
   from {
     font-size: 2rem;
@@ -37,7 +34,6 @@
     font-size: 3.5rem;
   }
 }
-
 @keyframes warning {
   0% {
     opacity: 1;
@@ -49,7 +45,6 @@
     opacity: 1;
   }
 }
-
 .afficheContainer {
   display: flex;
   flex-direction: column;
@@ -59,23 +54,38 @@
   max-height: 60vh;
   flex-grow: 0;
 }
-
 .afficheContainer img {
   border-radius: 10px;
   max-height: 90%;
   box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
 }
-
+@media screen and (max-height: 600px) {
+  .afficheContainer {
+    width: 100%;
+    max-height: 45vh;
+    // background-color: yellow;
+  }
+}
 .movieTitle {
   display: flex;
   width: 100%;
   justify-content: center;
+  text-align: center;
   color: white;
   font-size: 2.5em;
   font-family: $backupTypo;
   padding-bottom: 2vh;
 }
-
+@media screen and (max-height: 600px) {
+  .movieTitle {
+    padding-bottom: 10vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .movieTitle {
+    font-size: 2em;
+  }
+}
 .responses {
   display: flex;
   flex-direction: column;

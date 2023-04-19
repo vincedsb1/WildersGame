@@ -5,7 +5,6 @@ function Pseudo({ setPseudo }) {
   const handleChange = (event) => {
     setPseudo(event.target.value);
   };
-
   return (
     <div className="pseudo">
       <p>Your name</p>
