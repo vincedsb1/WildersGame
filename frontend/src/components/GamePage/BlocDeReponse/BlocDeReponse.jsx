@@ -1,11 +1,9 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-
 function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
   const minYear = bonneReponse - mode;
   const maxYear = bonneReponse + mode;
-
 
   const [tableauDeReponse, setTableauDeReponse] = useState([bonneReponse]);
 
@@ -18,7 +16,7 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
           Math.random() * (maxYear - minYear + 1) + minYear
         );
         if (
-          tableauDeReponse.find((el) => el === MauvaiseReponse) === undefined &&
+          tab.find((el) => el === MauvaiseReponse) === undefined &&
           MauvaiseReponse < 2024
         ) {
           tab.push(MauvaiseReponse);
@@ -29,6 +27,16 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
     [bonneReponse]
   );
 
+  function handleClass(ele) {
+    if (!disableButton) {
+      return "Reponse-container";
+    }
+    if (bonneReponse === ele) {
+      return "Reponse-container goodAnswer";
+    }
+    return "Reponse-container wrongAnswer";
+  }
+
   return (
     // bloc des 4 bulles ou les reponses vont s'afficher.
     <div className="bloc-response">
@@ -38,11 +46,11 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
           return (
             <button
               disabled={disableButton}
-              className="Reponse-container"
+              className={handleClass(ele)}
               onClick={handleClick}
               type="button"
               id={ele.toString()}
-              key={ele}
+              key={Math.floor(Math.random() * 10000000)}
             >
               {ele}
             </button>
@@ -56,7 +64,7 @@ BlocDeReponse.propTypes = {
   bonneReponse: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired,
   disableButton: PropTypes.bool.isRequired,
-    mode: PropTypes.number.isRequired,
+  mode: PropTypes.number.isRequired,
 };
 
 export default BlocDeReponse;

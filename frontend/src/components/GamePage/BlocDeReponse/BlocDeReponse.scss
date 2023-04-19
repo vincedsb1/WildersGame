@@ -28,7 +28,6 @@
   }
 
   .goodAnswer {
-    position: relative;
     border-color: green;
   }
   .goodAnswer::before {
@@ -38,7 +37,6 @@
     right: 0;
   }
   .wrongAnswer {
-    position: relative;
     border-color: red;
   }
   .wrongAnswer::before {

@@ -21,8 +21,8 @@
 
 @media screen and (max-height: 600px) {
   .h1GameMode {
-      font-size: 4em;
-    }
+    font-size: 4em;
+  }
 }
 
 .pseudo {
@@ -33,31 +33,31 @@
   justify-content: center;
   padding: 0 0 5% 0;
 
-    p {
-      color: white;
-      align-self: left;
-      font-size: 1.8rem;
-    }
+  p {
+    color: white;
+    align-self: left;
+    font-size: 1.8rem;
+  }
 
-    input {
-      color: #552e61;
-      font-size: 1.5rem;
-      padding: 16px;
-      background: white;
-      height: 70px;
-      width: 50vw;
-      max-width: 300px;
-      border-radius: 30px;
-      border: 8px solid $buttonColor;
-      box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-      outline: none;
-    }
+  input {
+    color: #552e61;
+    font-size: 1.5rem;
+    padding: 16px;
+    background: white;
+    height: 70px;
+    width: 50vw;
+    max-width: 300px;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+  }
 }
 
 @media screen and (max-height: 600px) {
   .pseudo {
-      padding: 3vh 0 0 0;
-    }
+    padding: 3vh 0 0 0;
+  }
 }
 
 .difficultyContainer {
@@ -76,10 +76,9 @@
 }
 
 @media screen and (max-height: 600px) {
-
-    .difficulty {
-      flex-direction: row;
-    }
+  .difficulty {
+    flex-direction: row;
+  }
 }
 
 button {
@@ -95,7 +94,6 @@ button {
 }
 
 @media screen and (max-height: 600px) {
-
   button {
     width: 170px;
     margin: 0 10px 0 10px;

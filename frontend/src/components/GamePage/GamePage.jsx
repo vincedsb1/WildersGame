@@ -4,7 +4,6 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-
 function GamePage({ title, date, poster, getMovie, mode }) {
   const [disableButton, setDisableButton] = useState(false);
 
@@ -16,22 +15,14 @@ function GamePage({ title, date, poster, getMovie, mode }) {
     e.target.className = "Reponse-container";
     setDisableButton(false);
   };
+
   const handleClick = (e) => {
     setDisableButton(true);
 
-    if (Number(e.target.id) === date) {
-      e.target.className = "Reponse-container goodAnswer";
-    }
-    if (Number(e.target.id) !== date) {
-      e.target.className = "Reponse-container wrongAnswer";
-    }
-
     setTimeout(() => {
       generateNewQuestion(e);
-      console.info("timeout");
     }, 1500);
   };
-
 
   return (
     <div className="mainContainer">
@@ -52,17 +43,13 @@ function GamePage({ title, date, poster, getMovie, mode }) {
           <h2>{title}</h2>
         </div>
 
-
-      <BlocDeReponse
-        bonneReponse={date}
-        handleClick={handleClick}
-        disableButton={disableButton}
-         mode={mode}
-      />
-
-        </div>
+        <BlocDeReponse
+          bonneReponse={date}
+          handleClick={handleClick}
+          disableButton={disableButton}
+          mode={mode}
+        />
       </div>
-
     </div>
   );
 }
