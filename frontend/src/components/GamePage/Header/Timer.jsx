@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Timer() {
-  const [secs, setSeconds] = useState(50);
-  //  const navigate = useNavigate();
+function Timer({ resultat }) {
+  const [secs, setSeconds] = useState(20);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const sampleInterval = setInterval(() => {
@@ -11,7 +12,7 @@ function Timer() {
         setSeconds(secs - 1);
       } else if (secs === 0) {
         clearInterval(sampleInterval);
-        // navigate("/leaderBoard");
+        navigate("/leaderBoard", { state: { resultat } });
       }
     }, 1000);
     return () => {
@@ -25,5 +26,9 @@ function Timer() {
     </div>
   );
 }
+
+Timer.propTypes = {
+  resultat: PropTypes.number.isRequired,
+};
 
 export default Timer;

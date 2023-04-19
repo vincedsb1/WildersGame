@@ -4,6 +4,7 @@ $buttonColor: #783c8f;
 $buttonBackColor: #eadaf4;
 $mainTypo: "Cookies";
 $secondaryTypo: "CherryBird";
+$backupTypo: "Cappung";
 
 * {
   margin: 0;
@@ -15,8 +16,15 @@ $secondaryTypo: "CherryBird";
 }
 
 body {
-  height: 100vh;
-  background: linear-gradient($lighterGradient, $darkerGradient);
+  // height: 100vh;
+  height: 100%;
+  background: rgb(51, 20, 62);
+  background: linear-gradient(
+    90deg,
+    rgba(51, 20, 62, 1) 0%,
+    rgba(155, 89, 182, 1) 50%,
+    rgba(51, 20, 62, 1) 100%
+  );
 }
 
 @font-face {
@@ -31,9 +39,16 @@ body {
     url("./assets/fonts/Cookies.ttf") format("woff");
 }
 
+@font-face {
+  font-family: "Cappung";
+  src: local("CustomFont1Name"),
+    url("./assets/fonts/Cappung.otf") format("woff");
+}
+
 @import "./components/Home/StartButton/StartButton.scss";
 @import "./components/Home/Home.scss";
 @import "./components/GamePage/GamePage.scss";
 @import "./components/Countdown/_countdown.scss";
 @import "./components/LeaderBoard/LeaderBoard.scss";
+@import "./components/GameMode/GameMode.scss";
 @import "./components/GamePage/BlocDeReponse/BlocDeReponse.scss";

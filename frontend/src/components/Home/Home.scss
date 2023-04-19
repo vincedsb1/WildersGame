@@ -15,25 +15,62 @@ a:link {
   text-decoration: none;
 }
 
-body,
-html,
-#root {
+.background-class {
   height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+  background: rgb(51, 20, 62);
+  background: linear-gradient(
+    90deg,
+    rgba(51, 20, 62, 1) 0%,
+    rgba(155, 89, 182, 1) 50%,
+    rgba(51, 20, 62, 1) 100%
+  );
 }
 
-body {
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
   background: linear-gradient($lighterGradient, $darkerGradient);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.25);
+  height: 100vh;
+}
+
+.popcornBackground {
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/Home/popcorn.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: left -100px bottom -10px;
+}
+
+@media screen and (max-height: 600px) {
+  .popcornBackground {
+    background-position: left -100px bottom -200px;
+  }
+}
+
+.mainTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65%;
+}
+
+.mainTitle {
+  padding-bottom: 5%;
 }
 
 .boiteFanion {
   position: relative;
   overflow: hidden;
   height: 90px;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  z-index: 1;
 
   .fanion {
     height: 100%;
@@ -45,22 +82,31 @@ body {
   }
 }
 
-.popcorn {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  margin: 0px;
-
-  img {
-    height: 500px;
-    position: absolute;
-    left: -270px;
-    bottom: -110px;
-    opacity: 40%;
-  }
+.startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
 }
+
+// .popcorn {
+//   position: absolute;
+//   bottom: 0;
+//   width: 60%;
+//   height: 100%;
+//   overflow: hidden;
+//   margin: 0px;
+//   background-color: red;
+
+//   img {
+//     height: 70%;
+//     position: absolute;
+//     left: -270px;
+//     bottom: -310px;
+//     opacity: 40%;
+//     z-index: 0;
+//   }
+// }
 
 h1 {
   color: white;
@@ -72,7 +118,7 @@ h1 {
 }
 
 h1:nth-child(1) {
-  padding-top: 100px;
+  position: relative;
   transform: rotate(-8.5deg);
   margin-bottom: -15px;
 }
