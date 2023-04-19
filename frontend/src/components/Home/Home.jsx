@@ -2,26 +2,41 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
-import popcorn from "../../assets/Home/popcorn.svg";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
+import Music from "./Music/Music";
+import "./Music/Music.scss";
 
 function Home() {
   return (
-    <div>
-      <h1>Wilder</h1>
-      <h1>&nbsp;&nbsp;Game</h1>
-      <div className="boiteFanion">
-        <img className="fanion" src={fanion} alt="fanion" />
-        <img className="catchphrase" src={catchphrase} alt="catchphrase" />
-      </div>
-      <div className="popcorn">
-        <img src={popcorn} alt="" />
-      </div>
-      <div>
-        <NavLink to="/countdown">
-          <StartButton />
-        </NavLink>
+
+    <div className="background-class">
+      <div className="mainContainer">
+        <div className="popcornBackground">
+          <div className="mainTop">
+            <div className="mainTitle">
+              <h1>Wilder</h1>
+              <h1>&nbsp;&nbsp;Game</h1>
+            </div>
+            <div className="boiteFanion">
+              <img className="fanion" src={fanion} alt="fanion" />
+              <img
+                className="catchphrase"
+                src={catchphrase}
+                alt="catchphrase"
+              />
+            </div>
+          </div>
+          <div className="startButton">
+            <NavLink to="/gameMode">
+              <StartButton />
+            </NavLink>
+          </div>
+          <div className="Music">
+            <Music />
+         </div>
+        </div>
+
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import GamePage from "@components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
+import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
 
 function App() {
@@ -18,9 +19,11 @@ function App() {
     console.info("getmovie");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${
-          rdmNum(100) + 1
-        }`
+
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US&page=${rdmNum(
+          100 +1
+        )}&adult=false&original_language=en`
+
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
@@ -35,9 +38,17 @@ function App() {
     getMovie();
   }, []);
 
+  const [mode, setMode] = useState(20);
+  const [pseudo, setPseudo] = useState("joueur");
+
+
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
+      <Route
+        path="/GameMode"
+        element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
+      />
       <Route path="/countdown" element={<Countdown />} />
       <Route
         path="/game"
@@ -48,11 +59,11 @@ function App() {
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
             poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
-            useState={useState}
+            mode={mode}
           />
         }
       />
-      <Route path="/leaderBoard" element={<LeaderBoard />} />
+      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
     </Routes>
   );
 }

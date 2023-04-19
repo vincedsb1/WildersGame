@@ -3,19 +3,28 @@
   flex-wrap: wrap;
   gap: 5%;
   justify-content: center;
-  padding: 15px 5% 0px 5%;
+  align-items: center;
+}
 
+.Reponse-container {
+  margin-bottom: 1%;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  border-radius: 20px;
+  padding: 1%;
+  color: #552e61;
+  font-family: $mainTypo;
+  font-size: 1.3em;
+  cursor: pointer;
+  width: 15%;
+}
+
+@media screen and (max-width: 600px) {
+  .bloc-response {
+    // gap: 25%;
+  }
   .Reponse-container {
-    margin-bottom: 25px;
-    background-color: $buttonBackColor;
-    border: 8px solid $buttonColor;
-    border-radius: 20px;
-    padding: 8px;
-    min-width: 35%;
-    color: #552e61;
-    font-family: $mainTypo;
-    font-size: 1.3em;
-    cursor: pointer;
+    width: 35%;
   }
 
   .goodAnswer {
