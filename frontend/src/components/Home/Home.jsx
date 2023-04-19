@@ -5,10 +5,15 @@ import StartButton from "./StartButton/StartButton";
 import popcorn from "../../assets/Home/popcorn.svg";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
+import Music from "./Music/Music";
+import "./Music/Music.scss";
 
 function Home() {
   return (
     <div>
+      <div className="Music">
+        <Music />
+      </div>
       <h1>Wilder</h1>
       <h1>&nbsp;&nbsp;Game</h1>
       <div className="boiteFanion">
