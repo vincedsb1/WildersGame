@@ -26,4 +26,25 @@
   .Reponse-container {
     width: 35%;
   }
+
+  .goodAnswer {
+    position: relative;
+    border-color: green;
+  }
+  .goodAnswer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .wrongAnswer {
+    position: relative;
+    border-color: red;
+  }
+  .wrongAnswer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
