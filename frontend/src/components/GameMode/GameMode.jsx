@@ -9,20 +9,20 @@ function GameMode({ setMode, setPseudo }) {
     <div className="mainContainer">
       <div className="gameMode">
         <div className="maintTitleModeContainer">
-            <div className="mainTitleMode">
+          <div className="mainTitleMode">
             <h1 className="h1GameMode">Wilder</h1>
             <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
-            </div>
+          </div>
         </div>
         <div className="pseudo">
           <Pseudo setPseudo={setPseudo} />
         </div>
         <div className="difficultyContainer">
-            <div className="difficulty">
+          <div className="difficulty">
             <Link to="/countdown">
-                <Difficulty setMode={setMode} />
+              <Difficulty setMode={setMode} />
             </Link>
-            </div>
+          </div>
         </div>
       </div>
     </div>

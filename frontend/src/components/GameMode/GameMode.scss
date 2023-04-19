@@ -3,35 +3,34 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-}
 
-.maintTitleModeContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40%;
-}
+  .maintTitleModeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+  }
 
-.mainTitleMode {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // padding: 15% 0 5% 0;
-}
+  .mainTitleMode {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // padding: 15% 0 5% 0;
+  }
 
-@media screen and (max-height: 600px) {
-  .h1GameMode {
+  @media screen and (max-height: 600px) {
+    .h1GameMode {
       font-size: 4em;
     }
-}
+  }
 
-.pseudo {
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 5% 0;
+  .pseudo {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 5% 0;
 
     p {
       color: white;
@@ -52,52 +51,51 @@
       box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
       outline: none;
     }
-}
+  }
 
-@media screen and (max-height: 600px) {
-  .pseudo {
+  @media screen and (max-height: 600px) {
+    .pseudo {
       padding: 3vh 0 0 0;
     }
-}
+  }
 
-.difficultyContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40%;
-}
+  .difficultyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+  }
 
-.difficulty {
-  // height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .difficulty {
+    // height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-@media screen and (max-height: 600px) {
-
+  @media screen and (max-height: 600px) {
     .difficulty {
       flex-direction: row;
     }
-}
-
-button {
-  color: #552e61;
-  background-color: $buttonBackColor;
-  font-weight: 200;
-  font-size: 1.5em;
-  border-radius: 30px;
-  border: 8px solid $buttonColor;
-  width: 50vw;
-  max-width: 300px;
-  height: 70px;
-}
-
-@media screen and (max-height: 600px) {
+  }
 
   button {
-    width: 170px;
-    margin: 0 10px 0 10px;
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    max-width: 300px;
+    height: 70px;
+  }
+
+  @media screen and (max-height: 600px) {
+    button {
+      width: 170px;
+      margin: 0 10px 0 10px;
+    }
   }
 }
