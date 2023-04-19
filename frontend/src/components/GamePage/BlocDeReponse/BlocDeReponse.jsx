@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
+import BoutonReponse from "./Boutonreponse/BoutonReponse";
 
 function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
   const minYear = bonneReponse - mode;
@@ -27,16 +28,6 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
     [bonneReponse]
   );
 
-  function handleClass(ele) {
-    if (!disableButton) {
-      return "Reponse-container";
-    }
-    if (bonneReponse === ele) {
-      return "Reponse-container goodAnswer";
-    }
-    return "Reponse-container wrongAnswer";
-  }
-
   return (
     // bloc des 4 bulles ou les reponses vont s'afficher.
     <div className="bloc-response">
@@ -44,16 +35,12 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
         .sort((a, b) => a - b)
         .map((ele) => {
           return (
-            <button
-              disabled={disableButton}
-              className={handleClass(ele)}
-              onClick={handleClick}
-              type="button"
-              id={ele.toString()}
-              key={Math.floor(Math.random() * 10000000)}
-            >
-              {ele}
-            </button>
+            <BoutonReponse
+              ele={ele}
+              handleClick={handleClick}
+              disableButton={disableButton}
+              bonneReponse={bonneReponse}
+            />
           );
         })}
     </div>

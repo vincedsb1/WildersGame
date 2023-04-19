@@ -9,7 +9,6 @@ import "./Music/Music.scss";
 
 function Home() {
   return (
-
     <div className="background-class">
       <div className="mainContainer">
         <div className="popcornBackground">
@@ -36,7 +35,6 @@ function Home() {
             <Music />
           </div>
         </div>
-
       </div>
     </div>
   );
