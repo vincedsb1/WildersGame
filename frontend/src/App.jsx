@@ -18,7 +18,7 @@ function App() {
   const getMovie = () => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${rdmNum(
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US&page=${rdmNum(
           100
         )}&adult=false&original_language=en`
       )
@@ -42,6 +42,7 @@ function App() {
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
+
 
   return (
     <Routes>

@@ -4,6 +4,8 @@ import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
+import Music from "./Music/Music";
+import "./Music/Music.scss";
 
 function Home() {
   return (
@@ -29,6 +31,9 @@ function Home() {
               <StartButton />
             </Link>
           </div>
+          <div className="Music">
+            <Music />
+         </div>
         </div>
       </div>
     </div>
