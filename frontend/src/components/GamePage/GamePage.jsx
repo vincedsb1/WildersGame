@@ -21,11 +21,7 @@ function GamePage({ title, date, poster, getMovie, mode }) {
     setDisableButton(true);
 
     if (Number(e.target.id) === date) {
-      e.target.className = "Reponse-container goodAnswer";
       setResultat(resultat + 1);
-    }
-    if (Number(e.target.id) !== date) {
-      e.target.className = "Reponse-container wrongAnswer";
     }
 
     setTimeout(() => {

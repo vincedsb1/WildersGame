@@ -16,7 +16,7 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
           Math.random() * (maxYear - minYear + 1) + minYear
         );
         if (
-          tableauDeReponse.find((el) => el === MauvaiseReponse) === undefined &&
+          tab.find((el) => el === MauvaiseReponse) === undefined &&
           MauvaiseReponse < 2024
         ) {
           tab.push(MauvaiseReponse);
@@ -27,6 +27,16 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
     [bonneReponse]
   );
 
+  function handleClass(ele) {
+    if (!disableButton) {
+      return "Reponse-container";
+    }
+    if (bonneReponse === ele) {
+      return "Reponse-container goodAnswer";
+    }
+    return "Reponse-container wrongAnswer";
+  }
+
   return (
     // bloc des 4 bulles ou les reponses vont s'afficher.
     <div className="bloc-response">
@@ -36,7 +46,7 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
           return (
             <button
               disabled={disableButton}
-              className="Reponse-container"
+              className={handleClass(ele)}
               onClick={handleClick}
               type="button"
               id={ele.toString()}

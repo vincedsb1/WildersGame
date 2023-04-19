@@ -1,0 +1,44 @@
+.bloc-response {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+}
+.Reponse-container {
+  margin-bottom: 1%;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  border-radius: 20px;
+  padding: 1%;
+  color: #552e61;
+  font-family: $mainTypo;
+  font-size: 1.3em;
+  cursor: pointer;
+  width: 15%;
+}
+
+.goodAnswer {
+  border-color: green;
+}
+.goodAnswer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.wrongAnswer {
+  border-color: red;
+}
+.wrongAnswer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .Reponse-container {
+    width: 35%;
+  }
+}
