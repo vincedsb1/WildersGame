@@ -20,7 +20,7 @@
 }
 
 .goodAnswer {
-  border-color: green;
+  border-color: $greenColor;
 }
 .goodAnswer::before {
   content: "";
@@ -29,7 +29,7 @@
   right: 0;
 }
 .wrongAnswer {
-  border-color: red;
+  border-color: $redColor;
 }
 .wrongAnswer::before {
   content: "";
