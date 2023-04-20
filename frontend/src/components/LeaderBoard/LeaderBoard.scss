@@ -27,7 +27,7 @@
   width: 80%;
   background-color: $buttonBackColor;
   height: 80%;
-  margin: 10% 0 0 0;
+  margin: 5% 0 0 0;
 }
 
 .congratulation {
@@ -72,12 +72,14 @@
   font-size: 1.5em;
 }
 
-#top1 {
+#top1Result {
   color: #4caf50;
+  // background-color: lightcyan;
+  font-size: 1.4em;
 }
 
-.resultNameTime #top1Time {
-  width: 65%;
+#top1Time {
+  width: 100%;
 }
 
 .resultName {
@@ -99,6 +101,7 @@
   gap: 100px;
   height: 20%;
   align-items: center;
+  // background-color: lightpink;
 }
 
 #restart {
@@ -118,20 +121,24 @@
     font-size: 1.5em;
   }
 
-  #top1 {
+  #top1Result,
+  #top1Name {
     font-size: 1.2em;
+    // background-color: lightcoral;
   }
 
   #top1NameTime {
-    width: 100%;
+    width: 70%;
+    // background-color: lightgray;
   }
 
   #top1Time {
-    font-size: 0.7em;
+    font-size: 0.9em;
+    // background-color: red;
   }
 
   #top1Points {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .result {
@@ -146,6 +153,11 @@
     font-size: 1em;
     height: 50px;
     width: 100px;
+  }
+
+  .resultsCongratsCupScores {
+    width: 100%;
+    margin: 15% 0 0 0;
   }
 }
 

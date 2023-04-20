@@ -15,7 +15,7 @@ function Results({ pseudo }) {
       date: "2023/04/02",
       time: "13:27",
       name: "Jeremy",
-      points: 1452,
+      points: 452,
     },
     {
       date: "2023/03/03",
@@ -56,9 +56,11 @@ function Results({ pseudo }) {
         <img src={cup} alt="cup" />
       </div>
       <div className="results">
-        <div className="result" id="top1">
+        <div className="result" id="top1Result">
           <div className="resultNameTime" id="top1NameTime">
-            <div className="resultName">{bestScore[0].name}</div>
+            <div className="resultName" id="top1Name">
+              {bestScore[0].name}
+            </div>
             <div className="resultTime" id="top1Time">
               {bestScore[0].date}&ensp;{bestScore[0].time}
             </div>
