@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
@@ -28,31 +27,26 @@ function Results({ pseudo }) {
       date: "01/04/2023",
       time: "11:54",
       name: "Marah",
-      points: 0,
+      points: 4,
+    },
+
+    {
+      date: "01/04/2023",
+      time: "11:54",
+      name: "Caro",
+      points: 4,
     },
   ];
 
-  const location = useLocation();
-  const currentDate = new Date();
-  const currentDateString = currentDate.toLocaleDateString();
-  const currentTimeString = currentDate.toLocaleTimeString();
-
   const actualScore = {
-    date: currentDateString,
-    time: currentTimeString.replace(/(.*)\D\d+/, "$1"),
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString().replace(/(.*)\D\d+/, "$1"),
     name: pseudo,
-    points: location.state.resultat,
+    points: useLocation().state.resultat,
   };
 
   results.push(actualScore);
-
-  const bestScore = results.sort((a, b) => (a.points < b.points ? 1 : -1));
-
-  const [bestScoreReached, setBestScoreReached] = useState(false);
-
-  if (bestScore[0].name === pseudo && !bestScoreReached) {
-    setBestScoreReached(true);
-  }
+  results.sort((a, b) => b.points - a.points);
 
   return (
     <div className="resultsCongratsCupScores">
@@ -63,55 +57,23 @@ function Results({ pseudo }) {
         <img src={cup} alt="cup" />
       </div>
       <div className="results">
-        <div className="result" id="top1">
-          <div className="resultNameTime" id="top1NameTime">
-            <div className="resultName">{bestScore[0].name}</div>
-            <div className="resultTime" id="top1Time">
-              {bestScore[0].date}&ensp;{bestScore[0].time}
+        {results.slice(0, 4).map((el) => {
+          return (
+            <div className="result">
+              <div className="resultNameTime">
+                <div className="resultName">{el.name}</div>
+                <div className="resultTime">
+                  {el.date}&ensp;{el.time}
+                </div>
+              </div>
+              <div className="resultPoints">
+                <p>{el.points}&ensp;pts</p>
+              </div>
             </div>
-          </div>
-          <div className="resultPoints" id="top1Points">
-            <p>{bestScore[0].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[1].name}</div>
-            <div className="resultTime">
-              {bestScore[1].date}&ensp;{bestScore[1].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[1].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[2].name}</div>
-            <div className="resultTime">
-              {bestScore[2].date}&ensp;{bestScore[2].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[2].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[3].name}</div>
-            <div className="resultTime">
-              {bestScore[3].date}&ensp;{bestScore[3].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[3].points}&ensp;pts</p>
-          </div>
-        </div>
+          );
+        })}
       </div>
-      {bestScoreReached && <Confetti />}
+      {results[0].name === pseudo && <Confetti />}
       <br />
     </div>
   );
