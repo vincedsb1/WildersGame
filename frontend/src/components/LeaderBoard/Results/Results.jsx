@@ -4,6 +4,7 @@ import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
 function Results({ pseudo }) {
+
   let results = JSON.parse(localStorage.getItem("storedResults"));
   if (!results) {
     results = [
@@ -34,6 +35,7 @@ function Results({ pseudo }) {
     ];
   }
 
+
   const actualScore = {
     date: new Date().toLocaleDateString(),
     time: new Date().toLocaleTimeString().replace(/(.*)\D\d+/, "$1"),
@@ -50,7 +52,11 @@ function Results({ pseudo }) {
   return (
     <div className="resultsCongratsCupScores">
       <div className="congratulation">
-        <h1>Well done {pseudo}!</h1>
+        {results[0].name === pseudo && <h1>Best score {pseudo}!</h1>}
+        {results[1].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[2].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[3].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[4].name === pseudo && <h1>Try again {pseudo}!</h1>}
       </div>
       <div className="cupImage">
         <img src={cup} alt="cup" />

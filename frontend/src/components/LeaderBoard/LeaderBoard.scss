@@ -27,7 +27,7 @@
   width: 80%;
   background-color: $buttonBackColor;
   height: 80%;
-  margin: 10% 0 0 0;
+  margin: 5% 0 0 0;
 }
 
 .congratulation {
@@ -47,9 +47,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  // background-color: lightgray;
 }
 .cupImage img {
   max-height: 200px;
+  height: 80%;
 }
 
 .results {
@@ -60,10 +62,19 @@
   color: $buttonColor;
   padding: 20px 5 0 5;
   width: 100%;
+  margin-top: 2%;
+  font-size: 1.1em;
 }
 
 .result:first-child {
-  color: #4caf50;
+  color: $greenColor;
+  font-size: 1.6em;
+}
+
+.result:nth-child(2),
+.result:nth-child(3),
+.result:nth-child(4) {
+  font-size: 1.3em;
 }
 
 .result {
@@ -72,13 +83,19 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  padding: 0 0 2% 0;
-  font-size: 1.5em;
+  padding: 3% 0 2% 0;
+  // background-color: lightgreen;
 }
 
-.resultNameTime {
-  width: 65%;
-}
+// #top1Result {
+//   color: $greenColor;
+//   // background-color: lightcyan;
+//   font-size: 1.4em;
+// }
+
+// #top1Time {
+//   width: 100%;
+// }
 
 .resultTime {
   opacity: 0.65;
@@ -96,6 +113,7 @@
   gap: 100px;
   height: 20%;
   align-items: center;
+  // background-color: lightpink;
 }
 
 #restart {
@@ -108,12 +126,46 @@
   color: #552e61;
   font-family: $mainTypo;
   height: 60px;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
 }
 
 @media screen and (max-width: 800px) {
   .congratulation h1 {
     font-size: 1.5em;
+    padding: 6% 1% 1% 1%;
   }
+
+  .result:first-child {
+    color: $greenColor;
+    font-size: 1.2em;
+  }
+
+  .result:nth-child(2),
+  .result:nth-child(3),
+  .result:nth-child(4) {
+    font-size: 1em;
+  }
+
+  // #top1NameTime {
+  //   width: 70%;
+  //   // background-color: lightgray;
+  // }
+
+  // #top1Time {
+  //   font-size: 0.9em;
+  //   // background-color: red;
+  // }
+
+  // #top1Points {
+  //   font-size: 1.2em;
+  // }
 
   .result {
     font-size: 1em;
@@ -128,6 +180,11 @@
     height: 50px;
     width: 100px;
   }
+
+  .resultsCongratsCupScores {
+    width: 100%;
+    margin: 15% 0 0 0;
+  }
 }
 
 @media screen and (max-height: 600px) {
@@ -135,9 +192,9 @@
     font-size: 1.5em;
   }
 
-  #top1 {
-    font-size: 1.2em;
-  }
+  // #top1 {
+  //   font-size: 1.2em;
+  // }
 
   .result {
     font-size: 1em;
