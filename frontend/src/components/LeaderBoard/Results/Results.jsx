@@ -45,10 +45,10 @@ function Results({ pseudo }) {
     <div className="resultsCongratsCupScores">
       <div className="congratulation">
         {results[0].name === pseudo && <h1>Best score {pseudo}!</h1>}
-        {(results[1].name || results[2].name || results[3].name) === pseudo && (
-          <h1>Well done {pseudo}!</h1>
-        )}
-        {results[4].name === pseudo && <h1>Too bad {pseudo}!</h1>}
+        {results[1].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[2].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[3].name === pseudo && <h1>Well done {pseudo}!</h1>}
+        {results[4].name === pseudo && <h1>Try again {pseudo}!</h1>}
       </div>
       <div className="cupImage">
         <img src={cup} alt="cup" />
