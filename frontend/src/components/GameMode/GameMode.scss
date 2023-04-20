@@ -79,6 +79,7 @@
     justify-content: center;
     align-items: center;
     height: 40%;
+    // background-color: lightcoral;
   }
 
   .difficultyContainer {
@@ -97,6 +98,7 @@
   #difficulty {
     color: #552e61;
     background-color: $buttonBackColor;
+    // background-color: blueviolet;
     font-weight: 200;
     font-size: 1.5em;
     border-radius: 30px;
@@ -104,6 +106,7 @@
     width: 50vw;
     max-width: 300px;
     height: 70px;
+    margin-top: 1vh;
   }
 
   @media screen and (max-height: 600px) {
