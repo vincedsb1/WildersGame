@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
+import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
 function Results({ pseudo }) {
@@ -15,7 +16,7 @@ function Results({ pseudo }) {
       date: "2023/04/02",
       time: "13:27",
       name: "Jeremy",
-      points: 1452,
+      points: 1,
     },
     {
       date: "2023/03/03",
@@ -46,6 +47,12 @@ function Results({ pseudo }) {
   results.push(actualScore);
 
   const bestScore = results.sort((a, b) => (a.points < b.points ? 1 : -1));
+
+  const [bestScoreReached, setBestScoreReached] = useState(false);
+
+  if (bestScore[0].name === pseudo && !bestScoreReached) {
+    setBestScoreReached(true);
+  }
 
   return (
     <div className="resultsCongratsCupScores">
@@ -104,6 +111,8 @@ function Results({ pseudo }) {
           </div>
         </div>
       </div>
+      {bestScoreReached && <Confetti />}
+      <br />
     </div>
   );
 }
