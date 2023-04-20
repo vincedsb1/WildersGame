@@ -62,6 +62,10 @@
   width: 100%;
 }
 
+.result:first-child {
+  color: #4caf50;
+}
+
 .result {
   display: flex;
   flex-direction: row;
@@ -70,10 +74,6 @@
   width: 90%;
   padding: 0 0 2% 0;
   font-size: 1.5em;
-}
-
-#top1 {
-  color: #4caf50;
 }
 
 .resultNameTime {
@@ -113,22 +113,6 @@
 @media screen and (max-width: 800px) {
   .congratulation h1 {
     font-size: 1.5em;
-  }
-
-  #top1 {
-    font-size: 1.2em;
-  }
-
-  #top1NameTime {
-    width: 100%;
-  }
-
-  #top1Time {
-    font-size: 0.7em;
-  }
-
-  #top1Points {
-    font-size: 1em;
   }
 
   .result {
