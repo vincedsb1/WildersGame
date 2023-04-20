@@ -107,6 +107,15 @@
     max-width: 300px;
     height: 70px;
     margin-top: 1vh;
+
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
   }
 
   @media screen and (max-height: 600px) {
