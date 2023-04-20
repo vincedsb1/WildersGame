@@ -9,14 +9,16 @@ function LeaderBoard({ pseudo }) {
   return (
     <div className="mainContainer">
       <div className="leaderBoard">
-        <Results pseudo={pseudo} />
-        <div className="bouton">
-          <Link to="/game">
-            <Restart />
-          </Link>
-          <Link to="/">
-            <Quit />
-          </Link>
+        <div className="resultContainer">
+          <Results pseudo={pseudo} />
+          <div className="endButons">
+            <Link to="/game">
+              <Restart />
+            </Link>
+            <Link to="/">
+              <Quit />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

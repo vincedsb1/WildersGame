@@ -18,6 +18,21 @@
     // padding: 15% 0 5% 0;
   }
 
+  .h1GameMode {
+    color: white;
+    font-family: $mainTypo;
+    font-weight: 800;
+    font-size: 5.5em;
+    text-align: center;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  #tilted {
+    position: relative;
+    transform: rotate(-8.5deg);
+    margin-bottom: -15px;
+  }
+
   @media screen and (max-height: 600px) {
     .h1GameMode {
       font-size: 4em;
@@ -64,14 +79,7 @@
     justify-content: center;
     align-items: center;
     height: 40%;
-  }
-
-  .difficulty {
-    // height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // background-color: lightcoral;
   }
 
   @media screen and (max-height: 600px) {
@@ -80,9 +88,10 @@
     }
   }
 
-  button {
+  #difficulty {
     color: #552e61;
     background-color: $buttonBackColor;
+    // background-color: blueviolet;
     font-weight: 200;
     font-size: 1.5em;
     border-radius: 30px;
@@ -90,12 +99,33 @@
     width: 50vw;
     max-width: 300px;
     height: 70px;
+    margin-top: 1vh;
   }
 
   @media screen and (max-height: 600px) {
     button {
-      width: 170px;
-      margin: 0 10px 0 10px;
+      color: #552e61;
+      background-color: $buttonBackColor;
+      font-weight: 200;
+      font-size: 1.5em;
+      border-radius: 30px;
+      border: 8px solid $buttonColor;
+      width: 50vw;
+      max-width: 300px;
+      height: 70px;
+    }
+
+    #difficulty {
+      font-size: 1.3em;
+      height: 50px;
+      margin-top: 1vh;
+    }
+
+    @media screen and (max-height: 600px) {
+      button {
+        width: 170px;
+        margin: 0 10px 0 10px;
+      }
     }
   }
 }
