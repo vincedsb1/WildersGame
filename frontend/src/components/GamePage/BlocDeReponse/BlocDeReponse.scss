@@ -19,10 +19,26 @@
   width: 15%;
 }
 
+.goodAnswer {
+  border-color: $greenColor;
+}
+.goodAnswer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.wrongAnswer {
+  border-color: $redColor;
+}
+.wrongAnswer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 @media screen and (max-width: 600px) {
-  .bloc-response {
-    // gap: 25%;
-  }
   .Reponse-container {
     width: 35%;
   }

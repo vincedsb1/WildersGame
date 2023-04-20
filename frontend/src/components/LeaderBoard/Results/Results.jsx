@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
 function Results({ pseudo }) {
@@ -8,7 +9,7 @@ function Results({ pseudo }) {
       date: "2023/04/06",
       time: "15:26",
       name: "Lucas",
-      points: 15,
+      points: 2,
     },
     {
       date: "2023/04/02",
@@ -20,15 +21,29 @@ function Results({ pseudo }) {
       date: "2023/03/03",
       time: "09:57",
       name: "Antonin",
-      points: 11,
+      points: 1,
     },
     {
       date: "2023/04/01",
       time: "11:54",
       name: "Marah",
-      points: 5,
+      points: 0,
     },
   ];
+
+  const location = useLocation();
+  const currentDate = new Date();
+  const currentDateString = currentDate.toLocaleDateString();
+  const currentTimeString = currentDate.toLocaleTimeString();
+
+  const actualScore = {
+    date: currentDateString,
+    time: currentTimeString,
+    name: pseudo,
+    points: location.state.resultat,
+  };
+
+  results.push(actualScore);
 
   const bestScore = results.sort((a, b) => (a.points < b.points ? 1 : -1));
 

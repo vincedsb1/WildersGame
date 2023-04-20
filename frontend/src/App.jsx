@@ -16,11 +16,12 @@ function App() {
   }
 
   const getMovie = () => {
+    console.info("getmovie");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${rdmNum(
-          100
-        )}&adult=false&original_language=en`
+        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&page=${
+          rdmNum(100) + 1
+        }`
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
@@ -30,11 +31,6 @@ function App() {
         console.warn(err.message);
       });
   };
-
-  const { title } = movie;
-  // const { overview } = movie;
-  const date = Number(new Date(`${movie.release_date}`).getFullYear());
-  const poster = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
 
   useEffect(() => {
     getMovie();
@@ -55,10 +51,10 @@ function App() {
         path="/game"
         element={
           <GamePage
-            title={title}
+            title={movie.title}
             // overwiew={overview}
-            date={date}
-            poster={poster}
+            date={Number(new Date(`${movie.release_date}`).getFullYear())}
+            poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
             mode={mode}
           />

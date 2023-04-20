@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
+import Music from "./Music/Music";
+import "./Music/Music.scss";
 
 function Home() {
   return (
@@ -12,6 +14,9 @@ function Home() {
         <div className="popcornBackground">
           <div className="mainTop">
             <div className="mainTitle">
+              <div className="Music">
+                <Music />
+              </div>
               <h1>Wilder</h1>
               <h1>&nbsp;&nbsp;Game</h1>
             </div>
@@ -25,9 +30,9 @@ function Home() {
             </div>
           </div>
           <div className="startButton">
-            <Link to="/gameMode">
+            <NavLink to="/gameMode">
               <StartButton />
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

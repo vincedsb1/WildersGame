@@ -2,6 +2,8 @@ $darkerGradient: #9b59b6;
 $lighterGradient: #c695dd;
 $buttonColor: #783c8f;
 $buttonBackColor: #eadaf4;
+$greenColor: #4caf50;
+$redColor: #ff5733;
 $mainTypo: "Cookies";
 $secondaryTypo: "CherryBird";
 $backupTypo: "Cappung";
@@ -50,5 +52,5 @@ body {
 @import "./components/GamePage/GamePage.scss";
 @import "./components/Countdown/_countdown.scss";
 @import "./components/LeaderBoard/LeaderBoard.scss";
-@import "./components/GamePage/BlocDeReponse/BlocDeReponse.scss";
 @import "./components/GameMode/GameMode.scss";
+@import "./components/GamePage/BlocDeReponse/BlocDeReponse.scss";
