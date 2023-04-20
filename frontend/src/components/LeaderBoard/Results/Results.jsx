@@ -55,51 +55,60 @@ function Results({ pseudo }) {
   }
 
   return (
-    <div className="results">
-      <br />
-      <h1>Well done {pseudo}!</h1>
-      <br />
-      <img src={cup} alt="cup" />
-      <br />
-      <div>
-        <div className="result1">
-          <div>
-            <p>{bestScore[0].name}</p>
-            <p className="opacity">
+    <div className="resultsCongratsCupScores">
+      <div className="congratulation">
+        <h1>Well done {pseudo}!</h1>
+      </div>
+      <div className="cupImage">
+        <img src={cup} alt="cup" />
+      </div>
+      <div className="results">
+        <div className="result" id="top1">
+          <div className="resultNameTime" id="top1NameTime">
+            <div className="resultName">{bestScore[0].name}</div>
+            <div className="resultTime" id="top1Time">
               {bestScore[0].date}&ensp;{bestScore[0].time}
-            </p>
+            </div>
           </div>
-          <p>{bestScore[0].points}&ensp;pts</p>
+          <div className="resultPoints" id="top1Points">
+            <p>{bestScore[0].points}&ensp;pts</p>
+          </div>
         </div>
-        <br />
-        <div className="result2">
-          <div>
-            <p>{bestScore[1].name}</p>
-            <p className="opacity">
+
+        <div className="result">
+          <div className="resultNameTime">
+            <div className="resultName">{bestScore[1].name}</div>
+            <div className="resultTime">
               {bestScore[1].date}&ensp;{bestScore[1].time}
-            </p>
+            </div>
           </div>
-          <p>{bestScore[1].points}&ensp;pts</p>
+          <div className="resultPoints">
+            <p>{bestScore[1].points}&ensp;pts</p>
+          </div>
         </div>
-        <br />
-        <div className="result3">
-          <div>
-            <p>{bestScore[2].name}</p>
-            <p className="opacity">
+
+        <div className="result">
+          <div className="resultNameTime">
+            <div className="resultName">{bestScore[2].name}</div>
+            <div className="resultTime">
               {bestScore[2].date}&ensp;{bestScore[2].time}
-            </p>
+            </div>
           </div>
-          <p>{bestScore[2].points}&ensp;pts</p>
+          <div className="resultPoints">
+            <p>{bestScore[2].points}&ensp;pts</p>
+          </div>
         </div>
-        <br />
-        <div className="result4">
-          <div>
-            <p>{bestScore[3].name}</p>
-            <p className="opacity">
+
+        <div className="result">
+          <div className="resultNameTime">
+            <div className="resultName">{bestScore[3].name}</div>
+            <div className="resultTime">
               {bestScore[3].date}&ensp;{bestScore[3].time}
-            </p>
+            </div>
           </div>
-          <p>{bestScore[3].points}&ensp;pts</p>
+          <div className="resultPoints">
+            <p>{bestScore[3].points}&ensp;pts</p>
+          </div>
         </div>
       </div>
       {bestScoreReached && <Confetti />}

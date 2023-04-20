@@ -18,11 +18,26 @@
     // padding: 15% 0 5% 0;
   }
 
-  @media screen and (max-height: 600px) {
-    .h1GameMode {
-      font-size: 4em;
-    }
+.h1GameMode {
+  color: white;
+  font-family: $mainTypo;
+  font-weight: 800;
+  font-size: 5.5em;
+  text-align: center;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+#tilted {
+  position: relative;
+  transform: rotate(-8.5deg);
+  margin-bottom: -15px;
+}
+
+@media screen and (max-height: 600px) {
+  .h1GameMode {
+    font-size: 4em;
   }
+}
 
   .pseudo {
     height: 20%;
@@ -32,32 +47,39 @@
     justify-content: center;
     padding: 0 0 5% 0;
 
-    p {
-      color: white;
-      align-self: left;
-      font-size: 1.8rem;
-    }
-
-    input {
-      color: #552e61;
-      font-size: 1.5rem;
-      padding: 16px;
-      background: white;
-      height: 70px;
-      width: 50vw;
-      max-width: 300px;
-      border-radius: 30px;
-      border: 8px solid $buttonColor;
-      box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-      outline: none;
-    }
+  p {
+    color: white;
+    align-self: left;
+    font-size: 1.8rem;
   }
 
-  @media screen and (max-height: 600px) {
-    .pseudo {
-      padding: 3vh 0 0 0;
-    }
+  input {
+    color: #552e61;
+    font-size: 1.5rem;
+    padding: 16px;
+    background: white;
+    height: 70px;
+    width: 50vw;
+    max-width: 300px;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
   }
+}
+
+@media screen and (max-height: 600px) {
+  .pseudo {
+    padding: 3vh 0 0 0;
+  }
+}
+
+.difficultyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
 
   .difficultyContainer {
     display: flex;
@@ -66,20 +88,25 @@
     height: 40%;
   }
 
+@media screen and (max-height: 600px) {
   .difficulty {
-    // height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
+}
 
-  @media screen and (max-height: 600px) {
-    .difficulty {
-      flex-direction: row;
-    }
-  }
+#difficulty {
+  color: #552e61;
+  background-color: $buttonBackColor;
+  font-weight: 200;
+  font-size: 1.5em;
+  border-radius: 30px;
+  border: 8px solid $buttonColor;
+  width: 50vw;
+  max-width: 300px;
+  height: 70px;
+}
 
+@media screen and (max-height: 600px) {
   button {
     color: #552e61;
     background-color: $buttonBackColor;

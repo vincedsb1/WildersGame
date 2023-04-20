@@ -6,15 +6,13 @@ import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
 function GamePage({ title, date, poster, getMovie, mode }) {
   const [resultat, setResultat] = useState(0);
-
   const [disableButton, setDisableButton] = useState(false);
 
   console.info(date);
   console.info(title);
 
-  const generateNewQuestion = (e) => {
+  const generateNewQuestion = () => {
     getMovie();
-    e.target.className = "Reponse-container";
     setDisableButton(false);
   };
   const handleClick = (e) => {

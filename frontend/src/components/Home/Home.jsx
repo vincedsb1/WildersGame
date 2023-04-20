@@ -14,6 +14,9 @@ function Home() {
         <div className="popcornBackground">
           <div className="mainTop">
             <div className="mainTitle">
+              <div className="Music">
+                <Music />
+              </div>
               <h1>Wilder</h1>
               <h1>&nbsp;&nbsp;Game</h1>
             </div>
@@ -30,9 +33,6 @@ function Home() {
             <NavLink to="/gameMode">
               <StartButton />
             </NavLink>
-          </div>
-          <div className="Music">
-            <Music />
           </div>
         </div>
       </div>
