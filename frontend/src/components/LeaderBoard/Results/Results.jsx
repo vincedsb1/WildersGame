@@ -39,7 +39,7 @@ function Results({ pseudo }) {
 
   const actualScore = {
     date: currentDateString,
-    time: currentTimeString,
+    time: currentTimeString.replace(/(.*)\D\d+/, "$1"),
     name: pseudo,
     points: location.state.resultat,
   };
