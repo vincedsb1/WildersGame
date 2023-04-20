@@ -56,8 +56,7 @@ function App() {
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
             poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
- mode={mode}
-
+            mode={mode}
           />
         }
       />
