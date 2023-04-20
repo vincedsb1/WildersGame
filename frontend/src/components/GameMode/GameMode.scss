@@ -82,6 +82,13 @@
     // background-color: lightcoral;
   }
 
+  .difficultyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+  }
+
   @media screen and (max-height: 600px) {
     .difficulty {
       flex-direction: row;
@@ -113,12 +120,6 @@
       width: 50vw;
       max-width: 300px;
       height: 70px;
-    }
-
-    #difficulty {
-      font-size: 1.3em;
-      height: 50px;
-      margin-top: 1vh;
     }
 
     @media screen and (max-height: 600px) {

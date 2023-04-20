@@ -1,7 +1,7 @@
 .bloc-response {
   display: flex;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }
@@ -20,22 +20,34 @@
 }
 
 .goodAnswer {
+  position: relative;
   border-color: $greenColor;
 }
 .goodAnswer::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -25px;
+  right: -25px;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://i.ibb.co/bdZgXb6/answer-ok.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .wrongAnswer {
+  position: relative;
   border-color: $redColor;
 }
 .wrongAnswer::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -25px;
+  right: -25px;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://i.ibb.co/svKKg8c/x-red.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 600px) {

@@ -62,6 +62,10 @@
   width: 100%;
 }
 
+.result:first-child {
+  color: #4caf50;
+}
+
 .result {
   display: flex;
   flex-direction: row;
@@ -80,9 +84,6 @@
 
 #top1Time {
   width: 100%;
-}
-
-.resultName {
 }
 
 .resultTime {
