@@ -53,7 +53,9 @@ function App() {
           <GamePage
             title={movie.title}
             // overwiew={overview}
+
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
+            release={movie.release_date}
             poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             getMovie={getMovie}
             mode={mode}
