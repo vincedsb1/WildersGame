@@ -45,7 +45,7 @@ function GamePage({ title, date, poster, getMovie, mode, release }) {
         </div>
 
         <div className="movieTitle">
-          <h2>{title}</h2>
+          <h2>{title.length > 30 ? `${title.slice(0, 30)}...` : title}</h2>
         </div>
 
         <BlocDeReponse
