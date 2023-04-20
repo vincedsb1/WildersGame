@@ -22,9 +22,9 @@
 }
 .timer-rouge {
   color: red;
-  animation-duration: 6s, 0.4s;
+  animation-duration: 15s, 0.4s;
   animation-name: size, warning;
-  animation-iteration-count: 1, 15;
+  animation-iteration-count: 1, 25;
 }
 @keyframes size {
   from {
