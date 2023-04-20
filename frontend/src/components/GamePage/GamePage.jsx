@@ -4,12 +4,13 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-function GamePage({ title, date, poster, getMovie, mode }) {
+function GamePage({ title, date, poster, getMovie, mode, release }) {
   const [resultat, setResultat] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
 
   console.info(date);
   console.info(title);
+  console.info(release);
 
   const generateNewQuestion = () => {
     getMovie();
@@ -52,6 +53,7 @@ function GamePage({ title, date, poster, getMovie, mode }) {
           handleClick={handleClick}
           disableButton={disableButton}
           mode={mode}
+          release={release}
         />
       </div>
     </div>
@@ -64,6 +66,7 @@ GamePage.propTypes = {
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   mode: PropTypes.number.isRequired,
+  release: PropTypes.string.isRequired,
 };
 
 export default GamePage;
