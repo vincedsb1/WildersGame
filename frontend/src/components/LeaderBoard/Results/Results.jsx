@@ -42,13 +42,13 @@ function Results({ pseudo }) {
       </div>
       <div className="results">
         <div className="result" id="top1">
-          <div className="resultNameTime">
+          <div className="resultNameTime" id="top1NameTime">
             <div className="resultName">{bestScore[0].name}</div>
-            <div className="resultTime">
+            <div className="resultTime" id="top1Time">
               {bestScore[0].date}&ensp;{bestScore[0].time}
             </div>
           </div>
-          <div className="resultPoints">
+          <div className="resultPoints" id="top1Points">
             <p>{bestScore[0].points}&ensp;pts</p>
           </div>
         </div>

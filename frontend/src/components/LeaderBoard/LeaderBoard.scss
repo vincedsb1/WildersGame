@@ -74,8 +74,12 @@
 
 #top1 {
   color: #4caf50;
-  font-size: 1.9em;
 }
+
+.resultNameTime #top1Time {
+  width: 65%;
+}
+
 .resultName {
 }
 
@@ -84,6 +88,7 @@
 }
 
 .resultPoints {
+  text-align: end;
 }
 
 .endButons {
@@ -115,6 +120,18 @@
 
   #top1 {
     font-size: 1.2em;
+  }
+
+  #top1NameTime {
+    width: 100%;
+  }
+
+  #top1Time {
+    font-size: 0.7em;
+  }
+
+  #top1Points {
+    font-size: 1em;
   }
 
   .result {
