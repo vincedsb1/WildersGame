@@ -48,6 +48,9 @@ function Results({ pseudo }) {
   results.push(actualScore);
   results.sort((a, b) => b.points - a.points);
 
+  localStorage.setItem("storedResults", JSON.stringify(results));
+  const storedResults = JSON.parse(localStorage.getItem("storedResults"));
+
   return (
     <div className="resultsCongratsCupScores">
       <div className="congratulation">
@@ -57,7 +60,7 @@ function Results({ pseudo }) {
         <img src={cup} alt="cup" />
       </div>
       <div className="results">
-        {results.slice(0, 4).map((el) => {
+        {storedResults.slice(0, 4).map((el) => {
           return (
             <div className="result">
               <div className="resultNameTime">
