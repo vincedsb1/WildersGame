@@ -10,6 +10,14 @@
   background-image: url("./SonOnImg.svg");
   background-size: 100%;
   background-color: transparent;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
 }
 
 .MusicOff {
@@ -19,4 +27,12 @@
   background-size: 100%;
   background-color: transparent;
   background-repeat: no-repeat;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
 }

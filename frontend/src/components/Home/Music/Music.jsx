@@ -1,11 +1,21 @@
 import React, { useState } from "react";
-//  import audioFile from "./SOUND.mp3";
+import musicFile from "./music.mp3";
 
 function Music() {
+  const audio = new Audio(musicFile);
   const [MusicOn, setMusicOn] = useState();
+
   const handleClickMusicOn = () => {
+    if (MusicOn) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    
     setMusicOn(!MusicOn);
   };
+
+
 
   return (
     <div>
