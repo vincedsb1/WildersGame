@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import musicFile from "./music.mp3";
 
 function Music() {
-  const audio = new Audio(musicFile);
-  const [MusicOn, setMusicOn] = useState();
+  const [MusicOn, setMusicOn] = useState(false);
+  const audioRef = useRef(null);
 
   const handleClickMusicOn = () => {
     if (MusicOn) {
-      audio.pause();
+      audioRef.current.pause();
     } else {
-      audio.play();
+      audioRef.current.play();
     }
-    
+
     setMusicOn(!MusicOn);
   };
 
-
-
+  useEffect(() => {
+    audioRef.current = new Audio(musicFile);
+    return () => {
+      audioRef.current.pause();
+      audioRef.current = null;
+    };
+  }, []);
   return (
     <div>
       <button
