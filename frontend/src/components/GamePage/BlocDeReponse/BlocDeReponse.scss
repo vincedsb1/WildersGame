@@ -17,6 +17,14 @@
   font-size: 1.3em;
   cursor: pointer;
   width: 15%;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
 }
 
 .goodAnswer {
