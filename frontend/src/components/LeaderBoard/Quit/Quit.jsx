@@ -3,7 +3,9 @@ import React from "react";
 function Quit() {
   return (
     <div className="restart">
-      <button type="button">Quit</button>
+      <button type="button" id="restart">
+        Quit
+      </button>
     </div>
   );
 }
