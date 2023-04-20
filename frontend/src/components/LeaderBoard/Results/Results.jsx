@@ -29,13 +29,6 @@ function Results({ pseudo }) {
       name: "Marah",
       points: 4,
     },
-
-    {
-      date: "01/04/2023",
-      time: "11:54",
-      name: "Caro",
-      points: 4,
-    },
   ];
 
   const actualScore = {
@@ -51,7 +44,11 @@ function Results({ pseudo }) {
   return (
     <div className="resultsCongratsCupScores">
       <div className="congratulation">
-        <h1>Well done {pseudo}!</h1>
+        {results[0].name === pseudo && <h1>Best score {pseudo}!</h1>}
+        {(results[1].name || results[2].name || results[3].name) === pseudo && (
+          <h1>Well done {pseudo}!</h1>
+        )}
+        {results[4].name === pseudo && <h1>Too bad {pseudo}!</h1>}
       </div>
       <div className="cupImage">
         <img src={cup} alt="cup" />

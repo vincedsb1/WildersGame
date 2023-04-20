@@ -71,7 +71,9 @@
   font-size: 1.6em;
 }
 
-.result:nth-child(2), .result:nth-child(3), .result:nth-child(4)  {
+.result:nth-child(2),
+.result:nth-child(3),
+.result:nth-child(4) {
   font-size: 1.3em;
 }
 
@@ -144,8 +146,10 @@
     color: $greenColor;
     font-size: 1.2em;
   }
-  
-  .result:nth-child(2), .result:nth-child(3), .result:nth-child(4)  {
+
+  .result:nth-child(2),
+  .result:nth-child(3),
+  .result:nth-child(4) {
     font-size: 1em;
   }
 
