@@ -4,7 +4,6 @@ import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
 function Results({ pseudo }) {
-
   let results = JSON.parse(localStorage.getItem("storedResults"));
   if (!results) {
     results = [
@@ -35,7 +34,6 @@ function Results({ pseudo }) {
     ];
   }
 
-
   const actualScore = {
     date: new Date().toLocaleDateString(),
     time: new Date().toLocaleTimeString().replace(/(.*)\D\d+/, "$1"),
@@ -47,42 +45,51 @@ function Results({ pseudo }) {
   results.sort((a, b) => b.points - a.points);
 
   localStorage.setItem("storedResults", JSON.stringify(results));
-  const storedResults = JSON.parse(localStorage.getItem("storedResults"));
+  const storedResults = JSON.parse(
+    localStorage.getItem("storedResults")
+  ).filter(
+    (el, index, arr) => arr.findIndex((t) => t.name === el.name) === index
+  );
+
+  const handleRewardPhrase = () => {
+    switch (
+      storedResults.indexOf(storedResults.find((el) => el.name === pseudo))
+    ) {
+      case 0:
+        return <h1>Best score {pseudo}!</h1>;
+      case 1:
+        return <h1>Well done {pseudo}!</h1>;
+      case 2:
+        return <h1>Well done {pseudo}!</h1>;
+      case 3:
+        return <h1>Well done {pseudo}!</h1>;
+      default:
+        return <h1>Try again {pseudo}!</h1>;
+    }
+  };
 
   return (
     <div className="resultsCongratsCupScores">
-      <div className="congratulation">
-        {results[0].name === pseudo && <h1>Best score {pseudo}!</h1>}
-        {results[1].name === pseudo && <h1>Well done {pseudo}!</h1>}
-        {results[2].name === pseudo && <h1>Well done {pseudo}!</h1>}
-        {results[3].name === pseudo && <h1>Well done {pseudo}!</h1>}
-        {results[4].name === pseudo && <h1>Try again {pseudo}!</h1>}
-      </div>
+      <div className="congratulation">{handleRewardPhrase()}</div>
       <div className="cupImage">
         <img src={cup} alt="cup" />
       </div>
       <div className="results">
-        {storedResults
-          .filter(
-            (el, index, arr) =>
-              arr.findIndex((t) => t.name === el.name) === index
-          )
-          .slice(0, 4)
-          .map((el) => {
-            return (
-              <div className="result">
-                <div className="resultNameTime">
-                  <div className="resultName">{el.name}</div>
-                  <div className="resultTime">
-                    {el.date}&ensp;{el.time}
-                  </div>
-                </div>
-                <div className="resultPoints">
-                  <p>{el.points}&ensp;pts</p>
+        {storedResults.slice(0, 4).map((el) => {
+          return (
+            <div className="result">
+              <div className="resultNameTime">
+                <div className="resultName">{el.name}</div>
+                <div className="resultTime">
+                  {el.date}&ensp;{el.time}
                 </div>
               </div>
-            );
-          })}
+              <div className="resultPoints">
+                <p>{el.points}&ensp;pts</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
       {results[0].name === pseudo && <Confetti />}
       <br />
