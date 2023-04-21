@@ -8,6 +8,9 @@ import Musique from "../Musique/Musique";
 function GameMode({ setMode, setPseudo }) {
   return (
     <div className="mainContainer">
+      <div className="Musique">
+        <Musique />
+      </div>
       <div className="gameMode">
         <div className="maintTitleModeContainer">
           <div className="mainTitleMode">
@@ -17,9 +20,6 @@ function GameMode({ setMode, setPseudo }) {
             <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
           </div>
         </div>{" "}
-        <div className="Musique">
-          <Musique />
-        </div>
         <div className="pseudo">
           <Pseudo setPseudo={setPseudo} />
         </div>
