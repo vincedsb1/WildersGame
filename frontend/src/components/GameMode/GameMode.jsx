@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
+import Musique from "../Musique/Musique";
 
 function GameMode({ setMode, setPseudo }) {
   return (
     <div className="mainContainer">
+      <div className="Musique">
+        <Musique />
+      </div>
       <div className="gameMode">
         <div className="maintTitleModeContainer">
           <div className="mainTitleMode">
@@ -15,7 +19,7 @@ function GameMode({ setMode, setPseudo }) {
             </h1>
             <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
           </div>
-        </div>
+        </div>{" "}
         <div className="pseudo">
           <Pseudo setPseudo={setPseudo} />
         </div>

@@ -11,12 +11,12 @@
     height: 40%;
   }
 
-  .mainTitleMode {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // padding: 15% 0 5% 0;
-  }
+  // .mainTitleMode {
+  //   // display: flex;
+  //   // align-items: center;
+  //   // justify-content: center;
+  //   // padding: 15% 0 5% 0;
+  // }
 
   .h1GameMode {
     color: white;
@@ -119,7 +119,7 @@
   }
 
   @media screen and (max-height: 600px) {
-    button {
+    #difficulty {
       color: #552e61;
       background-color: $buttonBackColor;
       font-weight: 200;
@@ -132,7 +132,7 @@
     }
 
     @media screen and (max-height: 600px) {
-      button {
+      #difficulty {
         width: 170px;
         margin: 0 10px 0 10px;
       }

@@ -4,6 +4,16 @@
   gap: 15px;
   justify-content: center;
   align-items: center;
+  animation: rollout 0.6s;
+}
+
+@keyframes rollout {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 .Reponse-container {
@@ -56,6 +66,10 @@
   background-image: url("https://i.ibb.co/svKKg8c/x-red.png");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.cloudyAnswer {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 600px) {

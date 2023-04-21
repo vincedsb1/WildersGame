@@ -41,10 +41,10 @@ function GamePage({ title, date, poster, getMovie, mode, release }) {
           </div>{" "}
         </div>
         <div className="afficheContainer">
-          <img src={poster} alt="" />
+          <img src={poster} alt="" key={poster} />
         </div>
 
-        <div className="movieTitle">
+        <div className="movieTitle" key={title}>
           <h2>{title.length > 30 ? `${title.slice(0, 30)}...` : title}</h2>
         </div>
 
