@@ -1,12 +1,13 @@
-import Home from "@components/Home/Home";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
-import GamePage from "@components/GamePage/GamePage";
+import Home from "./components/Home/Home";
+import LeaderBoard from "./components/LeaderBoard/LeaderBoard";
+import GamePage from "./components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
 import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
+import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
   const [movie, setMovie] = useState({ title: "", overview: "" });
@@ -47,6 +48,7 @@ function App() {
         element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
       />
       <Route path="/countdown" element={<Countdown />} />
+      <Route path="/avatargallery" element={<AvatarGallery />} />
       <Route
         path="/game"
         element={
