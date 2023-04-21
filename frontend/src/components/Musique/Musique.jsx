@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import musicFile from "./music.mp3";
+import musicFile from "../Musique/music.mp3"
 
-function Music() {
+
+function Musique() {
   const [MusicOn, setMusicOn] = useState(false);
   const audioRef = useRef(null);
 
@@ -26,7 +27,7 @@ function Music() {
     <div>
       <button
         type="button"
-        id="Music"
+        id="Musique"
         className={MusicOn ? "MusicOn" : "MusicOff"}
         onClick={handleClickMusicOn}
         aria-label="Save"
@@ -35,4 +36,4 @@ function Music() {
   );
 }
 
-export default Music;
+export default Musique;
