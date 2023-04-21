@@ -41,7 +41,7 @@ function GamePage({ title, date, poster, getMovie, mode, release }) {
           </div>{" "}
         </div>
         <div className="afficheContainer">
-          <img src={poster} alt="" />
+          <img src={poster} alt="" key={poster} />
         </div>
 
         <div className="movieTitle" key={title}>
