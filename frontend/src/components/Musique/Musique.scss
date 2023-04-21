@@ -1,0 +1,40 @@
+.Musique {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .MusicOn {
+    width: 40px;
+    height: 45px;
+    background-image: url("../src/assets/Musique/SonOnImg.svg");
+    background-size: 100%;
+    background-color: transparent;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  .MusicOff {
+    width: 40px;
+    height: 45px;
+    background-image: url("../src/assets/Musique/SonOffImg.svg");
+    background-size: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+}
