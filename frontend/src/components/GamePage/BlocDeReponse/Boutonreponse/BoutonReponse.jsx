@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function BoutonReponse({ ele, handleClick, disableButton, bonneReponse }) {
+function BoutonReponse({
+  ele,
+  handleClick,
+  disableButton,
+  bonneReponse,
+  release,
+}) {
   const [classe, setClasse] = useState("Reponse-container");
-
-  useEffect(() => {
-    setClasse("Reponse-container");
-  }, [bonneReponse]);
 
   useEffect(() => {
     if (ele === bonneReponse) setClasse("Reponse-container goodAnswer");
@@ -21,7 +23,7 @@ function BoutonReponse({ ele, handleClick, disableButton, bonneReponse }) {
 
   useEffect(() => {
     setClasse("Reponse-container");
-  }, []);
+  }, [release]);
 
   return (
     <button
@@ -38,10 +40,11 @@ function BoutonReponse({ ele, handleClick, disableButton, bonneReponse }) {
 }
 
 BoutonReponse.propTypes = {
-  ele: PropTypes.string.isRequired,
+  ele: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired,
   disableButton: PropTypes.bool.isRequired,
   bonneReponse: PropTypes.number.isRequired,
+  release: PropTypes.string.isRequired,
 };
 
 export default BoutonReponse;

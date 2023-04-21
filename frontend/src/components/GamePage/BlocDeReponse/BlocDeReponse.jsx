@@ -2,7 +2,13 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import BoutonReponse from "./Boutonreponse/BoutonReponse";
 
-function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
+function BlocDeReponse({
+  bonneReponse,
+  handleClick,
+  disableButton,
+  mode,
+  release,
+}) {
   const minYear = bonneReponse - mode;
   const maxYear = bonneReponse + mode;
 
@@ -40,6 +46,7 @@ function BlocDeReponse({ bonneReponse, handleClick, disableButton, mode }) {
               handleClick={handleClick}
               disableButton={disableButton}
               bonneReponse={bonneReponse}
+              release={release}
             />
           );
         })}
@@ -52,6 +59,7 @@ BlocDeReponse.propTypes = {
   handleClick: PropTypes.func.isRequired,
   disableButton: PropTypes.bool.isRequired,
   mode: PropTypes.number.isRequired,
+  release: PropTypes.string.isRequired,
 };
 
 export default BlocDeReponse;

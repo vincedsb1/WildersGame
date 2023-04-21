@@ -8,15 +8,17 @@ function Difficulty({ setMode }) {
 
   return (
     <div className="difficulty">
-      <button className="mode" type="button" onClick={() => handleClick(20)}>
+
+      <button type="button" id="difficulty" onClick={() => handleClick(20)}>
         Easy 🐣
       </button>
       <br />
-      <button className="mode" type="button" onClick={() => handleClick(10)}>
+      <button type="button" id="difficulty" onClick={() => handleClick(10)}>
         Normal 🍵
       </button>
       <br />
-      <button className="mode" type="button" onClick={() => handleClick(5)}>
+      <button type="button" id="difficulty" onClick={() => handleClick(5)}>
+
         Hard 🤖
       </button>
     </div>

@@ -11,7 +11,9 @@ function GameMode({ setMode, setPseudo }) {
       <div className="gameMode">
         <div className="maintTitleModeContainer">
           <div className="mainTitleMode">
-            <h1 className="h1GameMode">Wilder</h1>
+            <h1 className="h1GameMode" id="tilted">
+              Wilder
+            </h1>
             <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
           </div>
         </div>{" "}
@@ -22,7 +24,7 @@ function GameMode({ setMode, setPseudo }) {
           <Pseudo setPseudo={setPseudo} />
         </div>
         <div className="difficultyContainer">
-          <div className="difficulty">
+          <div className="difficultyContainer">
             <Link to="/countdown">
               <Difficulty setMode={setMode} />
             </Link>
