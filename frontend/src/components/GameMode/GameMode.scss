@@ -95,7 +95,6 @@
     }
   }
 
-
   #difficulty {
     color: #552e61;
     background-color: $buttonBackColor;
@@ -120,7 +119,6 @@
   }
 
   @media screen and (max-height: 600px) {
-
     #difficulty {
       color: #552e61;
       background-color: $buttonBackColor;
@@ -138,7 +136,6 @@
         width: 170px;
         margin: 0 10px 0 10px;
       }
-
     }
   }
 }
