@@ -20,9 +20,9 @@ function App() {
     console.info("getmovie");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=f3754ed904627a678defd47c619260ea&language=fr&region=US,EU&page=${rdmNum(
-          100 + 1
-        )}&adult=false&original_language=en`
+        `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=${rdmNum(
+          30 + 1
+        )}&adult=false`
       )
       .then((response) =>
         setMovie(response.data.results[rdmNum(response.data.results.length)])
