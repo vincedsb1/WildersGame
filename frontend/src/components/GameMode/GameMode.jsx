@@ -14,13 +14,13 @@ function GameMode({ setMode, setPseudo }) {
             <h1 className="h1GameMode">Wilder</h1>
             <h1 className="h1GameMode">&nbsp;&nbsp;Game</h1>
           </div>
-        </div> <div className="Musique">
-                <Musique />
-              </div>
+        </div>{" "}
+        <div className="Musique">
+          <Musique />
+        </div>
         <div className="pseudo">
           <Pseudo setPseudo={setPseudo} />
         </div>
-       
         <div className="difficultyContainer">
           <div className="difficulty">
             <Link to="/countdown">

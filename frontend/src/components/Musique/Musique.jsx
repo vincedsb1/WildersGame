@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import musicFile from "../Musique/music.mp3"
-
+import musicFile from "./music.mp3";
 
 function Musique() {
   const [MusicOn, setMusicOn] = useState(false);

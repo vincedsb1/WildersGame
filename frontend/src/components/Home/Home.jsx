@@ -5,7 +5,6 @@ import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
 
-
 function Home() {
   return (
     <div className="background-class">
@@ -16,7 +15,7 @@ function Home() {
               <h1>Wilder</h1>
               <h1>&nbsp;&nbsp;Game</h1>
             </div>
-      
+
             <div className="boiteFanion">
               <img className="fanion" src={fanion} alt="fanion" />
               <img
