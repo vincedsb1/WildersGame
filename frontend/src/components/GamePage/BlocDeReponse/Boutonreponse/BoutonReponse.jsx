@@ -25,7 +25,7 @@ function BoutonReponse({
       if (ele !== bonneReponse) {
         setClasse("Reponse-container wrongAnswer");
       }
-    }, 50)
+    }, 1)
   };
 
   useEffect(() => {
