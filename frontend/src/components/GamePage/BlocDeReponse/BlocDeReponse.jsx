@@ -36,7 +36,7 @@ function BlocDeReponse({
 
   return (
     // bloc des 4 bulles ou les reponses vont s'afficher.
-    <div className="bloc-response">
+    <div className="bloc-response" key={release}>
       {tableauDeReponse
         .sort((a, b) => a - b)
         .map((ele) => {
