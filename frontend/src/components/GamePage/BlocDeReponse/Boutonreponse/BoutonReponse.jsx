@@ -12,15 +12,11 @@ function BoutonReponse({
 
   useEffect(() => {
     if (ele === bonneReponse) setClasse("Reponse-container goodAnswer");
-  }, [handleClick]);
-
-  useEffect(() => {
     if (ele !== bonneReponse) setClasse("Reponse-container cloudyAnswer");
   }, [handleClick]);
 
   const handleClicked = (e) => {
     handleClick(e);
-
     setTimeout(() => {
       if (ele !== bonneReponse) {
         setClasse("Reponse-container wrongAnswer");
