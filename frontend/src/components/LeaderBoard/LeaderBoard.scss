@@ -187,14 +187,10 @@
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 800px) {
   .congratulation h1 {
     font-size: 1.5em;
   }
-
-  // #top1 {
-  //   font-size: 1.2em;
-  // }
 
   .result {
     font-size: 1em;
@@ -214,3 +210,25 @@
     max-height: 100px;
   }
 }
+
+@media screen and (max-height: 700px) {
+  .result:first-child {
+    color: $greenColor;
+    font-size: 1.2em;
+  }
+  
+  .result:nth-child(2),
+  .result:nth-child(3),
+  .result:nth-child(4) {
+    font-size: 1em;
+  }
+
+  .congratulation h1 {
+    margin: 5% 0 0 0;
+  }
+
+  .result {
+    padding: 2% 0 2% 0;
+  }
+}
+
