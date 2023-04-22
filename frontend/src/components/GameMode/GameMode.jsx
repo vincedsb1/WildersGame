@@ -42,7 +42,9 @@ function GameMode({ setMode, setPseudo }) {
           >
             {selectedAvatar ? (
               <img src={selectedAvatar} alt="Selected Avatar" />
-            ) : ("")}
+            ) : (
+              ""
+            )}
             {isOpen && <AvatarGallery setSelectedAvatar={setSelectedAvatar} />}
           </div>
           <div className="pseudo">

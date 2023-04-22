@@ -48,7 +48,6 @@
       align-self: left;
       font-size: 1.8rem;
       padding: 0% 0 2% 0;
-
     }
 
     input {
@@ -80,8 +79,7 @@
     // padding: 5% 0 0 0 ;
     &:hover {
       // transform: scale(1.1);
-      box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.25)
-      
+      box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -89,7 +87,7 @@
     width: 100%;
     height: 120%;
     object-fit: contain;
-}
+  }
 
   .pseudo {
     display: flex;
@@ -113,7 +111,6 @@
     height: 40%;
     // background-color: rgb(225, 240, 128);
     padding: 0 0 2% 0;
-
   }
 
   @media screen and (max-height: 600px) {
