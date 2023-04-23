@@ -20,8 +20,7 @@
 
 // export default AvatarGallery;
 
-
-/////// OK ///////
+/// //// OK ///////
 
 import React from "react";
 import avatar1 from "../../../assets/GameMode/Avatars/avatar-01.svg";
@@ -55,15 +54,49 @@ import avatar28 from "../../../assets/GameMode/Avatars/avatar-28.svg";
 import avatar29 from "../../../assets/GameMode/Avatars/avatar-29.svg";
 import avatar30 from "../../../assets/GameMode/Avatars/avatar-30.svg";
 
-const avatarImages = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8, avatar9, avatar10, avatar11, avatar12, avatar13, avatar14, avatar15, avatar16, avatar17, avatar18, avatar19, avatar20, avatar21, avatar22, avatar23, avatar24, avatar25, avatar26, avatar28, avatar29, avatar30];
+const avatarImages = [
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar4,
+  avatar5,
+  avatar6,
+  avatar7,
+  avatar8,
+  avatar9,
+  avatar10,
+  avatar11,
+  avatar12,
+  avatar13,
+  avatar14,
+  avatar15,
+  avatar16,
+  avatar17,
+  avatar18,
+  avatar19,
+  avatar20,
+  avatar21,
+  avatar22,
+  avatar23,
+  avatar24,
+  avatar25,
+  avatar26,
+  avatar28,
+  avatar29,
+  avatar30,
+];
 
 function AvatarGallery() {
   return (
     <div className="avatarContainer">
-        
       {avatarImages.map((imageSrc, index) => (
         <div className="avatar">
-            <img key={index} src={imageSrc} alt={`Avatar ${index + 1}`} className="avatarImg"/>
+          <img
+            // key={index} ->  95:18  error  Do not use Array index in keys  react/no-array-index-key
+            src={imageSrc}
+            alt={`Avatar ${index + 1}`}
+            className="avatarImg"
+          />
         </div>
       ))}
     </div>

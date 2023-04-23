@@ -1,36 +1,38 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import musicFile from "./music.mp3";
 
 function Musique() {
-  const [MusicOn, setMusicOn] = useState(false);
-  const audioRef = useRef(null);
-
+  const [isMuted, setIsMuted] = useState(true);
   const handleClickMusicOn = () => {
-    if (MusicOn) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-
-    setMusicOn(!MusicOn);
+    setIsMuted((current) => !current);
   };
 
-  useEffect(() => {
-    audioRef.current = new Audio(musicFile);
-    return () => {
-      audioRef.current.pause();
-      audioRef.current = null;
-    };
-  }, []);
   return (
     <div>
+      <audio src={musicFile} loop autoPlay muted={isMuted}>
+        <track kind="captions" />
+      </audio>
       <button
         type="button"
         id="Musique"
-        className={MusicOn ? "MusicOn" : "MusicOff"}
+        className="but"
         onClick={handleClickMusicOn}
         aria-label="Save"
-      />
+      >
+        {isMuted ? (
+          <img
+            src="../src/assets/Musique/SonOffImg.svg"
+            className="MusicOff"
+            alt="musicOff"
+          />
+        ) : (
+          <img
+            src="../src/assets/Musique/SonOnImg.svg"
+            className="MusicOn"
+            alt="musicOn"
+          />
+        )}
+      </button>
     </div>
   );
 }
