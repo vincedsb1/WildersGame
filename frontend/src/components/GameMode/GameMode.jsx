@@ -5,6 +5,7 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
+import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
 function GameMode({ setMode, setPseudo }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,12 @@ function GameMode({ setMode, setPseudo }) {
             {selectedAvatar ? (
               <img src={selectedAvatar} alt="Selected Avatar" />
             ) : (
-              ""
+              <img
+                className="AvatarPlaceholder"
+                id="AvatarPlaceholder"
+                src={AvatarPlaceholder}
+                alt="AvatarPlaceholder"
+              />
             )}
             {isOpen && <AvatarGallery setSelectedAvatar={setSelectedAvatar} />}
           </div>

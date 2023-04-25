@@ -67,6 +67,8 @@
   }
 
   .avatarButton {
+    display: flex;
+    justify-content: center;
     outline: 8px solid #783c8f;
     background-color: $buttonBackColor;
     width: 120px;
@@ -84,7 +86,14 @@
   }
 
   .avatarButton img {
-    width: 100%;
+    width: 90%;
+    height: 120%;
+    object-fit: contain;
+    margin-top: 5px;
+  }
+
+  #AvatarPlaceholder {
+    width: 80%;
     height: 120%;
     object-fit: contain;
   }
