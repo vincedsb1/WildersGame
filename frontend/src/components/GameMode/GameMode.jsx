@@ -5,11 +5,11 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Musique from "../Musique/Musique";
 
-function GameMode({ setMode, setPseudo }) {
+function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
   return (
     <div className="mainContainer">
       <div className="Musique">
-        <Musique />
+        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
       </div>
       <div className="gameMode">
         <div className="maintTitleModeContainer">
@@ -38,6 +38,8 @@ function GameMode({ setMode, setPseudo }) {
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
 };
 
 export default GameMode;

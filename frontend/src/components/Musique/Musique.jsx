@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import PropTypes from "prop-types";
 import musicFile from "./music.mp3";
 
-function Musique() {
-  const [isMuted, setIsMuted] = useState(true);
+function Musique({ setIsMuted, isMuted }) {
   const handleClickMusicOn = () => {
     setIsMuted((current) => !current);
   };
@@ -36,5 +35,10 @@ function Musique() {
     </div>
   );
 }
+
+Musique.propTypes = {
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
+};
 
 export default Musique;
