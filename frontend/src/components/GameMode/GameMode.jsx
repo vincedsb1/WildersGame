@@ -48,10 +48,10 @@ function GameMode({
 
   return (
     <div className="mainContainer">
-      <div className="Musique">
-        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
-      </div>
       <div className="gameMode">
+        <div className="Musique">
+          <Musique />
+        </div>
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
             <h1 className="h1GameMode" id="tilted">

@@ -38,7 +38,7 @@ function GamePage({
     setTimeout(() => {
       generateNewQuestion(e);
       console.info("timeout");
-    }, 1500);
+    }, 800);
   };
 
   return (
@@ -85,6 +85,6 @@ GamePage.propTypes = {
   setIsMuted: PropTypes.func.isRequired,
   release: PropTypes.string.isRequired,
   request: PropTypes.string.isRequired,
-};
+  }
 
 export default GamePage;
