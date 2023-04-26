@@ -39,15 +39,26 @@ function App() {
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
+  const [isMuted, setIsMuted] = useState(false);
 
   return (
     <Routes>
       <Route path="/" element={<Home />} className="App" />
       <Route
         path="/GameMode"
-        element={<GameMode setMode={setMode} setPseudo={setPseudo} />}
+        element={
+          <GameMode
+            setMode={setMode}
+            setPseudo={setPseudo}
+            setIsMuted={setIsMuted}
+            isMuted={isMuted}
+          />
+        }
       />
-      <Route path="/countdown" element={<Countdown />} />
+      <Route
+        path="/countdown"
+        element={<Countdown setIsMuted={setIsMuted} isMuted={isMuted} />}
+      />
       <Route path="/avatargallery" element={<AvatarGallery />} />
       <Route
         path="/game"
@@ -61,6 +72,8 @@ function App() {
             poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             getMovie={getMovie}
             mode={mode}
+            setIsMuted={setIsMuted}
+            isMuted={isMuted}
           />
         }
       />
