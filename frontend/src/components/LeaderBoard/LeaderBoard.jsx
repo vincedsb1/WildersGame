@@ -5,7 +5,7 @@ import Results from "./Results/Results";
 import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
 
-function LeaderBoard({ pseudo }) {
+function LeaderBoard({ pseudo, clearState }) {
   return (
     <div className="mainContainer">
       <div className="leaderBoard">
@@ -16,7 +16,7 @@ function LeaderBoard({ pseudo }) {
               <Restart />
             </Link>
             <Link to="/">
-              <Quit />
+              <Quit clearState={clearState} />
             </Link>
           </div>
         </div>
@@ -27,6 +27,7 @@ function LeaderBoard({ pseudo }) {
 
 LeaderBoard.propTypes = {
   pseudo: PropTypes.string.isRequired,
+  clearState: PropTypes.func.isRequired,
 };
 
 export default LeaderBoard;

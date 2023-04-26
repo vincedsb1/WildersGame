@@ -4,12 +4,18 @@ import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Genre from "./Genre/Genre";
-import Period from "./Period/Period"
 import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-function GameMode({ setMode, setPseudo, setIsMuted, isMuted, setRequest }) {
+function GameMode({
+  setMode,
+  setPseudo,
+  setIsMuted,
+  isMuted,
+  setRequest,
+  request,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState("");
 
@@ -60,21 +66,12 @@ function GameMode({ setMode, setPseudo, setIsMuted, isMuted, setRequest }) {
           </div>
         </div>
         <div className="genreContainer">
-          <div className="genreContainer">
-              <Genre setRequest={setRequest} />
-          </div>
-        </div>
-        <div className="periodContainer">
-          <div className="periodContainer">
-              <Period setRequest={setRequest}  />
-          </div>
+          <Genre setRequest={setRequest} request={request} />
         </div>
         <div className="difficultyContainer">
-          <div className="difficultyContainer">
-            <Link to="/countdown">
-              <Difficulty setMode={setMode} />
-            </Link>
-          </div>
+          <Link to="/countdown">
+            <Difficulty setMode={setMode} />
+          </Link>
         </div>
       </div>
     </div>
@@ -85,6 +82,7 @@ GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
   setRequest: PropTypes.func.isRequired,
+  request: PropTypes.string.isRequired,
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
 };

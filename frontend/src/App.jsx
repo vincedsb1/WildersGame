@@ -12,6 +12,16 @@ import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 function App() {
   const [movie, setMovie] = useState({ title: "", overview: "" });
 
+  const [request, setRequest] = useState(
+    `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&sort_by=vote_count.desc&include_adult=false&language=fr&adult=false`
+  );
+
+  const clearState = () => {
+    setRequest(
+      `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&sort_by=vote_count.desc&include_adult=false&language=fr&adult=false`
+    );
+  };
+
   function rdmNum(num) {
     return Math.floor(Math.random() * num) + 1;
   }
@@ -19,13 +29,11 @@ function App() {
   const getMovie = () => {
     console.info("getmovie");
     axios
-      .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=${rdmNum(
-          30
-        )}&adult=false`
-      )
+      .get(`${request}&page=${rdmNum(50)}`)
       .then((response) =>
-        setMovie(response.data.results[rdmNum(response.data.results.length)])
+        setMovie(
+          response.data.results[rdmNum(response.data.results.length) - 1]
+        )
       )
 
       .catch((err) => {
@@ -35,7 +43,7 @@ function App() {
 
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [setRequest]);
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
@@ -52,6 +60,8 @@ function App() {
             setPseudo={setPseudo}
             setIsMuted={setIsMuted}
             isMuted={isMuted}
+            setRequest={setRequest}
+            request={request}
           />
         }
       />
@@ -74,10 +84,14 @@ function App() {
             mode={mode}
             setIsMuted={setIsMuted}
             isMuted={isMuted}
+            request={request}
           />
         }
       />
-      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
+      <Route
+        path="/leaderBoard"
+        element={<LeaderBoard pseudo={pseudo} clearState={clearState} />}
+      />
     </Routes>
   );
 }
