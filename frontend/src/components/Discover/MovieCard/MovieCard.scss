@@ -1,0 +1,16 @@
+.MovieCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 250px;
+  overflow: hidden;
+  color: white;
+  font-family: $mainTypo;
+  margin-bottom: 3vh;
+  text-align: center;
+  img,
+  p {
+    width: 70%;
+  }
+}

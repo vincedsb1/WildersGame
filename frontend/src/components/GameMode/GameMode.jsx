@@ -7,7 +7,7 @@ import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
+function GameMode({ setMode, setPseudo }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState("");
 
@@ -70,8 +70,6 @@ function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
-  isMuted: PropTypes.bool.isRequired,
-  setIsMuted: PropTypes.func.isRequired,
 };
 
 export default GameMode;

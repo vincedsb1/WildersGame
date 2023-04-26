@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import Discover from "@components/Discover/Discover";
 import Home from "./components/Home/Home";
 import LeaderBoard from "./components/LeaderBoard/LeaderBoard";
 import GamePage from "./components/GamePage/GamePage";
@@ -78,6 +79,7 @@ function App() {
         }
       />
       <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
+      <Route path="/discover" element={<Discover />} className="App" />
     </Routes>
   );
 }
