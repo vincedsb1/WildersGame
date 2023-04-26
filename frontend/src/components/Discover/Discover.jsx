@@ -24,18 +24,24 @@ function Discover() {
   const [sortFunc, setsortFunc] = useState("Populars");
 
   const getMovieList = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=1&adult=false`
-      )
-      .then((response) => setMovieList(response.data.results))
-      .catch((err) => {
-        console.warn(err.message);
-      });
+    for (let i = 1; i < 3; i += 1) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=${i}&adult=false`
+        )
+        .then((response) =>
+          setMovieList((arr) => [...arr, ...response.data.results])
+        )
+        .catch((err) => {
+          console.warn(err.message);
+        });
+    }
   };
   useEffect(() => {
     getMovieList();
   }, []);
+
+  console.info(movieList);
 
   const handleClick = (title, image, overview, date) => {
     setDisplayDetails(!displayDetails);
@@ -73,7 +79,6 @@ function Discover() {
               title={ele.original_title}
               image={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`}
               date={ele.release_date}
-              key={ele.original_title}
               overview={ele.overview}
               handleClick={handleClick}
             />
