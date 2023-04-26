@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 45%;
-  height: 250px;
+  justify-content: space-between;
+  width: 50%;
+  height: 28vh;
   overflow: hidden;
   color: white;
   font-family: $mainTypo;
