@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Musique from "../Musique/Musique";
 
-function Countdown({ setIsMuted, isMuted }) {
+function Countdown({ setIsMuted, isMuted, setGo }) {
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (count === 0) {
+        setGo(true);
         clearInterval(intervalId);
         navigate("/game");
       } else {
@@ -39,6 +40,7 @@ function Countdown({ setIsMuted, isMuted }) {
 Countdown.propTypes = {
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
+  setGo: PropTypes.func.isRequired,
 };
 
 export default Countdown;

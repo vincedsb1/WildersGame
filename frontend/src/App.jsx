@@ -22,6 +22,8 @@ function App() {
     );
   };
 
+  const [go, setGo] = useState(false);
+
   function rdmNum(num) {
     return Math.floor(Math.random() * num) + 1;
   }
@@ -43,11 +45,14 @@ function App() {
 
   useEffect(() => {
     getMovie();
-  }, [setRequest]);
+  }, [setGo]);
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(false);
+
+  console.info(go);
+  // ne pas supprimer //
 
   return (
     <Routes>
@@ -67,7 +72,9 @@ function App() {
       />
       <Route
         path="/countdown"
-        element={<Countdown setIsMuted={setIsMuted} isMuted={isMuted} />}
+        element={
+          <Countdown setIsMuted={setIsMuted} isMuted={isMuted} setGo={setGo} />
+        }
       />
       <Route path="/avatargallery" element={<AvatarGallery />} />
       <Route

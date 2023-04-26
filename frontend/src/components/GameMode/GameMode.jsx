@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
+import Period from "./Period/Period";
 import Genre from "./Genre/Genre";
 import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
@@ -22,6 +23,29 @@ function GameMode({
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const [genreClass, setGenreClass] = useState("genreContainer");
+  const [levelClass, setLevelClass] = useState("levelContainerHidden");
+  const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
+  const [perClass, setPerClass] = useState("periodContainerHidden");
+
+  const handleClickGenreClass = () => {
+    setGenreClass("genreContainerHidden");
+    setLevelClass("levelContainer");
+  };
+
+  const handleClickDiffClass = () => {
+    setLevelClass("levelContainerHidden");
+    setDiffClass("difficultyContainer");
+    setPerClass("periodContainerHidden");
+  };
+
+  const handleClickPerClass = () => {
+    setLevelClass("levelContainerHidden");
+    setPerClass("periodContainer");
+    setDiffClass("difficultyContainerHidden");
+  };
+
   return (
     <div className="mainContainer">
       <div className="Musique">
@@ -65,12 +89,37 @@ function GameMode({
             <Pseudo setPseudo={setPseudo} />
           </div>
         </div>
-        <div className="genreContainer">
-          <Genre setRequest={setRequest} request={request} />
+        <div className={genreClass}>
+          <Genre
+            setRequest={setRequest}
+            request={request}
+            handleClickGenreClass={handleClickGenreClass}
+          />
         </div>
-        <div className="difficultyContainer">
+        <div className={levelClass}>
+          <button
+            type="button"
+            id="level"
+            onClick={() => handleClickDiffClass()}
+          >
+            Difficulty
+          </button>
+          <button
+            type="button"
+            id="level"
+            onClick={() => handleClickPerClass()}
+          >
+            Period
+          </button>
+        </div>
+        <div className={diffClass}>
           <Link to="/countdown">
             <Difficulty setMode={setMode} />
+          </Link>
+        </div>
+        <div className={perClass}>
+          <Link to="/countdown">
+            <Period setRequest={setRequest} request={request} />
           </Link>
         </div>
       </div>

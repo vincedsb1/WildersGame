@@ -94,33 +94,8 @@
     padding: 3% 0 0 0;
   }
 
-  .difficultyContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
-    padding: 0 0 2% 0;
-  }
-
-  #difficulty {
-    color: #552e61;
-    background-color: $buttonBackColor;
-    font-weight: 200;
-    font-size: 1.5em;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
-    max-width: 300px;
-    height: 70px;
-    margin-top: 1vh;
-    transition: 0.15s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(1.15);
-    }
+  .genreContainerHidden {
+    display: none;
   }
 
   .genreContainer {
@@ -160,10 +135,43 @@
     }
   }
 
-  .periodContainer {
+  .levelContainerHidden {
+    display: none;
+  }
+
+  .levelContainer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  #level {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 20vw;
+    max-width: 300px;
+    height: 50px;
+    margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  .periodContainerHidden {
+    display: none;
+  }
+
+  .periodContainer {
     height: 40%;
     padding: 0 0 2% 0;
   }
@@ -186,6 +194,43 @@
     width: 20vw;
     max-width: 300px;
     height: 50px;
+    margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  .difficultyContainerHidden {
+    display: none;
+  }
+
+  .difficultyContainer {
+    height: 40%;
+    padding: 0 0 2% 0;
+  }
+
+  .difficulty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #difficulty {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    max-width: 300px;
+    height: 70px;
     margin-top: 1vh;
     transition: 0.15s;
 
