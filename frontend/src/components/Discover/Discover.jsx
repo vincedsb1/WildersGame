@@ -16,8 +16,9 @@ function Discover() {
 
   const SORT_MAP = {
     Populars: (a, b) => b.popularity - a.popularity,
-    MostRecent: (a, b) => new Date(b.release_date) - new Date(a.release_date),
-    MostVotes: (a, b) => b.vote_count - a.vote_count,
+    "Most Recent": (a, b) =>
+      new Date(b.release_date) - new Date(a.release_date),
+    "Most Votes": (a, b) => b.vote_count - a.vote_count,
   };
   const SORT_NAMES = Object.keys(SORT_MAP);
   const [sortFunc, setsortFunc] = useState("Populars");
@@ -42,7 +43,13 @@ function Discover() {
   };
 
   return (
-    <div className="mainContainer discoverPage">
+    <div
+      className="mainContainer discoverPage"
+      role="button"
+      tabIndex={0}
+      onKeyDown={() => displayDetails && setDisplayDetails(false)}
+      onClick={() => displayDetails && setDisplayDetails(false)}
+    >
       <div className="discoverHeader">
         <p>Discover your favorite movies !</p>
       </div>
@@ -52,14 +59,12 @@ function Discover() {
         ))}
       </div>
       {displayDetails && (
-        <div className="MovieDetails">
-          <MovieDetails
-            title={details.title}
-            image={details.image}
-            overview={details.overview}
-            date={details.date}
-          />
-        </div>
+        <MovieDetails
+          title={details.title}
+          image={details.image}
+          overview={details.overview}
+          date={details.date}
+        />
       )}
       <div className="movieList">
         {movieList.sort(SORT_MAP[sortFunc]).map((ele) => {
