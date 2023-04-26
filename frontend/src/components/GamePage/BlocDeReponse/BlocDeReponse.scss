@@ -72,8 +72,14 @@
   opacity: 0.5;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  .bloc-response {
+    gap: 10px;
+  }
   .Reponse-container {
     width: 35%;
+    font-size: 1.2em;
+    padding: 5px 0px;
+    margin: 0;
   }
 }

@@ -63,13 +63,6 @@
   animation: rollout 1s;
 }
 
-@media screen and (max-height: 600px) {
-  .afficheContainer {
-    width: 100%;
-    max-height: 45vh;
-    // background-color: yellow;
-  }
-}
 .movieTitle {
   display: flex;
   width: 100%;
@@ -90,13 +83,15 @@
   }
 }
 
-@media screen and (max-height: 600px) {
-  .movieTitle {
-    padding-bottom: 10vh;
-  }
-}
-@media screen and (max-width: 600px) {
-  .movieTitle {
-    font-size: 2em;
+@media screen and (max-height: 700px) {
+  .GamePage {
+    padding: 10% 0 15% 0;
+    .afficheContainer {
+      width: 100%;
+      max-height: 45vh;
+    }
+    .movieTitle {
+      font-size: 2em;
+    }
   }
 }

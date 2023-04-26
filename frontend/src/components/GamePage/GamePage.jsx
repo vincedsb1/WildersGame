@@ -36,7 +36,7 @@ function GamePage({
     setTimeout(() => {
       generateNewQuestion(e);
       console.info("timeout");
-    }, 1500);
+    }, 800);
   };
 
   return (
