@@ -4,27 +4,22 @@
   flex-direction: column;
   height: 100%;
 
-  .maintTitleModeContainer {
+  .mainTitleModeContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    height: 13%;
+    // background-color: yellow;
   }
-
-  // .mainTitleMode {
-  //   // display: flex;
-  //   // align-items: center;
-  //   // justify-content: center;
-  //   // padding: 15% 0 5% 0;
-  // }
 
   .h1GameMode {
     color: white;
     font-family: $mainTypo;
     font-weight: 800;
-    font-size: 5.5em;
+    font-size: 250%;
     text-align: center;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+    // background-color: lightblue;
   }
 
   #tilted {
@@ -39,24 +34,26 @@
     }
   }
 
-  .pseudo {
-    height: 20%;
+  .avatarPseudo {
+    height: 47%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 0 5% 0;
+    // padding: 0 0 5% 0;
+    // background-color: lightcoral;
 
     p {
       color: white;
       align-self: left;
       font-size: 1.8rem;
+      padding: 0% 0 2% 0;
     }
 
     input {
       color: #552e61;
       font-size: 1.5rem;
-      padding: 16px;
+      padding: 0 0 0 0;
       background: white;
       height: 70px;
       width: 50vw;
@@ -65,7 +62,49 @@
       border: 8px solid $buttonColor;
       box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
       outline: none;
+      // background-color: lightgreen;
     }
+  }
+
+  .avatarButton {
+    display: flex;
+    justify-content: center;
+    outline: 8px solid #783c8f;
+    background-color: $buttonBackColor;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin: 0% 0 0% 0;
+    box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+    overflow: hidden;
+    // padding: 5% 0 0 0 ;
+    &:hover {
+      // transform: scale(1.1);
+      box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .avatarButton img {
+    width: 90%;
+    height: 120%;
+    object-fit: contain;
+    margin-top: 5px;
+  }
+
+  #AvatarPlaceholder {
+    width: 80%;
+    height: 120%;
+    object-fit: contain;
+  }
+
+  .pseudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background-color: lightblue;
+    padding: 3% 0 0 0;
   }
 
   @media screen and (max-height: 600px) {
@@ -79,14 +118,8 @@
     justify-content: center;
     align-items: center;
     height: 40%;
-    // background-color: lightcoral;
-  }
-
-  .difficultyContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
+    // background-color: rgb(225, 240, 128);
+    padding: 0 0 2% 0;
   }
 
   @media screen and (max-height: 600px) {
