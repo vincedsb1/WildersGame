@@ -25,7 +25,9 @@ function App() {
         )}&adult=false`
       )
       .then((response) =>
-        setMovie(response.data.results[rdmNum(response.data.results.length)])
+        setMovie(
+          response.data.results[rdmNum(response.data.results.length) - 1]
+        )
       )
 
       .catch((err) => {
