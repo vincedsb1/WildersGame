@@ -47,7 +47,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  // background-color: lightgray;
 }
 .cupImage img {
   max-height: 200px;
@@ -85,18 +84,7 @@
   align-items: center;
   width: 90%;
   padding: 3% 0 2% 0;
-  // background-color: lightgreen;
 }
-
-// #top1Result {
-//   color: $greenColor;
-//   // background-color: lightcyan;
-//   font-size: 1.4em;
-// }
-
-// #top1Time {
-//   width: 100%;
-// }
 
 .resultTime {
   opacity: 0.65;
@@ -114,7 +102,6 @@
   gap: 100px;
   height: 20%;
   align-items: center;
-  // background-color: lightpink;
 }
 
 #restart {
@@ -153,20 +140,6 @@
   .result:nth-child(4) {
     font-size: 1em;
   }
-
-  // #top1NameTime {
-  //   width: 70%;
-  //   // background-color: lightgray;
-  // }
-
-  // #top1Time {
-  //   font-size: 0.9em;
-  //   // background-color: red;
-  // }
-
-  // #top1Points {
-  //   font-size: 1.2em;
-  // }
 
   .result {
     font-size: 1em;
@@ -210,9 +183,6 @@
   .cupImage img {
     max-height: 100px;
   }
-}
-
-@media screen and (max-height: 700px) {
   .result:first-child {
     color: $greenColor;
     font-size: 1.2em;

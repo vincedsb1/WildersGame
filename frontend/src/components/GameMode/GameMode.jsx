@@ -7,7 +7,7 @@ import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-function GameMode({ setMode, setPseudo }) {
+function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState("");
 
@@ -16,10 +16,10 @@ function GameMode({ setMode, setPseudo }) {
   };
   return (
     <div className="mainContainer">
-      <div className="Musique">
-        <Musique />
-      </div>
       <div className="gameMode">
+        <div className="Musique">
+          <Musique />
+        </div>
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
             <h1 className="h1GameMode" id="tilted">
@@ -58,11 +58,9 @@ function GameMode({ setMode, setPseudo }) {
           </div>
         </div>
         <div className="difficultyContainer">
-          <div className="difficultyContainer">
-            <Link to="/countdown">
-              <Difficulty setMode={setMode} />
-            </Link>
-          </div>
+          <Link to="/countdown">
+            <Difficulty setMode={setMode} />
+          </Link>
         </div>
       </div>
     </div>
@@ -72,6 +70,8 @@ function GameMode({ setMode, setPseudo }) {
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
 };
 
 export default GameMode;

@@ -76,3 +76,12 @@
     text-align: center;
   }
 }
+
+@media screen and (max-height: 700px) {
+  .Countdown {
+    .Rules,
+    .Ready {
+      font-size: 38px;
+    }
+  }
+}

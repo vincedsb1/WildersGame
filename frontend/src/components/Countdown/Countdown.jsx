@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import Musique from "../Musique/Musique";
 
-function Countdown() {
+function Countdown({ setIsMuted, isMuted }) {
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
@@ -20,6 +22,9 @@ function Countdown() {
 
   return (
     <div className="mainContainer">
+      <div className="Musique">
+        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
+      </div>
       <div className="Countdown">
         <div className="Rules">What is the release year ?</div>
         <div className="Countdown-numbers">{count}</div>
@@ -30,5 +35,10 @@ function Countdown() {
     </div>
   );
 }
+
+Countdown.propTypes = {
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
+};
 
 export default Countdown;
