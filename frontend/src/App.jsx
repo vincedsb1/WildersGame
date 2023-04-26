@@ -13,7 +13,7 @@ function App() {
   const [movie, setMovie] = useState({ title: "", overview: "" });
 
   function rdmNum(num) {
-    return Math.floor(Math.random() * num);
+    return Math.floor(Math.random() * num) + 1;
   }
 
   const getMovie = () => {
@@ -21,7 +21,7 @@ function App() {
     axios
       .get(
         `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=${rdmNum(
-          30 + 1
+          30
         )}&adult=false`
       )
       .then((response) =>
@@ -58,7 +58,7 @@ function App() {
 
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
             release={movie.release_date}
-            poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             getMovie={getMovie}
             mode={mode}
           />
