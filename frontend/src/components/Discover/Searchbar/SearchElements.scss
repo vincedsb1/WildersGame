@@ -25,6 +25,8 @@
     border: 8px solid $buttonColor;
     border-radius: 20px;
     animation: displaySearch 1s;
+    font-family: $backupTypo;
+    font-size: 2em;
   }
 
   #clickedInput {

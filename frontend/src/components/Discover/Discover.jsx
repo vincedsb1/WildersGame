@@ -16,6 +16,7 @@ function Discover() {
     overview: "",
     date: 0,
   });
+  const [searchedEl, setSearchedEL] = useState("");
 
   const SORT_MAP = {
     Populars: (a, b) => b.popularity - a.popularity,
@@ -66,13 +67,22 @@ function Discover() {
       </div>
       <div className="filters">
         {SORT_NAMES.map((el) => (
-          <FilterButton key={el} name={el} setsortFunc={setsortFunc} />
+          <FilterButton
+            key={el}
+            name={el}
+            setsortFunc={setsortFunc}
+            searchIsClicked={searchIsClicked}
+          />
         ))}
         <SearchButton
           setSearchIsClicked={setSearchIsClicked}
           searchIsClicked={searchIsClicked}
         />
-        <SearchInput searchIsClicked={searchIsClicked} />
+        <SearchInput
+          searchIsClicked={searchIsClicked}
+          searchedEl={searchedEl}
+          setSearchedEL={setSearchedEL}
+        />
       </div>
       {displayDetails && (
         <MovieDetails
@@ -83,17 +93,20 @@ function Discover() {
         />
       )}
       <div className="movieList">
-        {movieList.sort(SORT_MAP[sortFunc]).map((ele) => {
-          return (
-            <MovieCard
-              title={ele.original_title}
-              image={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`}
-              date={ele.release_date}
-              overview={ele.overview}
-              handleClick={handleClick}
-            />
-          );
-        })}
+        {movieList
+          .filter((el) => el.original_title.includes(searchedEl))
+          .sort(SORT_MAP[sortFunc])
+          .map((ele) => {
+            return (
+              <MovieCard
+                title={ele.original_title}
+                image={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`}
+                date={ele.release_date}
+                overview={ele.overview}
+                handleClick={handleClick}
+              />
+            );
+          })}
       </div>
     </div>
   );
