@@ -10,6 +10,7 @@ import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
 import Musique from "./components/Musique/Musique";
 
+
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
+
   const [isMuted, setIsMuted] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(
     "/src/assets/GameMode/AvatarPlaceholder.svg"
@@ -119,6 +121,7 @@ function App() {
       />
 <Route path="/discover" element={<Discover />} className="App" />
     </Routes>
+
   );
 }
 

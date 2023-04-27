@@ -10,10 +10,7 @@ function BoutonReponse({
 }) {
   const [classe, setClasse] = useState("Reponse-container");
 
-  useEffect(() => {
-    if (ele === bonneReponse) setClasse("Reponse-container goodAnswer");
-    if (ele !== bonneReponse) setClasse("Reponse-container cloudyAnswer");
-  }, [handleClick]);
+
 
   const handleClicked = (e) => {
     handleClick(e);
@@ -23,6 +20,10 @@ function BoutonReponse({
       }
     }, 1);
   };
+  useEffect(() => {
+    if (ele === bonneReponse) setClasse("Reponse-container goodAnswer");
+    if (ele !== bonneReponse) setClasse("Reponse-container cloudyAnswer");
+  }, [handleClick]);
 
   useEffect(() => {
     setClasse("Reponse-container");
@@ -35,6 +36,7 @@ function BoutonReponse({
       onClick={handleClicked}
       disabled={disableButton}
       id={ele.toString()}
+      // id={`reponseButton-${ele}`}
       key={Math.floor(Math.random() * 10000000)}
     >
       {ele}
