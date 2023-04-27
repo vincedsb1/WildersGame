@@ -5,17 +5,12 @@ import Results from "./Results/Results";
 import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
 
-function LeaderBoard({ pseudo, selectedAvatar }) {
-  console.info(
-    "%c%s",
-    "color: #ff0000",
-    console.info(`Props selectedAvatar : ${selectedAvatar}`)
-  );
+function LeaderBoard({ pseudo }) {
   return (
     <div className="mainContainer">
       <div className="leaderBoard">
         <div className="resultContainer">
-          <Results pseudo={pseudo} selectedAvatar={selectedAvatar} />
+          <Results pseudo={pseudo} />
           <div className="endButons">
             <Link to="/game">
               <Restart />
@@ -32,7 +27,6 @@ function LeaderBoard({ pseudo, selectedAvatar }) {
 
 LeaderBoard.propTypes = {
   pseudo: PropTypes.string.isRequired,
-  selectedAvatar: PropTypes.string.isRequired,
 };
 
 export default LeaderBoard;
