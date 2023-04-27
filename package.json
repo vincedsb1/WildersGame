@@ -29,5 +29,10 @@
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.3"
+  },
+  "dependencies": {
+    "antd": "^5.4.4",
+    "react-router-transition": "^2.1.0",
+    "react-transition-group": "^4.4.5"
   }
 }

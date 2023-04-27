@@ -8,7 +8,6 @@ function Pseudo({ setPseudo }) {
   return (
     <div className="pseudo">
       <p>Your name</p>
-      <br />
       <input type="text" maxLength="16" onChange={handleChange} />
     </div>
   );

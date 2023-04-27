@@ -4,25 +4,18 @@
   flex-direction: column;
   height: 100%;
 
-  .maintTitleModeContainer {
+  .mainTitleModeContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
-  }
-
-  .mainTitleMode {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // padding: 15% 0 5% 0;
+    height: 13%;
   }
 
   .h1GameMode {
     color: white;
     font-family: $mainTypo;
     font-weight: 800;
-    font-size: 5.5em;
+    font-size: 250%;
     text-align: center;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
   }
@@ -33,30 +26,24 @@
     margin-bottom: -15px;
   }
 
-  @media screen and (max-height: 600px) {
-    .h1GameMode {
-      font-size: 4em;
-    }
-  }
-
-  .pseudo {
-    height: 20%;
+  .avatarPseudo {
+    height: 47%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 0 5% 0;
 
     p {
       color: white;
       align-self: left;
       font-size: 1.8rem;
+      padding: 0% 0 2% 0;
     }
 
     input {
       color: #552e61;
       font-size: 1.5rem;
-      padding: 16px;
+      padding: 6px;
       background: white;
       height: 70px;
       width: 50vw;
@@ -68,65 +55,265 @@
     }
   }
 
-  @media screen and (max-height: 600px) {
-    .pseudo {
-      padding: 3vh 0 0 0;
+  .avatarButton {
+    display: flex;
+    justify-content: center;
+    outline: 8px solid #783c8f;
+    background-color: $buttonBackColor;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    margin: 0% 0 0% 0;
+    box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.25);
     }
   }
 
-  .difficultyContainer {
+  .avatarButton img {
+    width: 90%;
+    height: 120%;
+    object-fit: contain;
+    margin-top: 5px;
+  }
+
+  #AvatarPlaceholder {
+    width: 80%;
+    height: 120%;
+    object-fit: contain;
+  }
+
+  .pseudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 0 0 0;
+  }
+
+  .genreContainerHidden {
+    display: none;
+  }
+
+  .genreContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40%;
-    // background-color: lightcoral;
+    padding: 0 0 2% 0;
   }
 
-  .difficultyContainer {
+  .genre {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 40%;
   }
 
-  @media screen and (max-height: 600px) {
-    .difficulty {
-      flex-direction: row;
-    }
-  }
-
-  #difficulty {
+  #genre {
     color: #552e61;
     background-color: $buttonBackColor;
-    // background-color: blueviolet;
     font-weight: 200;
     font-size: 1.5em;
     border-radius: 30px;
     border: 8px solid $buttonColor;
     width: 50vw;
     max-width: 300px;
-    height: 70px;
+    height: 80px;
     margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
   }
 
-  @media screen and (max-height: 600px) {
-    button {
-      color: #552e61;
-      background-color: $buttonBackColor;
-      font-weight: 200;
-      font-size: 1.5em;
-      border-radius: 30px;
-      border: 8px solid $buttonColor;
-      width: 50vw;
-      max-width: 300px;
-      height: 70px;
-    }
+  .levelContainerHidden {
+    display: none;
+  }
 
-    @media screen and (max-height: 600px) {
-      button {
-        width: 170px;
-        margin: 0 10px 0 10px;
+  .levelContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    padding: 0 0 2% 0;
+  }
+
+  #level {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    max-width: 300px;
+    height: 80px;
+    margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  .periodContainerHidden {
+    display: none;
+  }
+
+  .periodContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    padding: 0 0 2% 0;
+  }
+
+  .period {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #period {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    max-width: 300px;
+    height: 80px;
+    margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  .difficultyContainerHidden {
+    display: none;
+  }
+
+  .difficultyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    padding: 0 0 2% 0;
+  }
+
+  .difficulty {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #difficulty {
+    color: #552e61;
+    background-color: $buttonBackColor;
+    font-weight: 200;
+    font-size: 1.5em;
+    border-radius: 30px;
+    border: 8px solid $buttonColor;
+    width: 50vw;
+    max-width: 300px;
+    height: 80px;
+    margin-top: 1vh;
+    transition: 0.15s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .gameMode {
+    padding-top: 15%;
+    .avatarPseudo {
+      height: 35%;
+      input {
+        height: 50px;
       }
+    }
+    .avatarButton {
+      width: 90px;
+      height: 90px;
+    }
+    .pseudo p {
+      font-size: 1.3em;
+    }
+    .difficultyContainer,
+    .genreContainer,
+    .levelContainer,
+    .periodContainer {
+      height: 30%;
+    }
+    #difficulty,
+    #genre,
+    #level,
+    #period {
+      height: 50px;
+      border: 6px solid $buttonColor;
+      font-size: 0.7em;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .gameMode {
+    padding-top: 15%;
+    .avatarPseudo {
+      height: 35%;
+
+      input {
+        height: 50px;
+      }
+    }
+    .avatarButton {
+      width: 90px;
+      height: 90px;
+    }
+    .pseudo p {
+      font-size: 1.3em;
+    }
+    .difficultyContainer,
+    .genreContainer,
+    .levelContainer,
+    .periodContainer {
+      height: 30%;
+    }
+    #difficulty,
+    #genre,
+    #level,
+    #period {
+      height: 50px;
+      border: 6px solid $buttonColor;
+      font-size: 0.7em;
     }
   }
 }

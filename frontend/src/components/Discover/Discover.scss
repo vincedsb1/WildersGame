@@ -1,0 +1,134 @@
+.discoverPage {
+  height: 100vh;
+
+  .discoverHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+    height: 10%;
+    background-color: $buttonBackColor;
+    border: 8px solid $buttonColor;
+    color: #552e61;
+    padding: 0px 40px;
+    border-radius: 20px;
+    font-family: $mainTypo;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1.5vh;
+  }
+
+  .MovieDetails {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    top: 15vh;
+    left: 10vw;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: $buttonBackColor;
+    border: 8px solid $buttonColor;
+    color: #552e61;
+    .datePara {
+      color: white;
+      font-family: $mainTypo;
+      font-size: 2em;
+    }
+    h1 {
+      color: white;
+      font-family: $mainTypo;
+      font-size: 2em;
+    }
+    img {
+      margin-top: 5%;
+      width: 70%;
+      border-radius: 8px;
+    }
+    .descPara {
+      font-family: $backupTypo;
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      height: 40%;
+      padding: 0 3vw;
+    }
+  }
+
+  .filters {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5vh;
+
+    .sortingBox {
+      position: relative;
+      button {
+        background-color: $buttonBackColor;
+        border: 8px solid $buttonColor;
+        border-radius: 20px;
+        padding: 10px 10px;
+        color: #552e61;
+        font-family: $mainTypo;
+        font-size: 0.9em;
+        cursor: pointer;
+      }
+
+      .sortList {
+        top: 60px;
+        left: 0;
+        position: absolute;
+        display: none;
+        height: 0%;
+        animation: displaySort 0.5s;
+      }
+      #clickedSortInput {
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      @keyframes displaySort {
+        0% {
+          height: 0%;
+        }
+        100% {
+          height: 100%;
+        }
+      }
+    }
+
+    .filteringingBox {
+      position: relative;
+      button {
+        background-color: $buttonBackColor;
+        border: 8px solid $buttonColor;
+        border-radius: 20px;
+        padding: 10px 10px;
+        color: #552e61;
+        font-family: $mainTypo;
+        font-size: 0.9em;
+        cursor: pointer;
+      }
+
+      .filterList {
+        top: 60px;
+        left: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .movieList {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+}

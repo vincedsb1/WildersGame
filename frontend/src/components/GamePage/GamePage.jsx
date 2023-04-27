@@ -4,13 +4,22 @@ import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
 
-function GamePage({ title, date, poster, getMovie, mode, release }) {
+function GamePage({
+  title,
+  date,
+  poster,
+  getMovie,
+  mode,
+  release,
+  request,
+}) {
   const [resultat, setResultat] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
 
   console.info(date);
   console.info(title);
   console.info(release);
+  console.info(request);
 
   const generateNewQuestion = () => {
     getMovie();
@@ -26,7 +35,7 @@ function GamePage({ title, date, poster, getMovie, mode, release }) {
     setTimeout(() => {
       generateNewQuestion(e);
       console.info("timeout");
-    }, 1500);
+    }, 800);
   };
 
   return (
@@ -41,11 +50,11 @@ function GamePage({ title, date, poster, getMovie, mode, release }) {
           </div>{" "}
         </div>
         <div className="afficheContainer">
-          <img src={poster} alt="" />
+          <img src={poster} alt="" key={poster} />
         </div>
 
-        <div className="movieTitle">
-          <h2>{title}</h2>
+        <div className="movieTitle" key={title}>
+          <h2>{title.length > 30 ? `${title.slice(0, 30)}...` : title}</h2>
         </div>
 
         <BlocDeReponse
@@ -66,7 +75,10 @@ GamePage.propTypes = {
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   mode: PropTypes.number.isRequired,
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
   release: PropTypes.string.isRequired,
+  request: PropTypes.string.isRequired,
 };
 
 export default GamePage;

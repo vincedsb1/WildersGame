@@ -1,9 +1,19 @@
 .bloc-response {
   display: flex;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: 15px;
   justify-content: center;
   align-items: center;
+  animation: rollout 0.6s;
+}
+
+@keyframes rollout {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 .Reponse-container {
@@ -17,12 +27,31 @@
   font-size: 1.3em;
   cursor: pointer;
   width: 15%;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .goodAnswer {
   position: relative;
   border-color: $greenColor;
 }
+
 .goodAnswer::before {
   content: "";
   position: absolute;
@@ -33,7 +62,34 @@
   background-image: url("https://i.ibb.co/bdZgXb6/answer-ok.png");
   background-position: center;
   background-repeat: no-repeat;
+  animation: bounce-in 0.6s;
 }
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
 .wrongAnswer {
   position: relative;
   border-color: $redColor;
@@ -48,10 +104,23 @@
   background-image: url("https://i.ibb.co/svKKg8c/x-red.png");
   background-position: center;
   background-repeat: no-repeat;
+  animation: wiggle 2s linear infinite;
+
+  // transition: transform 330ms ease-in-out;
 }
 
-@media screen and (max-width: 600px) {
+.cloudyAnswer {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 700px) {
+  .bloc-response {
+    gap: 10px;
+  }
   .Reponse-container {
     width: 35%;
+    font-size: 1.2em;
+    padding: 5px 0px;
+    margin: 0;
   }
 }

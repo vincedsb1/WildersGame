@@ -35,6 +35,7 @@ a:link {
   background: linear-gradient($lighterGradient, $darkerGradient);
   box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.25);
   height: 100vh;
+  overflow: auto;
 }
 
 .popcornBackground {
@@ -43,7 +44,7 @@ a:link {
   background-image: url("./assets/Home/popcorn.svg");
   background-size: 80%;
   background-repeat: no-repeat;
-  background-position: left -100px bottom -10px;
+  background-position: left -20vw bottom 2vh;
 }
 
 @media screen and (max-height: 600px) {
@@ -58,10 +59,6 @@ a:link {
   justify-content: center;
   align-items: center;
   height: 65%;
-}
-
-.mainTitle {
-  padding-bottom: 5%;
 }
 
 .boiteFanion {
@@ -82,31 +79,12 @@ a:link {
   }
 }
 
-.startButton {
+.startButtonDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 35%;
 }
-
-// .popcorn {
-//   position: absolute;
-//   bottom: 0;
-//   width: 60%;
-//   height: 100%;
-//   overflow: hidden;
-//   margin: 0px;
-//   background-color: red;
-
-//   img {
-//     height: 70%;
-//     position: absolute;
-//     left: -270px;
-//     bottom: -310px;
-//     opacity: 40%;
-//     z-index: 0;
-//   }
-// }
 
 .mainTitle {
   color: white;
@@ -115,10 +93,29 @@ a:link {
   font-size: 5.5em;
   text-align: center;
   text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+  padding-bottom: 5%;
 }
 
 .mainTitle h1:nth-child(1) {
   position: relative;
   transform: rotate(-8.5deg);
   margin-bottom: -15px;
+}
+
+@media screen and (max-height: 700px) {
+  .mainTop {
+    padding-top: 10%;
+  }
+  .mainTitle {
+    font-size: 4em;
+  }
+  .startButtonDiv {
+    height: 20%;
+  }
+  .boiteFanion {
+    height: 75px;
+    .catchphrase {
+      height: 30px;
+    }
+  }
 }

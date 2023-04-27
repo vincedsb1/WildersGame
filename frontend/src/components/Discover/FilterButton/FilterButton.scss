@@ -1,0 +1,21 @@
+.FilterButton {
+  height: 60px;
+  margin-bottom: 1%;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  border-radius: 20px;
+  padding: 10px 10px;
+  color: #552e61;
+  font-family: $mainTypo;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.noDisplay {
+  display: none;
+}

@@ -4,8 +4,6 @@ import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
-import Music from "./Music/Music";
-import "./Music/Music.scss";
 
 function Home() {
   return (
@@ -14,12 +12,10 @@ function Home() {
         <div className="popcornBackground">
           <div className="mainTop">
             <div className="mainTitle">
-              <div className="Music">
-                <Music />
-              </div>
               <h1>Wilder</h1>
               <h1>&nbsp;&nbsp;Game</h1>
             </div>
+
             <div className="boiteFanion">
               <img className="fanion" src={fanion} alt="fanion" />
               <img
@@ -29,7 +25,7 @@ function Home() {
               />
             </div>
           </div>
-          <div className="startButton">
+          <div className="startButtonDiv">
             <NavLink to="/gameMode">
               <StartButton />
             </NavLink>

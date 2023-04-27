@@ -1,20 +1,22 @@
 .leaderBoard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // justify-content:flex-start;
+  // align-items: center;
   font-family: $mainTypo;
   height: 100%;
   width: 100%;
+  // background-color: lightblue;
 }
 
 .resultContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100%;
+  // background-color: lightcoral;
 }
 
 .resultsCongratsCupScores {
@@ -22,12 +24,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 30px;
-  border: 8px solid $buttonColor;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom: 8px solid $buttonColor;
   width: 80%;
+  // background-color:lightgreen;
   background-color: $buttonBackColor;
-  height: 80%;
-  margin: 10% 0 0 0;
+  height: 100%;
+  margin: 0 0 0 0;
 }
 
 .congratulation {
@@ -50,6 +54,8 @@
 }
 .cupImage img {
   max-height: 200px;
+  height: 80%;
+  animation: wiggle 3s;
 }
 
 .results {
@@ -60,6 +66,9 @@
   color: $buttonColor;
   padding: 20px 5 0 5;
   width: 100%;
+  margin-top: 2%;
+  font-size: 1.1em;
+  // background-color: forestgreen;
 }
 
 .result {
@@ -68,16 +77,57 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  padding: 0 0 2% 0;
-  font-size: 1.5em;
+  // padding: 3% 0 2% 0;
+  // background-color: rgb(18, 1, 255);
 }
 
-#top1 {
-  color: #4caf50;
+.result:first-child {
+  color: $greenColor;
+  font-size: 1.6em;
+}
+
+.result:nth-child(2),
+.result:nth-child(3),
+.result:nth-child(4) {
+  font-size: 1.3em;
+}
+
+.resultAvatarNameTime {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  // background-color: red;
+  width: 80%;
+}
+
+.resultAvatar {
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  margin: 0% 0 0% 0;
+  transition: 0.2s;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin: 1%;
 }
 
 .resultNameTime {
-  width: 65%;
+  display: flex;
+  flex-direction: column;
+  // justify-content:center;
+  // align-items: center;
+  // background-color: blue;
+  margin: 2%;
+}
+
+.resultName {
+  // background-color: orange;
+}
+
+.resultTime {
+  // background-color: grey;
 }
 
 .resultTime {
@@ -108,26 +158,30 @@
   color: #552e61;
   font-family: $mainTypo;
   height: 60px;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
 }
 
 @media screen and (max-width: 800px) {
   .congratulation h1 {
     font-size: 1.5em;
+    padding: 6% 1% 1% 1%;
   }
 
-  #top1 {
+  .result:first-child {
+    color: $greenColor;
     font-size: 1.2em;
   }
 
-  #top1NameTime {
-    width: 100%;
-  }
-
-  #top1Time {
-    font-size: 0.7em;
-  }
-
-  #top1Points {
+  .result:nth-child(2),
+  .result:nth-child(3),
+  .result:nth-child(4) {
     font-size: 1em;
   }
 
@@ -144,19 +198,21 @@
     height: 50px;
     width: 100px;
   }
+
+  .resultsCongratsCupScores {
+    width: 100%;
+    margin: 0% 0 0 0;
+  }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 800px) {
   .congratulation h1 {
     font-size: 1.5em;
   }
 
-  #top1 {
-    font-size: 1.2em;
-  }
-
   .result {
     font-size: 1em;
+    // background-color: lightgrey;
   }
 
   .endButons {
@@ -171,5 +227,43 @@
 
   .cupImage img {
     max-height: 100px;
+  }
+  .result:first-child {
+    color: $greenColor;
+    font-size: 1.2em;
+  }
+
+  .result:nth-child(2),
+  .result:nth-child(3),
+  .result:nth-child(4) {
+    font-size: 1em;
+  }
+
+  .congratulation h1 {
+    margin: 5% 0 0 0;
+  }
+
+  .result {
+    padding: 2% 0 2% 0;
+  }
+
+  .resultAvatar {
+    width: 40px;
+    height: 40px;
+    margin: 1%;
+  }
+}
+@media screen and (max-height: 600px) {
+  .result {
+    padding: 0.5% 0 0.5% 0;
+  }
+
+  .resultAvatar {
+    width: 40px;
+    height: 40px;
+    margin: 0.5%;
+  }
+  .congratulation h1 {
+    margin: 1% 0 0 0;
   }
 }

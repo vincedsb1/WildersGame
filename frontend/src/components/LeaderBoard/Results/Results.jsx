@@ -1,117 +1,116 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
-function Results({ pseudo }) {
-  const results = [
-    {
-      date: "06/04/2023",
-      time: "15:26",
-      name: "Lucas",
-      points: 2,
-    },
-    {
-      date: "02/04/2023",
-      time: "13:27",
-      name: "Jeremy",
-      points: 1,
-    },
-    {
-      date: "03/03/2023",
-      time: "09:57",
-      name: "Antonin",
-      points: 1,
-    },
-    {
-      date: "01/04/2023",
-      time: "11:54",
-      name: "Marah",
-      points: 0,
-    },
-  ];
+function Results({ pseudo, selectedAvatar }) {
+  console.info(`Selected Avatar ${selectedAvatar}`);
 
-  const location = useLocation();
-  const currentDate = new Date();
-  const currentDateString = currentDate.toLocaleDateString();
-  const currentTimeString = currentDate.toLocaleTimeString();
+  let results = JSON.parse(localStorage.getItem("storedResults"));
+  if (!results) {
+    results = [
+      {
+        date: "06/04/2023",
+        time: "15:26",
+        name: "Lucas",
+        points: 2,
+        avatar: "/src/assets/GameMode/Avatars/avatar-01.svg",
+      },
+      {
+        date: "02/04/2023",
+        time: "13:27",
+        name: "Jeremy",
+        points: 1,
+        avatar: "/src/assets/GameMode/Avatars/avatar-03.svg",
+      },
+      {
+        date: "03/03/2023",
+        time: "09:57",
+        name: "Antonin",
+        points: 1,
+        avatar: "/src/assets/GameMode/Avatars/avatar-15.svg",
+      },
+      {
+        date: "01/04/2023",
+        time: "11:54",
+        name: "Marah",
+        points: 0,
+        avatar: "/src/assets/GameMode/Avatars/avatar-11.svg",
+      },
+    ];
+  }
 
   const actualScore = {
-    date: currentDateString,
-    time: currentTimeString.replace(/(.*)\D\d+/, "$1"),
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString().replace(/(.*)\D\d+/, "$1"),
     name: pseudo,
-    points: location.state.resultat,
+    points: useLocation().state.resultat,
+    avatar: selectedAvatar,
   };
 
   results.push(actualScore);
+  results.sort((a, b) => b.points - a.points);
 
-  const bestScore = results.sort((a, b) => (a.points < b.points ? 1 : -1));
+  localStorage.setItem("storedResults", JSON.stringify(results));
+  const storedResults = JSON.parse(
+    localStorage.getItem("storedResults")
+  ).filter(
+    (el, index, arr) => arr.findIndex((t) => t.name === el.name) === index
+  );
 
-  const [bestScoreReached, setBestScoreReached] = useState(false);
-
-  if (bestScore[0].name === pseudo && !bestScoreReached) {
-    setBestScoreReached(true);
-  }
+  const handleRewardPhrase = () => {
+    switch (
+      storedResults.indexOf(storedResults.find((el) => el.name === pseudo))
+    ) {
+      case 0:
+        return <h1>Best score {pseudo}!</h1>;
+      case 1:
+        return <h1>Well done {pseudo}!</h1>;
+      case 2:
+        return <h1>Well done {pseudo}!</h1>;
+      case 3:
+        return <h1>Well done {pseudo}!</h1>;
+      default:
+        return <h1>Try again {pseudo}!</h1>;
+    }
+  };
 
   return (
     <div className="resultsCongratsCupScores">
-      <div className="congratulation">
-        <h1>Well done {pseudo}!</h1>
-      </div>
+      <div className="congratulation">{handleRewardPhrase()}</div>
       <div className="cupImage">
         <img src={cup} alt="cup" />
       </div>
       <div className="results">
-        <div className="result" id="top1">
-          <div className="resultNameTime" id="top1NameTime">
-            <div className="resultName">{bestScore[0].name}</div>
-            <div className="resultTime" id="top1Time">
-              {bestScore[0].date}&ensp;{bestScore[0].time}
+        {storedResults.slice(0, 4).map((el) => {
+          return (
+            <div className="result">
+              <div className="resultAvatarNameTime">
+                <div className="resultAvatar">
+                  <img className="resultAvatarImg" src={el.avatar} alt="" />
+                </div>
+                <div className="resultNameTime">
+                  <div className="resultName">{el.name}</div>
+                  <div className="resultTime">
+                    {el.date}&ensp;{el.time}
+                  </div>
+                </div>
+              </div>
+              <div className="resultPoints">
+                <p>{el.points}&ensp;pts</p>
+              </div>
             </div>
-          </div>
-          <div className="resultPoints" id="top1Points">
-            <p>{bestScore[0].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[1].name}</div>
-            <div className="resultTime">
-              {bestScore[1].date}&ensp;{bestScore[1].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[1].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[2].name}</div>
-            <div className="resultTime">
-              {bestScore[2].date}&ensp;{bestScore[2].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[2].points}&ensp;pts</p>
-          </div>
-        </div>
-
-        <div className="result">
-          <div className="resultNameTime">
-            <div className="resultName">{bestScore[3].name}</div>
-            <div className="resultTime">
-              {bestScore[3].date}&ensp;{bestScore[3].time}
-            </div>
-          </div>
-          <div className="resultPoints">
-            <p>{bestScore[3].points}&ensp;pts</p>
-          </div>
-        </div>
+          );
+        })}
       </div>
-      {bestScoreReached && <Confetti />}
+      {results[0].name === pseudo && (
+        <Confetti
+          numberOfPieces={2000}
+          recycle={false}
+          tweenDuration={10000}
+          initialVelocityY={16}
+        />
+      )}
       <br />
     </div>
   );
@@ -119,6 +118,7 @@ function Results({ pseudo }) {
 
 Results.propTypes = {
   pseudo: PropTypes.string.isRequired,
+  selectedAvatar: PropTypes.string.isRequired,
 };
 
 export default Results;
