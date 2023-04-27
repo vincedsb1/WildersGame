@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import Musique from "../Musique/Musique";
 
-function Countdown() {
+function Countdown({ setGo }) {
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (count === 0) {
+        setGo(true);
         clearInterval(intervalId);
         navigate("/game");
       } else {
@@ -34,5 +35,9 @@ function Countdown() {
     </div>
   );
 }
+
+Countdown.propTypes = {
+  setGo: PropTypes.func.isRequired,
+};
 
 export default Countdown;

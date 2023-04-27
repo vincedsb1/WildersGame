@@ -5,7 +5,7 @@ import Results from "./Results/Results";
 import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
 
-function LeaderBoard({ pseudo, selectedAvatar }) {
+function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
   console.info(
     "%c%s",
     "color: #ff0000",
@@ -21,7 +21,7 @@ function LeaderBoard({ pseudo, selectedAvatar }) {
               <Restart />
             </Link>
             <Link to="/">
-              <Quit />
+              <Quit clearState={clearState} />
             </Link>
           </div>
         </div>
@@ -32,6 +32,7 @@ function LeaderBoard({ pseudo, selectedAvatar }) {
 
 LeaderBoard.propTypes = {
   pseudo: PropTypes.string.isRequired,
+  clearState: PropTypes.func.isRequired,
   selectedAvatar: PropTypes.string.isRequired,
 };
 
