@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import musicFile from "./music.mp3";
+import musicFile from "./music1.mp3";
 
-function Musique({ setIsMuted, isMuted }) {
+function Musique({ isMuted, setIsMuted }) {
   const handleClickMusicOn = () => {
     setIsMuted((current) => !current);
   };
@@ -35,10 +35,9 @@ function Musique({ setIsMuted, isMuted }) {
     </div>
   );
 }
-
 Musique.propTypes = {
-  isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
+  isMuted: PropTypes.func.isRequired,
 };
 
 export default Musique;

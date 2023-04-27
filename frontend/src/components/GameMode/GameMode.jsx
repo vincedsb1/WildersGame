@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
-import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
+function GameMode({ setMode, setPseudo }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState("");
 
@@ -17,9 +16,6 @@ function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
   return (
     <div className="mainContainer">
       <div className="gameMode">
-        <div className="Musique">
-          <Musique />
-        </div>
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
             <h1 className="h1GameMode" id="tilted">
@@ -70,8 +66,6 @@ function GameMode({ setMode, setPseudo, setIsMuted, isMuted }) {
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
-  isMuted: PropTypes.bool.isRequired,
-  setIsMuted: PropTypes.func.isRequired,
 };
 
 export default GameMode;
