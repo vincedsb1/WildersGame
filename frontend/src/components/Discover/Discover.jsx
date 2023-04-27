@@ -8,6 +8,7 @@ import SearchButton from "./Searchbar/SearchButton";
 
 function Discover() {
   const [searchIsClicked, setSearchIsClicked] = useState(false);
+  const [sortIsClicked, setSortIsClicked] = useState(false);
   const [movieList, setMovieList] = useState([]);
   const [displayDetails, setDisplayDetails] = useState(false);
   const [details, setDetails] = useState({
@@ -55,58 +56,75 @@ function Discover() {
   };
 
   return (
-    <div
-      className="mainContainer discoverPage"
-      role="button"
-      tabIndex={0}
-      onKeyDown={() => displayDetails && setDisplayDetails(false)}
-      onClick={() => displayDetails && setDisplayDetails(false)}
-    >
-      <div className="discoverHeader">
-        <p>Discover your favorite movies !</p>
-      </div>
-      <div className="filters">
-        {SORT_NAMES.map((el) => (
-          <FilterButton
-            key={el}
-            name={el}
-            setsortFunc={setsortFunc}
+    <div className="mainContainer">
+      <div
+        className=" discoverPage"
+        role="button"
+        tabIndex={0}
+        onKeyDown={() => displayDetails && setDisplayDetails(false)}
+        onClick={() => displayDetails && setDisplayDetails(false)}
+      >
+        <div className="discoverHeader">
+          <p>Discover your favorite movies !</p>
+        </div>
+        <div className="filters">
+          <div className={searchIsClicked ? "sortingBox hidden" : "sortingBox"}>
+            <button
+              onClick={() => setSortIsClicked(!sortIsClicked)}
+              type="button"
+            >
+              Sort
+            </button>
+            <div className="sortList" id={sortIsClicked && "clickedSortInput"}>
+              {SORT_NAMES.map((el) => (
+                <FilterButton
+                  key={el}
+                  name={el}
+                  setsortFunc={setsortFunc}
+                  searchIsClicked={searchIsClicked}
+                />
+              ))}
+            </div>
+          </div>
+          <div className={searchIsClicked ? "sortingBox hidden" : "sortingBox"}>
+            <button type="button">Filter</button>
+          </div>
+          <SearchButton
+            setSearchIsClicked={setSearchIsClicked}
             searchIsClicked={searchIsClicked}
           />
-        ))}
-        <SearchButton
-          setSearchIsClicked={setSearchIsClicked}
-          searchIsClicked={searchIsClicked}
-        />
-        <SearchInput
-          searchIsClicked={searchIsClicked}
-          searchedEl={searchedEl}
-          setSearchedEL={setSearchedEL}
-        />
-      </div>
-      {displayDetails && (
-        <MovieDetails
-          title={details.title}
-          image={details.image}
-          overview={details.overview}
-          date={details.date}
-        />
-      )}
-      <div className="movieList">
-        {movieList
-          .filter((el) => el.original_title.includes(searchedEl))
-          .sort(SORT_MAP[sortFunc])
-          .map((ele) => {
-            return (
-              <MovieCard
-                title={ele.original_title}
-                image={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`}
-                date={ele.release_date}
-                overview={ele.overview}
-                handleClick={handleClick}
-              />
-            );
-          })}
+          <SearchInput
+            searchIsClicked={searchIsClicked}
+            searchedEl={searchedEl}
+            setSearchedEL={setSearchedEL}
+          />
+        </div>
+        {displayDetails && (
+          <MovieDetails
+            title={details.title}
+            image={details.image}
+            overview={details.overview}
+            date={details.date}
+          />
+        )}
+        <div className="movieList">
+          {movieList
+            .filter((el) =>
+              el.original_title.toLowerCase().includes(searchedEl.toLowerCase())
+            )
+            .sort(SORT_MAP[sortFunc])
+            .map((ele) => {
+              return (
+                <MovieCard
+                  title={ele.original_title}
+                  image={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`}
+                  date={ele.release_date}
+                  overview={ele.overview}
+                  handleClick={handleClick}
+                />
+              );
+            })}
+        </div>
       </div>
     </div>
   );

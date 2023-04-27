@@ -18,15 +18,18 @@ $backupTypo: "Cappung";
 }
 
 body {
-  // height: 100vh;
-  height: 100%;
-  background: rgb(51, 20, 62);
   background: linear-gradient(
     90deg,
     rgba(51, 20, 62, 1) 0%,
     rgba(155, 89, 182, 1) 50%,
     rgba(51, 20, 62, 1) 100%
   );
+}
+
+html,
+body,
+#root {
+  overflow: auto;
 }
 
 @font-face {
