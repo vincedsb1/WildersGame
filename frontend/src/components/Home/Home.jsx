@@ -25,7 +25,7 @@ function Home() {
               />
             </div>
           </div>
-          <div className="startButton">
+          <div className="startButtonDiv">
             <NavLink to="/gameMode">
               <StartButton />
             </NavLink>

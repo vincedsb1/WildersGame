@@ -3,18 +3,8 @@ import PropTypes from "prop-types";
 import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
-import Musique from "../Musique/Musique";
 
-function GamePage({
-  title,
-  date,
-  poster,
-  getMovie,
-  mode,
-  release,
-  setIsMuted,
-  isMuted,
-}) {
+function GamePage({ title, date, poster, getMovie, mode, release }) {
   const [resultat, setResultat] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
 
@@ -36,14 +26,11 @@ function GamePage({
     setTimeout(() => {
       generateNewQuestion(e);
       console.info("timeout");
-    }, 1500);
+    }, 800);
   };
 
   return (
     <div className="mainContainer">
-      <div className="Musique">
-        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
-      </div>
       <div className="GamePage">
         <div className="header">
           <div className="navScore">
@@ -79,14 +66,7 @@ GamePage.propTypes = {
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   mode: PropTypes.number.isRequired,
-  isMuted: PropTypes.bool.isRequired,
-  setIsMuted: PropTypes.func.isRequired,
-
-  release: PropTypes.string,
-};
-
-GamePage.defaultProps = {
-  release: "",
+  release: PropTypes.string.isRequired,
 };
 
 export default GamePage;

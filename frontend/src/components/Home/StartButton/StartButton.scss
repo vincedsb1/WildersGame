@@ -28,3 +28,13 @@
     height: 100px;
   }
 }
+
+@media screen and (max-height: 700px) {
+  .StartButton {
+    button {
+      font-size: 1.8em;
+      padding: 10px 30px;
+      height: inherit;
+    }
+  }
+}

@@ -1,13 +1,10 @@
 .Musique {
   position: absolute;
-  padding: 0, 5%;
   border: none;
-
   .but {
     background-color: transparent;
     border-radius: 0px;
     border: none;
-
     .MusicOn {
       padding: 0px;
       margin: 0px;
@@ -17,32 +14,16 @@
       background-size: 100%;
       background-color: transparent;
       transition: 0.15s;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      &:active {
-        transform: scale(1.15);
-      }
     }
-
     .MusicOff {
-      border: none;
-
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none;
       width: 40px;
       height: 45px;
       background-size: 100%;
       background-color: transparent;
       transition: 0.15s;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      &:active {
-        transform: scale(1.15);
-      }
     }
   }
 }
