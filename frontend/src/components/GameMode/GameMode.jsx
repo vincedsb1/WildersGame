@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
-// import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
@@ -17,9 +16,6 @@ function GameMode({ setMode, setPseudo }) {
   return (
     <div className="mainContainer">
       <div className="gameMode">
-        {/* <div className="Musique">
-          <Musique />
-        </div> */}
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
             <h1 className="h1GameMode" id="tilted">

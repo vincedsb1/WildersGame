@@ -1,70 +1,29 @@
-// .Musique {
-//   position: absolute;
-//   border-radius: 30px;
-
-//    .music{
-
-//    color: #552e61;
-//    font-size: 1.5rem;
-//    padding: 0 0 0 0;
-//    background: #552e61;
-//    height: 20px;
-//    width: 15vw;
-//    max-width: 300px;
-//    border-radius: 30px;
-//    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-//    padding-top:8px;
-//    padding-left: 10px;
-
-//     .progress-bar{
-//       width: 60%;
-//       height: 2px;
-//       background-color: white;
-//       cursor: pointer;
-//       border-radius: 50px;
-
-//       .current{
-//         background-color: yellow;
-//         height: 2px;
-//         width: 60%;
-//         border-radius: 50px;
-//         .current::before{
-
-//           content:"";
-//           width: 20px;
-//           height: 20px;
-//           border-radius: 50%;
-//           background-color: blue;
-//           position: absolute;
-//           top:-2px;
-//           right: -8px;
-//           box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
-
-//         }
-//       }
-//     }
-//    }
-//   }
-
-#player-container #play-pause {
-  cursor: pointer;
-  text-indent: -999999px;
-  height: 40px;
-  width: 40px;
-  padding: 12px 18px;
-  z-index: 2;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
-  background-repeat: no-repeat !important;
-  background-position: center;
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  background-color: gainsboro;
-}
-.play {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
-}
-.pause {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTAgMjRoLTZ2LTI0aDZ2MjR6bTEwLTI0aC02djI0aDZ2LTI0eiIvPjwvc3ZnPg==) !important;
+.Musique {
+  position: absolute;
+  border: none;
+  .but {
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    .MusicOn {
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none;
+      width: 40px;
+      height: 45px;
+      background-size: 100%;
+      background-color: transparent;
+      transition: 0.15s;
+    }
+    .MusicOff {
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none;
+      width: 40px;
+      height: 45px;
+      background-size: 100%;
+      background-color: transparent;
+      transition: 0.15s;
+    }
+  }
 }
