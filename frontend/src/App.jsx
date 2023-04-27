@@ -11,6 +11,7 @@ import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
   const [movie, setMovie] = useState({ title: "", overview: "" });
+  // const [selectedAvatar, setSelectedAvatar] = useState(null);
 
   function rdmNum(num) {
     return Math.floor(Math.random() * num) + 1;
@@ -40,6 +41,9 @@ function App() {
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState(
+    "/src/assets/GameMode/AvatarPlaceholder.svg"
+  );
 
   return (
     <Routes>
@@ -52,6 +56,8 @@ function App() {
             setPseudo={setPseudo}
             setIsMuted={setIsMuted}
             isMuted={isMuted}
+            setSelectedAvatar={setSelectedAvatar}
+            selectedAvatar={selectedAvatar}
           />
         }
       />
@@ -59,7 +65,10 @@ function App() {
         path="/countdown"
         element={<Countdown setIsMuted={setIsMuted} isMuted={isMuted} />}
       />
-      <Route path="/avatargallery" element={<AvatarGallery />} />
+      <Route
+        path="/avatargallery"
+        element={<AvatarGallery selectedAvatar={selectedAvatar} />}
+      />
       <Route
         path="/game"
         element={
@@ -77,7 +86,12 @@ function App() {
           />
         }
       />
-      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
+      <Route
+        path="/leaderBoard"
+        element={
+          <LeaderBoard pseudo={pseudo} selectedAvatar={selectedAvatar} />
+        }
+      />
     </Routes>
   );
 }

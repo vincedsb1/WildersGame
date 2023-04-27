@@ -81,7 +81,6 @@ GamePage.propTypes = {
   mode: PropTypes.number.isRequired,
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
-
   release: PropTypes.string,
 };
 
