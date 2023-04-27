@@ -15,7 +15,7 @@ function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
     <div className="mainContainer">
       <div className="leaderBoard">
         <div className="resultContainer">
-          <Results pseudo={pseudo} selectedAvatar={selectedAvatar} />
+          <Results pseudo={pseudo} selectedAvatar={selectedAvatar || "/src/assets/GameMode/Avatars/avatar-11.svg"} />
           <div className="endButons">
             <Link to="/game">
               <Restart />
