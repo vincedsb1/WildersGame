@@ -3,16 +3,52 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
+import Period from "./Period/Period";
+import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-function GameMode({ setMode, setPseudo }) {
+
+function GameMode({
+  setMode,
+  setPseudo,
+  setIsMuted,
+  isMuted,
+  setRequest,
+  request,
+  setSelectedAvatar,
+  selectedAvatar,
+}) {
+
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState("");
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const [genreClass, setGenreClass] = useState("genreContainer");
+  const [levelClass, setLevelClass] = useState("levelContainerHidden");
+  const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
+  const [perClass, setPerClass] = useState("periodContainerHidden");
+
+  const handleClickGenreClass = () => {
+    setGenreClass("genreContainerHidden");
+    setDiffClass("difficultyContainer");
+  };
+
+  const handleClickDiffClass = () => {
+    setLevelClass("levelContainerHidden");
+    setDiffClass("difficultyContainer");
+    setPerClass("periodContainerHidden");
+  };
+
+  const handleClickPerClass = () => {
+    setLevelClass("levelContainerHidden");
+    setPerClass("periodContainer");
+    setDiffClass("difficultyContainerHidden");
+  };
+
+
   return (
     <div className="mainContainer">
       <div className="gameMode">
@@ -47,15 +83,32 @@ function GameMode({ setMode, setPseudo }) {
                 alt="AvatarPlaceholder"
               />
             )}
-            {isOpen && <AvatarGallery setSelectedAvatar={setSelectedAvatar} />}
+            {isOpen && (
+              <AvatarGallery
+                setSelectedAvatar={setSelectedAvatar}
+                selectedAvatar={selectedAvatar}
+              />
+            )}
           </div>
           <div className="pseudo">
             <Pseudo setPseudo={setPseudo} />
           </div>
         </div>
-        <div className="difficultyContainer">
+        <div className={genreClass}>
+          <Genre
+            setRequest={setRequest}
+            request={request}
+            handleClickGenreClass={handleClickGenreClass}
+          />
+        </div>
+        <div className={diffClass}>
           <Link to="/countdown">
             <Difficulty setMode={setMode} />
+          </Link>
+        </div>
+        <div className={perClass}>
+          <Link to="/countdown">
+            <Period setRequest={setRequest} request={request} />
           </Link>
         </div>
       </div>
@@ -66,6 +119,14 @@ function GameMode({ setMode, setPseudo }) {
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
+
+  setRequest: PropTypes.func.isRequired,
+  request: PropTypes.string.isRequired,
+  selectedAvatar: PropTypes.string.isRequired,
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
+  setSelectedAvatar: PropTypes.func.isRequired,
+
 };
 
 export default GameMode;

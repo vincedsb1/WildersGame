@@ -64,7 +64,11 @@ const avatarImages = [
   avatar30,
 ];
 
-function AvatarGallery({ setSelectedAvatar: handleSelectedAvatar, setIsOpen }) {
+function AvatarGallery({
+  setSelectedAvatar: handleSelectedAvatar,
+  setIsOpen,
+  // selectedAvatar,
+}) {
   const ref = useRef(null);
   const [selectedAvatarState, setSelectedAvatar] = useState(null);
   useEffect(() => {
@@ -130,6 +134,7 @@ function AvatarGallery({ setSelectedAvatar: handleSelectedAvatar, setIsOpen }) {
 AvatarGallery.propTypes = {
   setSelectedAvatar: PropTypes.func,
   setIsOpen: PropTypes.func,
+  // selectedAvatar: PropTypes.string,
 };
 
 AvatarGallery.defaultProps = {

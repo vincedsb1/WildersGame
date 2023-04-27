@@ -18,15 +18,18 @@ $backupTypo: "Cappung";
 }
 
 body {
-  // height: 100vh;
-  height: 100%;
-  background: rgb(51, 20, 62);
   background: linear-gradient(
     90deg,
     rgba(51, 20, 62, 1) 0%,
     rgba(155, 89, 182, 1) 50%,
     rgba(51, 20, 62, 1) 100%
   );
+}
+
+html,
+body,
+#root {
+  overflow: auto;
 }
 
 @font-face {
@@ -58,4 +61,9 @@ body {
 @import "./components/GamePage/BlocDeReponse/BlocDeReponse.scss";
 @import "./components/GameMode/Avatar/Avatar.scss";
 @import "./components/Musique/Musique.scss";
+
+@import "./components/Discover/Discover.scss";
+@import "./components/Discover/MovieCard/MovieCard.scss";
+@import "./components/Discover/FilterButton/FilterButton.scss";
+@import "./components/Discover/Searchbar/SearchElements.scss";
 
