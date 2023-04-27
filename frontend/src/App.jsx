@@ -109,10 +109,6 @@ function App() {
           />
         }
       />
-
-      <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
-      
-
       <Route
         path="/leaderBoard"
         element={
