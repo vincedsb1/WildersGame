@@ -1,0 +1,43 @@
+.filters {
+  .SearchBar {
+    position: relative;
+
+    .magnifyingGlass {
+      height: 60px;
+      width: 60px;
+      z-index: 2;
+      background-image: url("https://www.shareicon.net/data/512x512/2016/01/07/699394_magnifying-glass_512x512.png");
+      background-size: 35px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $buttonBackColor;
+      border: 8px solid $buttonColor;
+      border-radius: 20px;
+    }
+  }
+  input {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 5%;
+    height: 60px;
+    background-color: $buttonBackColor;
+    border: 8px solid $buttonColor;
+    border-radius: 20px;
+    animation: displaySearch 1s;
+  }
+
+  #clickedInput {
+    display: block;
+    width: 80%;
+  }
+
+  @keyframes displaySearch {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+}

@@ -3,8 +3,11 @@ import axios from "axios";
 import MovieCard from "./MovieCard/MovieCard";
 import FilterButton from "./FilterButton/FilterButton";
 import MovieDetails from "./MovieDetails/MovieDetails";
+import SearchInput from "./Searchbar/SearchInput";
+import SearchButton from "./Searchbar/SearchButton";
 
 function Discover() {
+  const [searchIsClicked, setSearchIsClicked] = useState(false);
   const [movieList, setMovieList] = useState([]);
   const [displayDetails, setDisplayDetails] = useState(false);
   const [details, setDetails] = useState({
@@ -65,6 +68,11 @@ function Discover() {
         {SORT_NAMES.map((el) => (
           <FilterButton key={el} name={el} setsortFunc={setsortFunc} />
         ))}
+        <SearchButton
+          setSearchIsClicked={setSearchIsClicked}
+          searchIsClicked={searchIsClicked}
+        />
+        <SearchInput searchIsClicked={searchIsClicked} />
       </div>
       {displayDetails && (
         <MovieDetails
