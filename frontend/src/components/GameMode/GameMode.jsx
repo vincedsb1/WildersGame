@@ -8,6 +8,7 @@ import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
+
 function GameMode({
   setMode,
   setPseudo,
@@ -18,6 +19,7 @@ function GameMode({
   setSelectedAvatar,
   selectedAvatar,
 }) {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -117,12 +119,14 @@ function GameMode({
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
+
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
   selectedAvatar: PropTypes.string.isRequired,
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
   setSelectedAvatar: PropTypes.func.isRequired,
+
 };
 
 export default GameMode;
