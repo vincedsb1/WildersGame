@@ -1,29 +1,59 @@
 .Musique {
   position: absolute;
   border: none;
+  padding: 1%;
+
   .but {
     background-color: transparent;
     border-radius: 0px;
     border: none;
+    padding-left: 10px;
+
     .MusicOn {
       padding: 0px;
       margin: 0px;
       box-shadow: none;
-      width: 40px;
-      height: 45px;
+      width: 30px;
+      height: 35px;
       background-size: 100%;
       background-color: transparent;
       transition: 0.15s;
     }
+
     .MusicOff {
       padding: 0px;
       margin: 0px;
       box-shadow: none;
-      width: 40px;
-      height: 45px;
+      width: 30px;
+      height: 35px;
       background-size: 100%;
       background-color: transparent;
       transition: 0.15s;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
+    }
+  }
+
+  input {
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: #eadaf4;
+    margin-bottom: 6px;
+    padding: 0px;
+    height: 6%;
+    width: 30%;
+    border-radius: 50px;
+    border: 4px solid $buttonColor;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(1.15);
     }
   }
 }

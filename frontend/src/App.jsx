@@ -44,11 +44,17 @@ function App() {
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(true);
+  const [volume, setVolume] = useState(0);
 
   return (
     <>
       <div className="Musique">
-        <Musique isMuted={isMuted} setIsMuted={setIsMuted} />
+        <Musique
+          isMuted={isMuted}
+          setIsMuted={setIsMuted}
+          volume={volume}
+          setVolume={setVolume}
+        />
       </div>
       <Routes>
         <Route path="/" element={<Home />} className="App" />
