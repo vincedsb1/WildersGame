@@ -8,7 +8,7 @@ function Discover() {
   const [movieList, setMovieList] = useState([]);
   const [displayDetails, setDisplayDetails] = useState(false);
   const [details, setDetails] = useState({
-    title: "pouetpouet",
+    title: "",
     image: "",
     overview: "",
     date: 0,
@@ -24,14 +24,16 @@ function Discover() {
   const [sortFunc, setsortFunc] = useState("Populars");
 
   const getMovieList = () => {
-    for (let i = 1; i < 3; i += 1) {
+    const tempArr = [];
+    for (let i = 1; i < 6; i += 1) {
       axios
         .get(
           `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&with_original_language=en&sort_by=vote_count.desc&include_adult=false&language=fr&page=${i}&adult=false`
         )
-        .then((response) =>
-          setMovieList((arr) => [...arr, ...response.data.results])
-        )
+        .then((response) => {
+          tempArr.push(...response.data.results);
+          setMovieList(tempArr);
+        })
         .catch((err) => {
           console.warn(err.message);
         });
