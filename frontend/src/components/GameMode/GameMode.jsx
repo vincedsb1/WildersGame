@@ -31,7 +31,7 @@ function GameMode({
 
   const handleClickGenreClass = () => {
     setGenreClass("genreContainerHidden");
-    setLevelClass("levelContainer");
+    setDiffClass("difficultyContainer");
   };
 
   const handleClickDiffClass = () => {
@@ -95,22 +95,6 @@ function GameMode({
             request={request}
             handleClickGenreClass={handleClickGenreClass}
           />
-        </div>
-        <div className={levelClass}>
-          <button
-            type="button"
-            id="level"
-            onClick={() => handleClickDiffClass()}
-          >
-            Difficulty
-          </button>
-          <button
-            type="button"
-            id="level"
-            onClick={() => handleClickPerClass()}
-          >
-            Period
-          </button>
         </div>
         <div className={diffClass}>
           <Link to="/countdown">
