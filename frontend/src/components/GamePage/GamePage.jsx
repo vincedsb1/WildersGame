@@ -66,7 +66,13 @@ GamePage.propTypes = {
   date: PropTypes.number.isRequired,
   poster: PropTypes.string.isRequired,
   mode: PropTypes.number.isRequired,
-  release: PropTypes.string.isRequired,
+  isMuted: PropTypes.bool.isRequired,
+  setIsMuted: PropTypes.func.isRequired,
+  release: PropTypes.string,
+};
+
+GamePage.defaultProps = {
+  release: "",
 };
 
 export default GamePage;
