@@ -43,7 +43,7 @@
     input {
       color: #552e61;
       font-size: 1.5rem;
-      padding: 0 0 0 0;
+      padding: 6px;
       background: white;
       height: 70px;
       width: 50vw;
@@ -121,9 +121,9 @@
     font-size: 1.5em;
     border-radius: 30px;
     border: 8px solid $buttonColor;
-    width: 20vw;
+    width: 50vw;
     max-width: 300px;
-    height: 50px;
+    height: 80px;
     margin-top: 1vh;
     transition: 0.15s;
 
@@ -141,9 +141,10 @@
 
   .levelContainer {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 40%;
+    padding: 0 0 2% 0;
   }
 
   #level {
@@ -153,9 +154,9 @@
     font-size: 1.5em;
     border-radius: 30px;
     border: 8px solid $buttonColor;
-    width: 20vw;
+    width: 50vw;
     max-width: 300px;
-    height: 50px;
+    height: 80px;
     margin-top: 1vh;
     transition: 0.15s;
 
@@ -172,6 +173,9 @@
   }
 
   .periodContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40%;
     padding: 0 0 2% 0;
   }
@@ -191,9 +195,9 @@
     font-size: 1.5em;
     border-radius: 30px;
     border: 8px solid $buttonColor;
-    width: 20vw;
+    width: 50vw;
     max-width: 300px;
-    height: 50px;
+    height: 80px;
     margin-top: 1vh;
     transition: 0.15s;
 
@@ -210,13 +214,17 @@
   }
 
   .difficultyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40%;
     padding: 0 0 2% 0;
   }
 
   .difficulty {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
@@ -230,7 +238,7 @@
     border: 8px solid $buttonColor;
     width: 50vw;
     max-width: 300px;
-    height: 70px;
+    height: 80px;
     margin-top: 1vh;
     transition: 0.15s;
 
@@ -260,11 +268,53 @@
     .pseudo p {
       font-size: 1.3em;
     }
-    .difficultyContainer {
+    .difficultyContainer,
+    .genreContainer,
+    .levelContainer,
+    .periodContainer {
       height: 30%;
     }
-    #difficulty {
+    #difficulty,
+    #genre,
+    #level,
+    #period {
       height: 50px;
+      border: 6px solid $buttonColor;
+      font-size: 0.7em;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .gameMode {
+    padding-top: 15%;
+    .avatarPseudo {
+      height: 35%;
+
+      input {
+        height: 50px;
+      }
+    }
+    .avatarButton {
+      width: 90px;
+      height: 90px;
+    }
+    .pseudo p {
+      font-size: 1.3em;
+    }
+    .difficultyContainer,
+    .genreContainer,
+    .levelContainer,
+    .periodContainer {
+      height: 30%;
+    }
+    #difficulty,
+    #genre,
+    #level,
+    #period {
+      height: 50px;
+      border: 6px solid $buttonColor;
+      font-size: 0.7em;
     }
   }
 }

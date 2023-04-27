@@ -8,10 +8,10 @@ function Period({ setRequest, request }) {
 
   const periods = [
     {
-      name: "None 🍄",
-      link: "&primary_release_date.gte=1980-01-01",
-      min: 1900,
-      max: 2023,
+      name: "1970's 🕸️",
+      link: "&primary_release_date.gte=1970-01-01&primary_release_date.lte=1979-12-31",
+      min: 1970,
+      max: 1979,
     },
     {
       name: "1980's 🕺",
@@ -49,6 +49,7 @@ function Period({ setRequest, request }) {
     <div className="period">
       {periods.map((period) => (
         <button
+          key={period.name}
           type="button"
           id="period"
           onClick={() => handlePeriod(period.link)}
