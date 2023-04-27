@@ -9,6 +9,7 @@ import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
 import Musique from "./components/Musique/Musique";
 
+
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
@@ -44,12 +45,14 @@ function App() {
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(true);
+  
 
   return (
     <>
       <div className="Musique">
         <Musique isMuted={isMuted} setIsMuted={setIsMuted} />
       </div>
+
       <Routes>
         <Route path="/" element={<Home />} className="App" />
         <Route
@@ -61,6 +64,8 @@ function App() {
         <Route
           path="/game"
           element={
+
+
             <GamePage
               title={movie.title}
               // overwiew={overview}
@@ -71,10 +76,13 @@ function App() {
               getMovie={getMovie}
               mode={mode}
             />
+
+
           }
         />
         <Route path="/leaderBoard" element={<LeaderBoard pseudo={pseudo} />} />
       </Routes>
+
     </>
   );
 }

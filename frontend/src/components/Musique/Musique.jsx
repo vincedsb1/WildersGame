@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import musicFile from "./music1.mp3";
 
 function Musique({ isMuted, setIsMuted }) {
-  const handleClickMusicOn = () => {
+  const handleMusicOn = () => {
     setIsMuted((current) => !current);
   };
 
@@ -15,7 +15,7 @@ function Musique({ isMuted, setIsMuted }) {
         type="button"
         id="Musique"
         className="but"
-        onClick={handleClickMusicOn}
+        onClick={handleMusicOn}
         aria-label="Save"
       >
         {isMuted ? (

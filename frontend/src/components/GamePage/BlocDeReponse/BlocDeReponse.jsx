@@ -47,6 +47,7 @@ function BlocDeReponse({
               disableButton={disableButton}
               bonneReponse={bonneReponse}
               release={release}
+              id = {ele}
             />
           );
         })}
