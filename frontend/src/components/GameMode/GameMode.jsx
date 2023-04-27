@@ -5,7 +5,6 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Period from "./Period/Period";
 import Genre from "./Genre/Genre";
-import Musique from "../Musique/Musique";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
@@ -16,9 +15,10 @@ function GameMode({
   isMuted,
   setRequest,
   request,
+  setSelectedAvatar,
+  selectedAvatar,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState("");
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -46,11 +46,9 @@ function GameMode({
     setDiffClass("difficultyContainerHidden");
   };
 
+
   return (
     <div className="mainContainer">
-      <div className="Musique">
-        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
-      </div>
       <div className="gameMode">
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
@@ -83,7 +81,12 @@ function GameMode({
                 alt="AvatarPlaceholder"
               />
             )}
-            {isOpen && <AvatarGallery setSelectedAvatar={setSelectedAvatar} />}
+            {isOpen && (
+              <AvatarGallery
+                setSelectedAvatar={setSelectedAvatar}
+                selectedAvatar={selectedAvatar}
+              />
+            )}
           </div>
           <div className="pseudo">
             <Pseudo setPseudo={setPseudo} />
@@ -116,8 +119,10 @@ GameMode.propTypes = {
   setPseudo: PropTypes.func.isRequired,
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
+  selectedAvatar: PropTypes.string.isRequired,
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
+  setSelectedAvatar: PropTypes.func.isRequired,
 };
 
 export default GameMode;

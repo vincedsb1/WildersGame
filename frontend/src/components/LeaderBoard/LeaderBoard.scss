@@ -1,20 +1,22 @@
 .leaderBoard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // justify-content:flex-start;
+  // align-items: center;
   font-family: $mainTypo;
   height: 100%;
   width: 100%;
+  // background-color: lightblue;
 }
 
 .resultContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100%;
+  // background-color: lightcoral;
 }
 
 .resultsCongratsCupScores {
@@ -22,12 +24,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 30px;
-  border: 8px solid $buttonColor;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom: 8px solid $buttonColor;
   width: 80%;
+  // background-color:lightgreen;
   background-color: $buttonBackColor;
-  height: 80%;
-  margin: 5% 0 0 0;
+  height: 100%;
+  margin: 0 0 0 0;
 }
 
 .congratulation {
@@ -47,11 +51,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  // background-color: lightgray;
 }
 .cupImage img {
   max-height: 200px;
   height: 80%;
+  animation: wiggle 2s linear infinite;
 }
 
 .results {
@@ -64,6 +68,17 @@
   width: 100%;
   margin-top: 2%;
   font-size: 1.1em;
+  // background-color: forestgreen;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  // padding: 3% 0 2% 0;
+  // background-color: rgb(18, 1, 255);
 }
 
 .result:first-child {
@@ -77,25 +92,43 @@
   font-size: 1.3em;
 }
 
-.result {
+.resultAvatarNameTime {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
-  width: 90%;
-  padding: 3% 0 2% 0;
-  // background-color: lightgreen;
+  // background-color: red;
+  width: 80%;
 }
 
-// #top1Result {
-//   color: $greenColor;
-//   // background-color: lightcyan;
-//   font-size: 1.4em;
-// }
+.resultAvatar {
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  margin: 0% 0 0% 0;
+  transition: 0.2s;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin: 1%;
+}
 
-// #top1Time {
-//   width: 100%;
-// }
+.resultNameTime {
+  display: flex;
+  flex-direction: column;
+  // justify-content:center;
+  // align-items: center;
+  // background-color: blue;
+  margin: 2%;
+}
+
+.resultName {
+  // background-color: orange;
+}
+
+.resultTime {
+  // background-color: grey;
+}
 
 .resultTime {
   opacity: 0.65;
@@ -113,7 +146,6 @@
   gap: 100px;
   height: 20%;
   align-items: center;
-  // background-color: lightpink;
 }
 
 #restart {
@@ -153,20 +185,6 @@
     font-size: 1em;
   }
 
-  // #top1NameTime {
-  //   width: 70%;
-  //   // background-color: lightgray;
-  // }
-
-  // #top1Time {
-  //   font-size: 0.9em;
-  //   // background-color: red;
-  // }
-
-  // #top1Points {
-  //   font-size: 1.2em;
-  // }
-
   .result {
     font-size: 1em;
   }
@@ -183,7 +201,7 @@
 
   .resultsCongratsCupScores {
     width: 100%;
-    margin: 15% 0 0 0;
+    margin: 0% 0 0 0;
   }
 }
 
@@ -194,6 +212,7 @@
 
   .result {
     font-size: 1em;
+    // background-color: lightgrey;
   }
 
   .endButons {
@@ -209,9 +228,6 @@
   .cupImage img {
     max-height: 100px;
   }
-}
-
-@media screen and (max-height: 700px) {
   .result:first-child {
     color: $greenColor;
     font-size: 1.2em;
@@ -229,5 +245,25 @@
 
   .result {
     padding: 2% 0 2% 0;
+  }
+
+  .resultAvatar {
+    width: 40px;
+    height: 40px;
+    margin: 1%;
+  }
+}
+@media screen and (max-height: 600px) {
+  .result {
+    padding: 0.5% 0 0.5% 0;
+  }
+
+  .resultAvatar {
+    width: 40px;
+    height: 40px;
+    margin: 0.5%;
+  }
+  .congratulation h1 {
+    margin: 1% 0 0 0;
   }
 }

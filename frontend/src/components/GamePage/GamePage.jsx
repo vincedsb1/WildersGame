@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Score from "./Header/Score";
 import Timer from "./Header/Timer";
 import BlocDeReponse from "./BlocDeReponse/BlocDeReponse";
-import Musique from "../Musique/Musique";
 
 function GamePage({
   title,
@@ -12,8 +11,6 @@ function GamePage({
   getMovie,
   mode,
   release,
-  setIsMuted,
-  isMuted,
   request,
 }) {
   const [resultat, setResultat] = useState(0);
@@ -38,14 +35,11 @@ function GamePage({
     setTimeout(() => {
       generateNewQuestion(e);
       console.info("timeout");
-    }, 1500);
+    }, 800);
   };
 
   return (
     <div className="mainContainer">
-      <div className="Musique">
-        <Musique setIsMuted={setIsMuted} isMuted={isMuted} />
-      </div>
       <div className="GamePage">
         <div className="header">
           <div className="navScore">

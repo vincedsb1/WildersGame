@@ -7,10 +7,13 @@ import GamePage from "./components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
 import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
+import Musique from "./components/Musique/Musique";
+
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
   const [movie, setMovie] = useState({ title: "", overview: "" });
+  // const [selectedAvatar, setSelectedAvatar] = useState(null);
 
   const [request, setRequest] = useState(
     `https://api.themoviedb.org/3/discover/movie?api_key=f3754ed904627a678defd47c619260ea&sort_by=vote_count.desc&include_adult=false&language=fr&adult=false`
@@ -50,6 +53,9 @@ function App() {
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState(
+    "/src/assets/GameMode/AvatarPlaceholder.svg"
+  );
 
   console.info(go);
   // ne pas supprimer //
@@ -67,6 +73,8 @@ function App() {
             isMuted={isMuted}
             setRequest={setRequest}
             request={request}
+            setSelectedAvatar={setSelectedAvatar}
+            selectedAvatar={selectedAvatar}
           />
         }
       />
@@ -76,7 +84,10 @@ function App() {
           <Countdown setIsMuted={setIsMuted} isMuted={isMuted} setGo={setGo} />
         }
       />
-      <Route path="/avatargallery" element={<AvatarGallery />} />
+      <Route
+        path="/avatargallery"
+        element={<AvatarGallery selectedAvatar={selectedAvatar} />}
+      />
       <Route
         path="/game"
         element={
@@ -97,7 +108,9 @@ function App() {
       />
       <Route
         path="/leaderBoard"
-        element={<LeaderBoard pseudo={pseudo} clearState={clearState} />}
+        element={
+          <LeaderBoard pseudo={pseudo} selectedAvatar={selectedAvatar} clearState={clearState}/>
+        }
       />
     </Routes>
   );
