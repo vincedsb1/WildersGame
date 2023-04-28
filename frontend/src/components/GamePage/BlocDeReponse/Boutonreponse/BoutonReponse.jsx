@@ -10,8 +10,6 @@ function BoutonReponse({
 }) {
   const [classe, setClasse] = useState("Reponse-container");
 
-
-
   const handleClicked = (e) => {
     handleClick(e);
     setTimeout(() => {

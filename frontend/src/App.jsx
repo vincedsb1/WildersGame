@@ -8,8 +8,6 @@ import GamePage from "./components/GamePage/GamePage";
 import Countdown from "./components/Countdown/Countdown";
 import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
-import Musique from "./components/Musique/Musique";
-
 
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
@@ -112,12 +110,15 @@ function App() {
       <Route
         path="/leaderBoard"
         element={
-          <LeaderBoard pseudo={pseudo} selectedAvatar={selectedAvatar} clearState={clearState}/>
+          <LeaderBoard
+            pseudo={pseudo}
+            selectedAvatar={selectedAvatar}
+            clearState={clearState}
+          />
         }
       />
-<Route path="/discover" element={<Discover />} className="App" />
+      <Route path="/discover" element={<Discover />} className="App" />
     </Routes>
-
   );
 }
 

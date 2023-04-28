@@ -8,18 +8,14 @@ import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
-
 function GameMode({
   setMode,
   setPseudo,
-  setIsMuted,
-  isMuted,
   setRequest,
   request,
   setSelectedAvatar,
   selectedAvatar,
 }) {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -27,27 +23,26 @@ function GameMode({
   };
 
   const [genreClass, setGenreClass] = useState("genreContainer");
-  const [levelClass, setLevelClass] = useState("levelContainerHidden");
+  // const [levelClass, setLevelClass] = useState("levelContainerHidden");
   const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
-  const [perClass, setPerClass] = useState("periodContainerHidden");
+  // const [perClass, setPerClass] = useState("periodContainerHidden");
 
   const handleClickGenreClass = () => {
     setGenreClass("genreContainerHidden");
     setDiffClass("difficultyContainer");
   };
 
-  const handleClickDiffClass = () => {
-    setLevelClass("levelContainerHidden");
-    setDiffClass("difficultyContainer");
-    setPerClass("periodContainerHidden");
-  };
+  // const handleClickDiffClass = () => {
+  //   setLevelClass("levelContainerHidden");
+  //   setDiffClass("difficultyContainer");
+  //   setPerClass("periodContainerHidden");
+  // };
 
-  const handleClickPerClass = () => {
-    setLevelClass("levelContainerHidden");
-    setPerClass("periodContainer");
-    setDiffClass("difficultyContainerHidden");
-  };
-
+  // const handleClickPerClass = () => {
+  //   setLevelClass("levelContainerHidden");
+  //   setPerClass("periodContainer");
+  //   setDiffClass("difficultyContainerHidden");
+  // };
 
   return (
     <div className="mainContainer">
@@ -106,7 +101,7 @@ function GameMode({
             <Difficulty setMode={setMode} />
           </Link>
         </div>
-        <div className={perClass}>
+        <div className="periodContainerHidden">
           <Link to="/countdown">
             <Period setRequest={setRequest} request={request} />
           </Link>
@@ -123,10 +118,7 @@ GameMode.propTypes = {
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
   selectedAvatar: PropTypes.string.isRequired,
-  isMuted: PropTypes.bool.isRequired,
-  setIsMuted: PropTypes.func.isRequired,
   setSelectedAvatar: PropTypes.func.isRequired,
-
 };
 
 export default GameMode;
