@@ -92,6 +92,7 @@
     align-items: center;
     justify-content: center;
     padding: 3% 0 0 0;
+    margin: 2% 0 0 0 ;
   }
 
   .genreContainerHidden {
@@ -112,6 +113,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-top: 10%;
+    width: 50%;
   }
 
   #genre {
@@ -120,11 +123,11 @@
     font-weight: 200;
     font-size: 1.5em;
     border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
+    border-bottom: 8px solid $buttonColor;
+    width: 100px;
     max-width: 300px;
     height: 80px;
-    margin-top: 1vh;
+    margin: 1%;
     transition: 0.15s;
 
     &:hover {
@@ -227,6 +230,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
   }
 
   #difficulty {
@@ -235,11 +239,11 @@
     font-weight: 200;
     font-size: 1.5em;
     border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
+    border-bottom: 8px solid $buttonColor;
+    width: 200px;
     max-width: 300px;
     height: 80px;
-    margin-top: 1vh;
+    margin: 1%;
     transition: 0.15s;
 
     &:hover {
@@ -278,8 +282,8 @@
     #level,
     #period {
       height: 50px;
-      border: 6px solid $buttonColor;
-      font-size: 0.7em;
+      border-bottom: 6px solid $buttonColor;
+      font-size: 1em;
     }
   }
 }
@@ -312,8 +316,12 @@
     #level,
     #period {
       height: 50px;
-      border: 6px solid $buttonColor;
-      font-size: 0.7em;
+      border-bottom: 6px solid $buttonColor;
+      font-size: 1em;
+      margin: 2%;
+    }
+    .genre {
+      width: 70%;
     }
   }
 }
