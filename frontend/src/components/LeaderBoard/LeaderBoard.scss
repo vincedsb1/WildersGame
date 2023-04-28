@@ -55,7 +55,7 @@
 .cupImage img {
   max-height: 200px;
   height: 80%;
-  animation: wiggle 3s;
+  animation: wiggle 1.5s;
 }
 
 .results {
@@ -152,7 +152,7 @@
   font-size: 1.5em;
   width: 150px;
   background-color: $buttonBackColor;
-  border: 8px solid $buttonColor;
+  border-bottom: 8px solid $buttonColor;
   border-radius: 20px;
   padding: 1%;
   color: #552e61;
