@@ -105,7 +105,7 @@ function Results({ pseudo, selectedAvatar }) {
       </div>
       {results[0].name === pseudo && (
         <Confetti
-          numberOfPieces={2000}
+          numberOfPieces={500}
           recycle={false}
           tweenDuration={10000}
           initialVelocityY={16}
