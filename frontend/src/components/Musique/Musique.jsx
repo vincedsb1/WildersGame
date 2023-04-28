@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 import musicFile from "./music1.mp3";
 
-
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
 
-  const handleClickMusicOn = () => {
+  const handleMusicOn = () => {
     setIsMuted(!isMuted);
   };
 
@@ -18,7 +17,6 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
     if (audioRef.current) {
       audioRef.current.volume = volume;
     }
-
   };
 
   return (
@@ -74,7 +72,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 Musique.propTypes = {
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
-  volume: PropTypes.number.isRequired,
+  volume: PropTypes.string.isRequired,
   setVolume: PropTypes.func.isRequired,
 };
 
