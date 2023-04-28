@@ -21,51 +21,44 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 
   return (
     <div>
-      {/* <input id="seekslider" type="range" min="0" max="100" value="0" step="1" /> */}
       <br />
-      <input
-        id="volumeslider"
-        type="range"
-        min="0"
-        max="1"
-        value={volume}
-        onChange={handleChangeVolume}
-        step="0.01"
-      />
 
-      <audio
-        ref={audioRef}
-        id="where"
-        src={musicFile}
-        loop
-        autoPlay
-        onTimeUpdate={handleUpdateVolume}
-        muted={isMuted}
-      >
-        <track kind="captions" />
-      </audio>
+      <div className="audioBlock">
+        <input
+          className={isMuted && "hidden"}
+          id="volumeslider"
+          type="range"
+          min="0"
+          max="1"
+          value={volume}
+          onChange={handleChangeVolume}
+          step="0.01"
+        />
 
-      <button
-        type="button"
-        id="Musique"
-        className="but"
-        onClick={handleMusicOn}
-        aria-label="Save"
-      >
-        {isMuted ? (
-          <img
-            src="../src/assets/Musique/SonOffImg.svg"
-            className="MusicOff"
-            alt="musicOff"
-          />
-        ) : (
-          <img
-            src="../src/assets/Musique/SonOnImg.svg"
-            className="MusicOn"
-            alt="musicOn"
-          />
-        )}
-      </button>
+        <img
+          src={
+            isMuted
+              ? "../src/assets/Musique/SonOffImg.svg"
+              : "../src/assets/Musique/SonOnImg.svg"
+          }
+          className={isMuted ? "MusicOff" : "MusicOn"}
+          alt={isMuted ? "musicOff" : "musicOn"}
+          onClick={handleMusicOn}
+          // onKeyDown={handleMusicOn}
+          role="presentation"
+        />
+        <audio
+          ref={audioRef}
+          id="where"
+          src={musicFile}
+          loop
+          autoPlay
+          onTimeUpdate={handleUpdateVolume}
+          muted={isMuted}
+        >
+          <track kind="captions" />
+        </audio>
+      </div>
     </div>
   );
 }
