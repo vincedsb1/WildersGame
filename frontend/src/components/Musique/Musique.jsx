@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 import musicFile from "./music1.mp3";
 
+
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
 
@@ -17,6 +18,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
     if (audioRef.current) {
       audioRef.current.volume = volume;
     }
+
   };
 
   return (
@@ -49,7 +51,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         type="button"
         id="Musique"
         className="but"
-        onClick={handleClickMusicOn}
+        onClick={handleMusicOn}
         aria-label="Save"
       >
         {isMuted ? (

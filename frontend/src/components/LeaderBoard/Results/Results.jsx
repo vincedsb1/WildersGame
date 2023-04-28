@@ -3,7 +3,9 @@ import { useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
-function Results({ pseudo }) {
+function Results({ pseudo, selectedAvatar }) {
+  console.info(`Selected Avatar ${selectedAvatar}`);
+
   let results = JSON.parse(localStorage.getItem("storedResults"));
   if (!results) {
     results = [
@@ -12,24 +14,28 @@ function Results({ pseudo }) {
         time: "15:26",
         name: "Lucas",
         points: 2,
+        avatar: "/src/assets/GameMode/Avatars/avatar-01.svg",
       },
       {
         date: "02/04/2023",
         time: "13:27",
         name: "Jeremy",
         points: 1,
+        avatar: "/src/assets/GameMode/Avatars/avatar-03.svg",
       },
       {
         date: "03/03/2023",
         time: "09:57",
         name: "Antonin",
         points: 1,
+        avatar: "/src/assets/GameMode/Avatars/avatar-15.svg",
       },
       {
         date: "01/04/2023",
         time: "11:54",
         name: "Marah",
         points: 0,
+        avatar: "/src/assets/GameMode/Avatars/avatar-11.svg",
       },
     ];
   }
@@ -39,6 +45,7 @@ function Results({ pseudo }) {
     time: new Date().toLocaleTimeString().replace(/(.*)\D\d+/, "$1"),
     name: pseudo,
     points: useLocation().state.resultat,
+    avatar: selectedAvatar,
   };
 
   results.push(actualScore);
@@ -78,10 +85,15 @@ function Results({ pseudo }) {
         {storedResults.slice(0, 4).map((el) => {
           return (
             <div className="result">
-              <div className="resultNameTime">
-                <div className="resultName">{el.name}</div>
-                <div className="resultTime">
-                  {el.date}&ensp;{el.time}
+              <div className="resultAvatarNameTime">
+                <div className="resultAvatar">
+                  <img className="resultAvatarImg" src={el.avatar} alt="" />
+                </div>
+                <div className="resultNameTime">
+                  <div className="resultName">{el.name}</div>
+                  <div className="resultTime">
+                    {el.date}&ensp;{el.time}
+                  </div>
                 </div>
               </div>
               <div className="resultPoints">
@@ -106,6 +118,7 @@ function Results({ pseudo }) {
 
 Results.propTypes = {
   pseudo: PropTypes.string.isRequired,
+  selectedAvatar: PropTypes.string.isRequired,
 };
 
 export default Results;
