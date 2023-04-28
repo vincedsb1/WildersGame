@@ -15,14 +15,18 @@ $backupTypo: "Cappung";
   font-size: 100%;
   font: inherit;
   box-sizing: border-box;
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
-*::-webkit-scrollbar:horizontal {
+::-webkit-scrollbar:horizontal {
   display: none;
 }
 
-*::-webkit-scrollbar:vertical {
+::-webkit-scrollbar:vertical {
   display: none;
+}
 }
 
 body {
