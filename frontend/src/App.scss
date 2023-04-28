@@ -17,6 +17,14 @@ $backupTypo: "Cappung";
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+*::-webkit-scrollbar:vertical {
+  display: none;
+}
+
 body {
   background: linear-gradient(
     90deg,

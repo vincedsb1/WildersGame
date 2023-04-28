@@ -101,7 +101,7 @@ function GameMode({
             <Difficulty setMode={setMode} />
           </Link>
         </div>
-        <div className="perClass">
+        <div className="periodContainerHidden">
           <Link to="/countdown">
             <Period setRequest={setRequest} request={request} />
           </Link>
@@ -114,7 +114,6 @@ function GameMode({
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
-
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
   selectedAvatar: PropTypes.string.isRequired,
