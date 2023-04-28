@@ -54,7 +54,6 @@ function App() {
 
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
-
   const [isMuted, setIsMuted] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(
     "/src/assets/GameMode/AvatarPlaceholder.svg"
@@ -64,6 +63,15 @@ function App() {
   // ne pas supprimer //
 
   return (
+  <>
+      <div className="Musique">
+        <Musique
+          isMuted={isMuted}
+          setIsMuted={setIsMuted}
+          volume={volume}
+          setVolume={setVolume}
+        />
+      </div>
     <Routes>
       <Route path="/" element={<Home />} className="App" />
       <Route
@@ -72,8 +80,6 @@ function App() {
           <GameMode
             setMode={setMode}
             setPseudo={setPseudo}
-            setIsMuted={setIsMuted}
-            isMuted={isMuted}
             setRequest={setRequest}
             request={request}
             setSelectedAvatar={setSelectedAvatar}
@@ -84,7 +90,7 @@ function App() {
       <Route
         path="/countdown"
         element={
-          <Countdown setIsMuted={setIsMuted} isMuted={isMuted} setGo={setGo} />
+          <Countdown setGo={setGo} />
         }
       />
       <Route
@@ -97,14 +103,11 @@ function App() {
           <GamePage
             title={movie.title}
             // overwiew={overview}
-
             date={Number(new Date(`${movie.release_date}`).getFullYear())}
             release={movie.release_date}
             poster={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             getMovie={getMovie}
             mode={mode}
-            setIsMuted={setIsMuted}
-            isMuted={isMuted}
             request={request}
           />
         }
@@ -117,6 +120,7 @@ function App() {
       />
 <Route path="/discover" element={<Discover />} className="App" />
     </Routes>
+</>
 
   );
 }
