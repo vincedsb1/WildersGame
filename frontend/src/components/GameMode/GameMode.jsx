@@ -114,7 +114,6 @@ function GameMode({
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
-
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
   selectedAvatar: PropTypes.string.isRequired,
