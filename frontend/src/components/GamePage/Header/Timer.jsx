@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function Timer({ resultat }) {
-  const [secs, setSeconds] = useState(2000);
+  const [secs, setSeconds] = useState(20);
   const navigate = useNavigate();
 
   useEffect(() => {
