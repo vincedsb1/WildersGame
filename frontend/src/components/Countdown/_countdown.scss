@@ -26,9 +26,6 @@
     left: 50%;
     z-index: 3;
     color: #4caf50;
-    @media screen and (max-width: 450px) {
-      font-size: 50px;
-    }
   }
 
   .Circle1 {
@@ -42,7 +39,7 @@
     z-index: 1;
     border-radius: 100%;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (min-width: 450px) {
       width: 40vw;
       height: 40vw;
       max-width: 250px;
@@ -61,7 +58,7 @@
     z-index: 2;
     border-radius: 100%;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (min-width: 450px) {
       width: 32vw;
       max-width: 220px;
       max-height: 220px;
