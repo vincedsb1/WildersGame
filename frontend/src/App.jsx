@@ -80,6 +80,7 @@ function App() {
             <GameMode
               setMode={setMode}
               setPseudo={setPseudo}
+              pseudo={pseudo}
               setRequest={setRequest}
               request={request}
               setSelectedAvatar={setSelectedAvatar}
