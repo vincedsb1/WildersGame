@@ -54,7 +54,7 @@ function App() {
   const [mode, setMode] = useState(20);
   const [pseudo, setPseudo] = useState("joueur");
   const [isMuted, setIsMuted] = useState(true);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(0);
   const [selectedAvatar, setSelectedAvatar] = useState(
     "/src/assets/GameMode/AvatarPlaceholder.svg"
   );
@@ -80,6 +80,7 @@ function App() {
             <GameMode
               setMode={setMode}
               setPseudo={setPseudo}
+              pseudo={pseudo}
               setRequest={setRequest}
               request={request}
               setSelectedAvatar={setSelectedAvatar}

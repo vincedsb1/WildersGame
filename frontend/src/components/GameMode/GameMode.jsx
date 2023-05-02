@@ -11,6 +11,7 @@ import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 function GameMode({
   setMode,
   setPseudo,
+  pseudo,
   setRequest,
   request,
   setSelectedAvatar,
@@ -86,7 +87,7 @@ function GameMode({
             )}
           </div>
           <div className="pseudo">
-            <Pseudo setPseudo={setPseudo} />
+            <Pseudo setPseudo={setPseudo} pseudo={pseudo} />
           </div>
         </div>
         <div className={genreClass}>
@@ -114,6 +115,7 @@ function GameMode({
 GameMode.propTypes = {
   setMode: PropTypes.func.isRequired,
   setPseudo: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
   setRequest: PropTypes.func.isRequired,
   request: PropTypes.string.isRequired,
   selectedAvatar: PropTypes.string.isRequired,

@@ -16,17 +16,17 @@ $backupTypo: "Cappung";
   font: inherit;
   box-sizing: border-box;
 
-::-webkit-scrollbar {
-  width: 0;
-}
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 
-::-webkit-scrollbar:horizontal {
-  display: none;
-}
+  ::-webkit-scrollbar:horizontal {
+    display: none;
+  }
 
-::-webkit-scrollbar:vertical {
-  display: none;
-}
+  ::-webkit-scrollbar:vertical {
+    display: none;
+  }
 }
 
 body {
