@@ -18,7 +18,7 @@ function Timer({ resultat }) {
     return () => {
       clearInterval(sampleInterval);
     };
-  });
+  }, [secs]);
 
   return (
     <div className={secs > 5 ? "timer-violet" : "timer-rouge"}>
