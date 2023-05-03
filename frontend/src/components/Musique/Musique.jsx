@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import musicFileMp3 from "./music1.mp3";
 import musicFileOgg from "./music1.ogg";
 import musicFileWav from "./music1.wav";
+import MusicOnImg from "../../assets/Musique/SonOnImg.svg";
+import MusicOffImg from "../../assets/Musique/SonOffImg.svg";
 
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
@@ -13,7 +15,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   };
 
   const handleChangeVolume = (e) => {
-    setVolume(e.target.value);
+    setVolume(Number(e.target.value));
   };
 
   const handleUpdateVolume = () => {
@@ -32,7 +34,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 
           <div className="audioBlock">
             <input
-              className={isMuted && "hidden"}
+          className={isMuted ? "hidden" : undefined}
               id="volumeslider"
               type="range"
               min="0"
@@ -43,11 +45,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
             />
 
             <img
-              src={
-                isMuted
-                  ? "../src/assets/Musique/SonOffImg.svg"
-                  : "../src/assets/Musique/SonOnImg.svg"
-              }
+              src={isMuted ? MusicOffImg : MusicOnImg}
               className={isMuted ? "MusicOff" : "MusicOn"}
               alt={isMuted ? "musicOff" : "musicOn"}
               onClick={handleMusicOn}
@@ -72,7 +70,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         </div>
       </div>
     );
-  }
+  } else {
 
   return (
     <div className="Musique">
@@ -80,7 +78,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         <br />
         <div className="audioBlock">
           <input
-            className={isMuted && "hidden"}
+            className={isMuted ? "hidden" : undefined}
             id="volumeslider"
             type="range"
             min="0"
@@ -91,11 +89,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
           />
 
           <img
-            src={
-              isMuted
-                ? "../src/assets/Musique/SonOffImg.svg"
-                : "../src/assets/Musique/SonOnImg.svg"
-            }
+            src={isMuted ? MusicOffImg : MusicOnImg}
             className={isMuted ? "MusicOff" : "MusicOn"}
             alt={isMuted ? "musicOff" : "musicOn"}
             onClick={handleMusicOn}
@@ -120,11 +114,12 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
       </div>
     </div>
   );
+ }
 }
 Musique.propTypes = {
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
-  volume: PropTypes.string.isRequired,
+  volume: PropTypes.number.isRequired,
   setVolume: PropTypes.func.isRequired,
 };
 

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
-import Period from "./Period/Period";
 import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
 import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
@@ -24,26 +23,12 @@ function GameMode({
   };
 
   const [genreClass, setGenreClass] = useState("genreContainer");
-  // const [levelClass, setLevelClass] = useState("levelContainerHidden");
   const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
-  // const [perClass, setPerClass] = useState("periodContainerHidden");
 
   const handleClickGenreClass = () => {
     setGenreClass("genreContainerHidden");
     setDiffClass("difficultyContainer");
   };
-
-  // const handleClickDiffClass = () => {
-  //   setLevelClass("levelContainerHidden");
-  //   setDiffClass("difficultyContainer");
-  //   setPerClass("periodContainerHidden");
-  // };
-
-  // const handleClickPerClass = () => {
-  //   setLevelClass("levelContainerHidden");
-  //   setPerClass("periodContainer");
-  //   setDiffClass("difficultyContainerHidden");
-  // };
 
   return (
     <div className="mainContainer">
@@ -69,16 +54,11 @@ function GameMode({
             role="button"
             tabIndex="0"
           >
-            {selectedAvatar ? (
-              <img src={selectedAvatar} alt="Selected Avatar" />
-            ) : (
-              <img
-                className="AvatarPlaceholder"
-                id="AvatarPlaceholder"
-                src={AvatarPlaceholder}
-                alt="AvatarPlaceholder"
-              />
-            )}
+            <img
+              src={selectedAvatar || AvatarPlaceholder}
+              alt="Selected Avatar"
+            />
+
             {isOpen && (
               <AvatarGallery
                 setSelectedAvatar={setSelectedAvatar}
@@ -100,11 +80,6 @@ function GameMode({
         <div className={diffClass}>
           <Link to="/countdown">
             <Difficulty setMode={setMode} />
-          </Link>
-        </div>
-        <div className="periodContainerHidden">
-          <Link to="/countdown">
-            <Period setRequest={setRequest} request={request} />
           </Link>
         </div>
       </div>

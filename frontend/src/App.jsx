@@ -13,7 +13,11 @@ import Musique from "./components/Musique/Musique";
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
-  const [movie, setMovie] = useState({ title: "", overview: "" });
+  const [movie, setMovie] = useState({
+    title: "",
+    overview: "",
+    release_date: "",
+  });
   // const [selectedAvatar, setSelectedAvatar] = useState(null);
 
   const [request, setRequest] = useState(
@@ -33,7 +37,6 @@ function App() {
   }
 
   const getMovie = () => {
-    console.info("getmovie");
     axios
       .get(`${request}&page=${rdmNum(50)}`)
       .then((response) =>
@@ -58,9 +61,6 @@ function App() {
   const [selectedAvatar, setSelectedAvatar] = useState(
     "/src/assets/GameMode/AvatarPlaceholder.svg"
   );
-
-  console.info(go);
-  // ne pas supprimer //
 
   return (
     <>
