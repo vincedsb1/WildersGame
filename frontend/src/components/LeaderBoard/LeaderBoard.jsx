@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Results from "./Results/Results";
 import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
+import AvatarPlaceholder from "../../assets/GameMode/AvatarPlaceholder.svg";
 
 function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
   return (
@@ -12,9 +13,7 @@ function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
         <div className="resultContainer">
           <Results
             pseudo={pseudo}
-            selectedAvatar={
-              selectedAvatar || "/src/assets/GameMode/Avatars/avatar-11.svg"
-            }
+            selectedAvatar={selectedAvatar || AvatarPlaceholder}
           />
           <div className="endButons">
             <Link to="/game">
