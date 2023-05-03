@@ -53,6 +53,14 @@
       box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
       outline: none;
     }
+
+    .generic {
+      color: $lighterGradient;
+    }
+
+    .custom {
+      color: #552e61;
+    }
   }
 
   .avatarButton {

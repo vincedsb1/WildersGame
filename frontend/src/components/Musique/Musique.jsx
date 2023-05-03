@@ -34,7 +34,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 
           <div className="audioBlock">
             <input
-          className={isMuted ? "hidden" : undefined}
+              className={isMuted ? "hidden" : undefined}
               id="volumeslider"
               type="range"
               min="0"
@@ -70,8 +70,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         </div>
       </div>
     );
-  } else {
-
+  }
   return (
     <div className="Musique">
       <div className={Musique && "hiddenMusique"}>
@@ -114,7 +113,6 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
       </div>
     </div>
   );
- }
 }
 Musique.propTypes = {
   isMuted: PropTypes.bool.isRequired,
