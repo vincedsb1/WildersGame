@@ -2,6 +2,10 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
+import avatar1 from "../../../assets/GameMode/Avatars/avatar-01.svg";
+import avatar2 from "../../../assets/GameMode/Avatars/avatar-02.svg";
+import avatar3 from "../../../assets/GameMode/Avatars/avatar-03.svg";
+import avatar4 from "../../../assets/GameMode/Avatars/avatar-04.svg";
 
 function Results({ pseudo, selectedAvatar }) {
   let results = JSON.parse(localStorage.getItem("storedResults"));
@@ -12,28 +16,28 @@ function Results({ pseudo, selectedAvatar }) {
         time: "15:26",
         name: "Lucas",
         points: 2,
-        avatar: "/src/assets/GameMode/Avatars/avatar-01.svg",
+        avatar: avatar1,
       },
       {
         date: "02/04/2023",
         time: "13:27",
         name: "Jeremy",
         points: 1,
-        avatar: "/src/assets/GameMode/Avatars/avatar-03.svg",
+        avatar: avatar2,
       },
       {
         date: "03/03/2023",
         time: "09:57",
         name: "Antonin",
         points: 1,
-        avatar: "/src/assets/GameMode/Avatars/avatar-15.svg",
+        avatar: avatar3,
       },
       {
         date: "01/04/2023",
         time: "11:54",
         name: "Marah",
         points: 0,
-        avatar: "/src/assets/GameMode/Avatars/avatar-11.svg",
+        avatar: avatar4,
       },
     ];
   }
