@@ -69,16 +69,11 @@ function GameMode({
             role="button"
             tabIndex="0"
           >
-            {selectedAvatar ? (
-              <img src={selectedAvatar} alt="Selected Avatar" />
-            ) : (
-              <img
-                className="AvatarPlaceholder"
-                id="AvatarPlaceholder"
-                src={AvatarPlaceholder}
-                alt="AvatarPlaceholder"
-              />
-            )}
+            <img
+              src={selectedAvatar || AvatarPlaceholder}
+              alt="Selected Avatar"
+            />
+
             {isOpen && (
               <AvatarGallery
                 setSelectedAvatar={setSelectedAvatar}
