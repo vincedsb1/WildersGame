@@ -93,7 +93,6 @@ function AvatarGallery({
 
   const handleKeyDown = (event, index) => {
     if (event.keyCode === 13) {
-      // 13 corresponds to the "Enter" key
       handleAvatarClick(index);
     }
   };
@@ -134,7 +133,6 @@ function AvatarGallery({
 AvatarGallery.propTypes = {
   setSelectedAvatar: PropTypes.func,
   setIsOpen: PropTypes.func,
-  // selectedAvatar: PropTypes.string,
 };
 
 AvatarGallery.defaultProps = {
