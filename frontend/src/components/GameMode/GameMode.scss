@@ -125,8 +125,7 @@
 
     p {
       padding-top: 5%;
-      animation: rollout 1s;
-      z-index: 0;
+      animation: fadein 0.2s;
     }
   }
 
@@ -137,16 +136,18 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    animation: rollout 1s;
-    z-index: 0;
+    animation: fadein 0.4s;
   }
 
-  @keyframes rollout {
+  @keyframes fadein {
     0% {
-      transform: translateX(-500px);
+      opacity: 0;
+      transform: scale(1.4);
     }
+
     100% {
-      transform: none;
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -197,8 +198,7 @@
 
     p {
       padding-top: 5%;
-      animation: rollout 1s;
-      z-index: 0;
+      animation: fadein 0.2s;
     }
   }
 
@@ -208,8 +208,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    animation: rollout 1s;
-    z-index: 0;
+    animation: fadein 0.4s;
   }
 
   #difficulty {
@@ -288,7 +287,7 @@
       }
     }
     .avatarButton {
-      width: 60px;
+      width: 90px;
       height: 90px;
     }
     .avatarContainer {
