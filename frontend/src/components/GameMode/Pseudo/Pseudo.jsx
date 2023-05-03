@@ -1,20 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Pseudo({ setPseudo }) {
+function Pseudo({ setPseudo, pseudo }) {
   const handleChange = (event) => {
     setPseudo(event.target.value);
   };
   return (
     <div className="pseudo">
       <p>Your name</p>
-      <input type="text" maxLength="16" onChange={handleChange} />
+      <input
+        type="text"
+        maxLength="16"
+        value={pseudo}
+        onChange={handleChange}
+      />
     </div>
   );
 }
 
 Pseudo.propTypes = {
   setPseudo: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 
 export default Pseudo;
