@@ -3,8 +3,6 @@ import { useRef } from "react";
 import musicFileMp3 from "./music1.mp3";
 import musicFileOgg from "./music1.ogg";
 import musicFileWav from "./music1.wav";
-import imgMusicOn from "../../assets/Musique/SonOffImg.svg";
-import imgMusicOff from "../../assets/Musique/SonOnImg.svg";
 
 // chnager la source des balaise audio
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
@@ -30,7 +28,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 
       <div className="audioBlock">
         <input
-          className={isMuted ? "hidden" : undefined}
+          className={isMuted && "hidden"}
           id="volumeslider"
           type="range"
           min="0"
@@ -41,7 +39,11 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         />
 
         <img
-          src={isMuted ? imgMusicOff : imgMusicOn}
+          src={
+            isMuted
+              ? "../src/assets/Musique/SonOffImg.svg"
+              : "../src/assets/Musique/SonOnImg.svg"
+          }
           className={isMuted ? "MusicOff" : "MusicOn"}
           alt={isMuted ? "musicOff" : "musicOn"}
           onClick={handleMusicOn}
