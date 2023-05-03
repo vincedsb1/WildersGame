@@ -6,11 +6,6 @@ import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
 
 function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
-  console.info(
-    "%c%s",
-    "color: #ff0000",
-    console.info(`Props selectedAvatar : ${selectedAvatar}`)
-  );
   return (
     <div className="mainContainer">
       <div className="leaderBoard">

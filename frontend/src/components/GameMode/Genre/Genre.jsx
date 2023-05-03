@@ -20,18 +20,21 @@ function Genre({ setRequest, request, handleClickGenreClass }) {
   ];
 
   return (
-    <div className="genre">
-      {genres.map((genre) => (
-        <button
-          key={genre.name}
-          type="button"
-          id="genre"
-          onClick={() => handleGenre(genre.link)}
-        >
-          {genre.name}
-        </button>
-      ))}
-      <br />
+    <div className="genreTitle">
+      <p>Choose your movie genre</p>
+      <div className="genre">
+        {genres.map((genre) => (
+          <button
+            key={genre.name}
+            type="button"
+            id="genre"
+            onClick={() => handleGenre(genre.link)}
+          >
+            {genre.name}
+          </button>
+        ))}
+        <br />
+      </div>
     </div>
   );
 }
