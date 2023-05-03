@@ -48,6 +48,7 @@ function BlocDeReponse({
               bonneReponse={bonneReponse}
               release={release}
               id={ele}
+              key={ele}
             />
           );
         })}

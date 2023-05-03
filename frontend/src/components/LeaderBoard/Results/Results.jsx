@@ -4,8 +4,6 @@ import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
 
 function Results({ pseudo, selectedAvatar }) {
-  console.info(`Selected Avatar ${selectedAvatar}`);
-
   let results = JSON.parse(localStorage.getItem("storedResults"));
   if (!results) {
     results = [
@@ -84,7 +82,7 @@ function Results({ pseudo, selectedAvatar }) {
       <div className="results">
         {storedResults.slice(0, 4).map((el) => {
           return (
-            <div className="result">
+            <div className="result" key={el.time}>
               <div className="resultAvatarNameTime">
                 <div className="resultAvatar">
                   <img className="resultAvatarImg" src={el.avatar} alt="" />
