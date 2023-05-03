@@ -59,7 +59,7 @@ function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(0);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "/src/assets/GameMode/avatarPlaceholder.svg"
+    "/src/assets/GameMode/avatarPlaceholder2.svg"
   );
 
   return (
