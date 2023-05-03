@@ -71,7 +71,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
 Musique.propTypes = {
   isMuted: PropTypes.bool.isRequired,
   setIsMuted: PropTypes.func.isRequired,
-  volume: PropTypes.string.isRequired,
+  volume: PropTypes.number.isRequired,
   setVolume: PropTypes.func.isRequired,
 };
 
