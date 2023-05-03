@@ -13,6 +13,7 @@ function Pseudo({ setPseudo, pseudo }) {
         maxLength="16"
         value={pseudo}
         onChange={handleChange}
+        className={pseudo === "joueur" ? "generic" : "custom"}
       />
     </div>
   );
