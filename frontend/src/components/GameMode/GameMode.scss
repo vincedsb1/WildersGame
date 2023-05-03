@@ -27,7 +27,7 @@
   }
 
   .avatarPseudo {
-    height: 47%;
+    height: 37%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,7 +132,8 @@
     align-items: center;
 
     p {
-      padding-top: 5%;
+      padding: 5% 0 0 0;
+      margin-bottom: 2%;
       animation: fadein 0.2s;
     }
   }
@@ -143,7 +144,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 90%;
     animation: fadein 0.4s;
   }
 
@@ -169,7 +170,7 @@
     width: 150px;
     max-width: 300px;
     height: 80px;
-    margin: 1%;
+    margin: 2%;
     transition: 0.15s;
 
     &:hover {
@@ -245,7 +246,7 @@
   .gameMode {
     padding-top: 15%;
     .avatarPseudo {
-      height: 35%;
+      height: 20%;
 
       input {
         height: 50px;
