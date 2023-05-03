@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
-import musicFile from "./music1.mp3";
+import musicFileMp3 from "./music1.mp3";
+import musicFileOgg from "./music1.ogg";
+import musicFileWav from "./music1.wav";
 
+// chnager la source des balaise audio
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
 
@@ -50,12 +53,15 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
         <audio
           ref={audioRef}
           id="where"
-          src={musicFile}
+          // src={musicFile}
           loop
           autoPlay
           onTimeUpdate={handleUpdateVolume}
           muted={isMuted}
         >
+          <source src={musicFileMp3} type="audio/mp3" />
+          <source src={musicFileOgg} type="audio/ogg" />
+          <source src={musicFileWav} type="audio/wav" />
           <track kind="captions" />
         </audio>
       </div>
