@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
 import cup from "../../../assets/LeaderBoard/cup.png";
-import avatar1 from "../../../assets/GameMode/Avatars/avatar-01.svg";
-import avatar2 from "../../../assets/GameMode/Avatars/avatar-02.svg";
-import avatar3 from "../../../assets/GameMode/Avatars/avatar-03.svg";
-import avatar4 from "../../../assets/GameMode/Avatars/avatar-04.svg";
+import avatar1 from "../../../assets/GameMode/avatar-01.svg";
+import avatar2 from "../../../assets/GameMode/avatar-02.svg";
+import avatar3 from "../../../assets/GameMode/avatar-03.svg";
+import avatar4 from "../../../assets/GameMode/avatar-04.svg";
 
 function Results({ pseudo, selectedAvatar }) {
   let results = JSON.parse(localStorage.getItem("storedResults"));
