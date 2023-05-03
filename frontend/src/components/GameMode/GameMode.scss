@@ -138,80 +138,6 @@
     }
   }
 
-  .levelContainerHidden {
-    display: none;
-  }
-
-  .levelContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
-    padding: 0 0 2% 0;
-  }
-
-  #level {
-    color: #552e61;
-    background-color: $buttonBackColor;
-    font-weight: 200;
-    font-size: 1.5em;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
-    max-width: 300px;
-    height: 80px;
-    margin-top: 1vh;
-    transition: 0.15s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(1.15);
-    }
-  }
-
-  .periodContainerHidden {
-    display: none;
-  }
-
-  .periodContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
-    padding: 0 0 2% 0;
-  }
-
-  .period {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #period {
-    color: #552e61;
-    background-color: $buttonBackColor;
-    font-weight: 200;
-    font-size: 1.5em;
-    border-radius: 30px;
-    border: 8px solid $buttonColor;
-    width: 50vw;
-    max-width: 300px;
-    height: 80px;
-    margin-top: 1vh;
-    transition: 0.15s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(1.15);
-    }
-  }
-
   .difficultyContainerHidden {
     display: none;
   }
@@ -272,15 +198,11 @@
       font-size: 1.3em;
     }
     .difficultyContainer,
-    .genreContainer,
-    .levelContainer,
-    .periodContainer {
+    .genreContainer {
       height: 30%;
     }
     #difficulty,
-    #genre,
-    #level,
-    #period {
+    #genre {
       height: 50px;
       border-bottom: 6px solid $buttonColor;
       font-size: 1em;
@@ -306,15 +228,11 @@
       font-size: 1.3em;
     }
     .difficultyContainer,
-    .genreContainer,
-    .levelContainer,
-    .periodContainer {
+    .genreContainer {
       height: 30%;
     }
     #difficulty,
-    #genre,
-    #level,
-    #period {
+    #genre {
       height: 50px;
       border-bottom: 6px solid $buttonColor;
       font-size: 1em;
@@ -323,6 +241,35 @@
     }
     .genre {
       width: 70%;
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .gameMode {
+    padding-top: 15%;
+    .avatarPseudo {
+      height: 35%;
+      input {
+        height: 50px;
+      }
+    }
+    .avatarButton {
+      width: 90px;
+      height: 90px;
+    }
+    .pseudo p {
+      font-size: 1.3em;
+    }
+    .difficultyContainer,
+    .genreContainer {
+      height: 30%;
+    }
+    #difficulty,
+    #genre {
+      height: 50px;
+      border-bottom: 6px solid $buttonColor;
+      font-size: 1em;
     }
   }
 }
