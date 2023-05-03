@@ -49,7 +49,7 @@ a:link {
 
 @media screen and (max-height: 600px) {
   .popcornBackground {
-    background-position: left -100px bottom -200px;
+    background-position: left -200% bottom -20%;
   }
 }
 
@@ -58,7 +58,7 @@ a:link {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 65%;
+  height: 60%;
 }
 
 .boiteFanion {
@@ -74,7 +74,8 @@ a:link {
   }
   .catchphrase {
     position: absolute;
-    height: 35px;
+    height: 100%;
+    max-height: 35px;
     bottom: 10px;
   }
 }
@@ -83,7 +84,9 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35%;
+  height: 40%;
+  padding-bottom: 20%;
+  // background-color: lightblue;
 }
 
 .mainTitle {
@@ -110,7 +113,9 @@ a:link {
     font-size: 4em;
   }
   .startButtonDiv {
-    height: 20%;
+    // height: 20%;
+    // background-color: lightblue;
+    padding-bottom: 5%;
   }
   .boiteFanion {
     height: 75px;
