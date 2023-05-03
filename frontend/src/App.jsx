@@ -88,7 +88,10 @@ function App() {
             />
           }
         />
-        <Route path="/countdown" element={<Countdown setGo={setGo} />} />
+        <Route
+          path="/countdown"
+          element={<Countdown setGo={setGo} go={go} />}
+        />
         <Route
           path="/avatargallery"
           element={<AvatarGallery selectedAvatar={selectedAvatar} />}
