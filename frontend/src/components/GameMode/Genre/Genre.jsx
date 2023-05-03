@@ -21,7 +21,7 @@ function Genre({ setRequest, request, handleClickGenreClass }) {
 
   return (
     <div className="genreTitle">
-      <p>Choose your movie genre</p>
+      <p>Your movie genre</p>
       <div className="genre">
         {genres.map((genre) => (
           <button
