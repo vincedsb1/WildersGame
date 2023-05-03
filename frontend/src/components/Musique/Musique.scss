@@ -1,6 +1,6 @@
 .Musique {
   position: absolute;
-  top : 50%;
+  top: 50%;
   left: 50%;
   top: 85%;
 }
@@ -60,15 +60,18 @@
   }
 }
 
+.hiddenMusique {
+  display: none;
+}
+
 @media screen and (min-width: 700px) {
   .Musique {
-    top: 10%;
-    
+    top: 60%;
   }
 }
-@media screen and (max-width: 344px) {
+
+@media screen and (max-width: 350px) {
   .Musique {
     top: 90%;
-    
   }
 }
