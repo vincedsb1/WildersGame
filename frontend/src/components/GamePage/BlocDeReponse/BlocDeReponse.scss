@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   animation: rollout 0.6s;
+  z-index: 0;
 }
 
 @keyframes rollout {
@@ -28,6 +29,7 @@
   cursor: pointer;
   width: 15%;
   transition: 0.15s;
+  z-index: 0;
 
   &:hover {
     transform: scale(1.05);
@@ -50,6 +52,7 @@
 .goodAnswer {
   position: relative;
   border-color: $greenColor;
+  z-index: 4;
 }
 
 .goodAnswer::before {
@@ -94,6 +97,7 @@
 .wrongAnswer {
   position: relative;
   border-color: $redColor;
+  z-index: 5;
 }
 .wrongAnswer::before {
   content: "";
@@ -106,7 +110,7 @@
   background-position: center;
   background-repeat: no-repeat;
   animation: wiggle 2s linear infinite;
-  z-index: 10;
+  z-index: 1;
 
   // transition: transform 330ms ease-in-out;
 }
