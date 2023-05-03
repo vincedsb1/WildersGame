@@ -54,10 +54,7 @@ function GameMode({
             role="button"
             tabIndex="0"
           >
-            <img
-              src={selectedAvatar || AvatarPlaceholder}
-              alt="Selected Avatar"
-            />
+            <img src={selectedAvatar || AvatarPlaceholder} alt="" />
 
             {isOpen && (
               <AvatarGallery
