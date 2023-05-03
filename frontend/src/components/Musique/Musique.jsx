@@ -23,7 +23,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   };
 
   return (
-    <div>
+    <div className="Musique">
       <br />
 
       <div className="audioBlock">
