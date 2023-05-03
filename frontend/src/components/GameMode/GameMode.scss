@@ -125,6 +125,8 @@
 
     p {
       padding-top: 5%;
+      animation: rollout 1s;
+      z-index: 0;
     }
   }
 
@@ -135,6 +137,17 @@
     justify-content: center;
     align-items: center;
     width: 70%;
+    animation: rollout 1s;
+    z-index: 0;
+  }
+
+  @keyframes rollout {
+    0% {
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: none;
+    }
   }
 
   #genre {
@@ -184,6 +197,8 @@
 
     p {
       padding-top: 5%;
+      animation: rollout 1s;
+      z-index: 0;
     }
   }
 
@@ -193,6 +208,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    animation: rollout 1s;
+    z-index: 0;
   }
 
   #difficulty {
