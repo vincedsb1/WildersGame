@@ -1,0 +1,40 @@
+.DiscoverButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(1.15);
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $buttonColor;
+    background-color: $buttonBackColor;
+    font-family: $mainTypo;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 8px solid $buttonColor;
+    box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(-5.42deg);
+    height: 50px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .DiscoverButton {
+    button {
+      font-size: 0.8em;
+      padding: 5px 15px;
+      height: inherit;
+    }
+  }
+}
