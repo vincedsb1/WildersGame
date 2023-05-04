@@ -5,6 +5,11 @@ function Pseudo({ setPseudo, pseudo }) {
   const handleChange = (event) => {
     setPseudo(event.target.value);
   };
+
+  const handleClickPseudo = () => {
+    setPseudo("");
+  };
+
   return (
     <div className="pseudo">
       <p>Your name</p>
@@ -14,6 +19,7 @@ function Pseudo({ setPseudo, pseudo }) {
         value={pseudo}
         onChange={handleChange}
         className={pseudo === "joueur" ? "generic" : "custom"}
+        onClick={handleClickPseudo}
       />
     </div>
   );
