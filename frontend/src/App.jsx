@@ -59,7 +59,7 @@ function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(0);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "/src/assets/GameMode/avatarPlaceholder2.svg"
+    "/src/assets/GameMode/avatarPlaceholder.png"
   );
 
   return (
@@ -88,7 +88,10 @@ function App() {
             />
           }
         />
-        <Route path="/countdown" element={<Countdown setGo={setGo} />} />
+        <Route
+          path="/countdown"
+          element={<Countdown setGo={setGo} go={go} />}
+        />
         <Route
           path="/avatargallery"
           element={<AvatarGallery selectedAvatar={selectedAvatar} />}
