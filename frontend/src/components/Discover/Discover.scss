@@ -5,14 +5,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5%;
     width: 100%;
     height: 90px;
     background-color: $buttonBackColor;
-    border: 8px solid $buttonColor;
+    border-bottom: 8px solid $buttonColor;
     color: #552e61;
     padding: 0px 40px;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     font-family: $mainTypo;
     margin-bottom: 2.5vh;
 
@@ -68,47 +67,52 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
-    margin-left: 40px;
+
     margin-bottom: 3.5vh;
 
     .sortingBox {
       position: relative;
       display: flex;
       justify-content: flex-start;
-      margin-left: 0px;
+      margin-left: calc(2vw * 2 + 10px);
       height: 60px;
+      width: 60%;
 
       button {
         background-color: $buttonBackColor;
-        border: 8px solid $buttonColor;
+        border-bottom: 8px solid $buttonColor;
         border-radius: 20px;
-        padding: 10px 10px;
+        padding: 20px 30px;
         color: #552e61;
         font-family: $mainTypo;
-        font-size: 0.9em;
+        font-size: calc(1vw + 0.5em);
         cursor: pointer;
+      }
+
+      .FilterButton {
+        padding: 0 20px;
+        border: none;
+        border-bottom: 8px solid $buttonColor;
+        border-radius: 15px;
       }
 
       .sortList {
         position: absolute;
         display: none;
-        animation: displaySort 0.3s;
       }
       #clickedSortInput {
         display: flex;
-        height: 120%;
-        overflow: hidden;
-        top: 0;
-        margin-left: 80px;
+        width: 100%;
         gap: 10px;
+        animation-duration: 10s;
       }
 
       @keyframes displaySort {
         0% {
-          height: 0%;
+          width: 0%;
         }
         100% {
-          height: 100%;
+          width: 100%;
         }
       }
     }
@@ -142,4 +146,8 @@
     flex-wrap: wrap;
     height: auto;
   }
+}
+
+.none {
+  display: none;
 }

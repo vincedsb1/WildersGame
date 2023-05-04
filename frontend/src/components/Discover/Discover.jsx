@@ -72,6 +72,7 @@ function Discover() {
             <button
               onClick={() => setSortIsClicked(!sortIsClicked)}
               type="button"
+              className={sortIsClicked ? "none" : ""}
             >
               Sort
             </button>
@@ -90,6 +91,8 @@ function Discover() {
           <SearchButton
             setSearchIsClicked={setSearchIsClicked}
             searchIsClicked={searchIsClicked}
+            sortIsClicked={sortIsClicked}
+            setSortIsClicked={setSortIsClicked}
           />
           <SearchInput
             searchIsClicked={searchIsClicked}

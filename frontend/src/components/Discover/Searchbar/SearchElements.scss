@@ -1,7 +1,7 @@
 .filters {
   .SearchBar {
     position: absolute;
-    right: 40px;
+    right: calc(2vw * 2 + 10px);
 
     .magnifyingGlass {
       height: 60px;
@@ -12,8 +12,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-color: $buttonBackColor;
-      border: 8px solid $buttonColor;
-      border-radius: 20px;
+      border-bottom: 8px solid $buttonColor;
+      border-radius: 15px;
     }
   }
   input {
@@ -32,7 +32,8 @@
 
   #clickedInput {
     display: block;
-    width: 400px;
+    width: 60%;
+    padding-left: 10px;
   }
 
   @keyframes displaySearch {
@@ -40,7 +41,7 @@
       width: 0%;
     }
     100% {
-      width: 70%;
+      width: 60%;
     }
   }
 }
@@ -54,28 +55,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: $buttonBackColor;
-  border: 8px solid $buttonColor;
-  border-radius: 20px;
-}
-
-// @media screen and (max-width: 790px) and (min-width: 350px) {
-//   #clickedInput {
-//     width: 10px;
-//   }
-// }
-@media screen and (max-width: 600px) {
-  .SearchBar {
-    position: static;
-    margin-bottom: 10px;
-  }
-
-  input {
-    position: static;
-    display: block;
-    width: 50%;
-  }
-
-  #clickedInput {
-    width: 50%;
-  }
+  border-bottom: 8px solid $buttonColor;
+  border-radius: 15px;
 }
