@@ -22,6 +22,12 @@ function GameMode({
     setIsOpen(!isOpen);
   };
 
+  const handleClickBody = () => {
+    if (isOpen) {
+      setIsOpen(!isOpen);
+    }
+  };
+
   const [genreClass, setGenreClass] = useState("genreContainer");
   const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
 
@@ -31,7 +37,11 @@ function GameMode({
   };
 
   return (
-    <div className="mainContainer">
+    <div
+      className="mainContainer"
+      role="presentation"
+      onClick={handleClickBody}
+    >
       <div className="gameMode">
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
