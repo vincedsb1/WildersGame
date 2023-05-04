@@ -86,9 +86,7 @@ function Discover() {
               ))}
             </div>
           </div>
-          <div className={searchIsClicked ? "sortingBox hidden" : "sortingBox"}>
-            <button type="button">Filter</button>
-          </div>
+
           <SearchButton
             setSearchIsClicked={setSearchIsClicked}
             searchIsClicked={searchIsClicked}
