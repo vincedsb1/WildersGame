@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Results from "./Results/Results";
 import Restart from "./Restart/Restart";
 import Quit from "./Quit/Quit";
-import AvatarPlaceholder from "../../assets/GameMode/avatarPlaceholder.png";
+import AvatarPlaceholder from "../../assets/avatarPlaceholder.svg";
 
 function LeaderBoard({ pseudo, clearState, selectedAvatar }) {
   return (
