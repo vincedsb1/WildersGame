@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import musicFile from "./music1.mp3";
 import MusicOnImg from "../../assets/Musique/SonOnImg.svg";
 import MusicOffImg from "../../assets/Musique/SonOffImg.svg";
-
+// MUSICGOOD
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
 
