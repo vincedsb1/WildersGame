@@ -50,7 +50,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
               // onKeyDown={handleMusicOn}
               role="presentation"
             />
-            <audio
+            <video
               ref={audioRef}
               id="where"
               src={musicFile}
@@ -60,7 +60,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
               muted={isMuted}
             >
               <track kind="captions" />
-            </audio>
+            </video>
           </div>
         </div>
       </div>
