@@ -36,6 +36,15 @@ a:link {
   box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.25);
   height: 100vh;
   overflow: auto;
+
+  .discoverOrPlay {
+    color: white;
+    font-family: $mainTypo;
+    font-weight: 800;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .popcornBackground {
@@ -82,8 +91,10 @@ a:link {
 
 .startButtonDiv {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10%;
   height: 40%;
   padding-bottom: 20%;
   // background-color: lightblue;
