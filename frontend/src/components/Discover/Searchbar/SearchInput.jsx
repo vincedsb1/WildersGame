@@ -9,7 +9,7 @@ function SearchInput({ searchIsClicked, setSearchedEL, searchedEl }) {
   return (
     <input
       type="text"
-      id={searchIsClicked && "clickedInput"}
+      id={searchIsClicked ? "clickedInput" : undefined}
       value={searchedEl}
       onChange={handleChange}
     />
