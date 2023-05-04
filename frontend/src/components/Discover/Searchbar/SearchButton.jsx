@@ -5,8 +5,10 @@ function SearchButton({
   searchIsClicked,
   sortIsClicked,
   setSortIsClicked,
+  setSearchedEL,
 }) {
   const handleClick = () => {
+    setSearchedEL("");
     if (sortIsClicked) {
       setSearchIsClicked(false);
       setSortIsClicked(false);
@@ -34,6 +36,7 @@ SearchButton.propTypes = {
   setSearchIsClicked: PropTypes.func.isRequired,
   sortIsClicked: PropTypes.bool.isRequired,
   setSortIsClicked: PropTypes.func.isRequired,
+  setSearchedEL: PropTypes.func.isRequired,
 };
 
 export default SearchButton;

@@ -49,8 +49,6 @@ function Discover() {
     getMovieList();
   }, []);
 
-  console.info(movieList);
-
   const handleClick = (title, image, overview, date) => {
     setDisplayDetails(!displayDetails);
     setDetails({ title, image, overview, date });
@@ -97,6 +95,7 @@ function Discover() {
             searchIsClicked={searchIsClicked}
             sortIsClicked={sortIsClicked}
             setSortIsClicked={setSortIsClicked}
+            setSearchedEL={setSearchedEL}
           />
           <SearchInput
             searchIsClicked={searchIsClicked}
