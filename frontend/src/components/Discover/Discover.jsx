@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 import MovieCard from "./MovieCard/MovieCard";
 import FilterButton from "./FilterButton/FilterButton";
 import MovieDetails from "./MovieDetails/MovieDetails";
@@ -65,6 +66,9 @@ function Discover() {
         onClick={() => displayDetails && setDisplayDetails(false)}
       >
         <div className="discoverHeader">
+          <NavLink to="/">
+            <p className="retour">↩</p>
+          </NavLink>
           <p>Discover your favorite movies !</p>
         </div>
         <div className="filters">
@@ -72,6 +76,7 @@ function Discover() {
             <button
               onClick={() => setSortIsClicked(!sortIsClicked)}
               type="button"
+              className={sortIsClicked ? "none" : ""}
             >
               Sort
             </button>
@@ -90,6 +95,8 @@ function Discover() {
           <SearchButton
             setSearchIsClicked={setSearchIsClicked}
             searchIsClicked={searchIsClicked}
+            sortIsClicked={sortIsClicked}
+            setSortIsClicked={setSortIsClicked}
           />
           <SearchInput
             searchIsClicked={searchIsClicked}
