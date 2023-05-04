@@ -5,7 +5,7 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
-import AvatarPlaceholder from "../../assets/GameMode/avatarPlaceholder.png";
+import AvatarPlaceholder from "../../assets/avatarPlaceholder.svg";
 
 function GameMode({
   setMode,
@@ -47,7 +47,6 @@ function GameMode({
             onClick={handleClick}
             onKeyDown={(event) => {
               if (event.keyCode === 13) {
-                // handle "Enter" key press
                 handleClick();
               }
             }}

@@ -9,7 +9,7 @@ import Countdown from "./components/Countdown/Countdown";
 import GameMode from "./components/GameMode/GameMode";
 import "./App.scss";
 import Musique from "./components/Musique/Musique";
-
+// import AvatarPlaceholder from "../src/assets/avatarPlaceholder";
 import AvatarGallery from "./components/GameMode/Avatar/AvatarGallery";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(0);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "/src/assets/GameMode/avatarPlaceholder.png"
+    "../src/assets/avatarPlaceholder.svg"
   );
 
   return (
