@@ -59,7 +59,7 @@ function App() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(0);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "https://zupimages.net/up/23/18/5zxh.png"
+    "https://zupimages.net/up/23/18/bzys.jpg"
   );
 
   return (

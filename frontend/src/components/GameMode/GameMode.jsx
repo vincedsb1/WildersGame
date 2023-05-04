@@ -63,7 +63,7 @@ function GameMode({
             tabIndex="0"
           >
             <img
-              src={selectedAvatar || "https://zupimages.net/up/23/18/5zxh.png"}
+              src={selectedAvatar || "https://zupimages.net/up/23/18/bzys.jpg"}
               alt=""
             />
 
