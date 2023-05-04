@@ -82,8 +82,10 @@ a:link {
 
 .startButtonDiv {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap:10%;
   height: 40%;
   padding-bottom: 20%;
   // background-color: lightblue;

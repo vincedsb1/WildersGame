@@ -4,6 +4,7 @@ import "./Home.scss";
 import StartButton from "./StartButton/StartButton";
 import fanion from "../../assets/Home/fanion.svg";
 import catchphrase from "../../assets/Home/catchphrase.svg";
+import DiscoverButton from "./DiscoverButton/DiscoverButton";
 
 function Home() {
   return (
@@ -28,6 +29,9 @@ function Home() {
           <div className="startButtonDiv">
             <NavLink to="/gameMode">
               <StartButton />
+            </NavLink>
+            <NavLink to="/discover">
+              <DiscoverButton />
             </NavLink>
           </div>
         </div>
