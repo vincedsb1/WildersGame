@@ -78,7 +78,10 @@ function Discover() {
             >
               Sort
             </button>
-            <div className="sortList" id={sortIsClicked && "clickedSortInput"}>
+            <div
+              className="sortList"
+              id={sortIsClicked ? "clickedSortInput" : undefined}
+            >
               {SORT_NAMES.map((el) => (
                 <FilterButton
                   key={el}
@@ -125,6 +128,7 @@ function Discover() {
                   date={ele.release_date}
                   overview={ele.overview}
                   handleClick={handleClick}
+                  key={ele.original_title}
                 />
               );
             })}
