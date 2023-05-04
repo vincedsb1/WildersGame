@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 import { useLocation } from "react-router-dom";
-import musicFile from "./music1.mp3";
+import musicFile from "./musicTest.mp3";
 import MusicOnImg from "../../assets/Musique/SonOnImg.svg";
 import MusicOffImg from "../../assets/Musique/SonOffImg.svg";
-
+// MUSICGOOD
 function Musique({ isMuted, setIsMuted, volume, setVolume }) {
   const audioRef = useRef(null);
 
@@ -50,7 +50,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
               // onKeyDown={handleMusicOn}
               role="presentation"
             />
-            <audio
+            <video
               ref={audioRef}
               id="where"
               src={musicFile}
@@ -60,7 +60,7 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
               muted={isMuted}
             >
               <track kind="captions" />
-            </audio>
+            </video>
           </div>
         </div>
       </div>
