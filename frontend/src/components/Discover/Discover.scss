@@ -159,3 +159,19 @@
 .none {
   display: none;
 }
+
+@media screen and (max-width: 400px) {
+  .discoverPage {
+    .filters {
+      .sortingBox {
+        .FilterButton {
+          padding: 0px 12px;
+          font-size: 0.7em;
+        }
+        #clickedSortInput {
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
