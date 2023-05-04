@@ -5,7 +5,7 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
-import AvatarPlaceholder from "../../assets/GameMode/avatarPlaceholder2.svg";
+import AvatarPlaceholder from "../../assets/GameMode/avatarPlaceholder.png";
 
 function GameMode({
   setMode,
