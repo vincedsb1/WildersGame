@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 import { useLocation } from "react-router-dom";
-import musicFileMp3 from "./music1.mp3";
-import musicFileOgg from "./music1.ogg";
-import musicFileWav from "./music1.wav";
+import musicFile from "./music1.mp3";
 import MusicOnImg from "../../assets/Musique/SonOnImg.svg";
 import MusicOffImg from "../../assets/Musique/SonOffImg.svg";
 
@@ -55,15 +53,12 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
             <audio
               ref={audioRef}
               id="where"
-              // src={musicFile}
+              src={musicFile}
               loop
               autoPlay
               onTimeUpdate={handleUpdateVolume}
               muted={isMuted}
             >
-              <source src={musicFileMp3} type="audio/mp3" />
-              <source src={musicFileOgg} type="audio/ogg" />
-              <source src={musicFileWav} type="audio/wav" />
               <track kind="captions" />
             </audio>
           </div>
@@ -98,15 +93,12 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
           <audio
             ref={audioRef}
             id="where"
-            // src={musicFile}
+            src={musicFile}
             loop
             autoPlay
             onTimeUpdate={handleUpdateVolume}
             muted={isMuted}
           >
-            <source src={musicFileMp3} type="audio/mp3" />
-            <source src={musicFileOgg} type="audio/ogg" />
-            <source src={musicFileWav} type="audio/wav" />
             <track kind="captions" />
           </audio>
         </div>
