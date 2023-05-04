@@ -30,6 +30,7 @@ function Home() {
             <NavLink to="/gameMode">
               <StartButton />
             </NavLink>
+            <h2 className="discoverOrPlay">Or</h2>
             <NavLink to="/discover">
               <DiscoverButton />
             </NavLink>
