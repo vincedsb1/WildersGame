@@ -14,7 +14,7 @@
     padding: 0px 40px;
     border-radius: 20px;
     font-family: $mainTypo;
-    margin-bottom: 1.5vh;
+    margin-bottom: 2.5vh;
 
     p {
       font-size: calc(1em + 1vw);
@@ -67,11 +67,17 @@
   .filters {
     position: relative;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 1.5vh;
+    justify-content: flex-start;
+    margin-left: 40px;
+    margin-bottom: 3.5vh;
 
     .sortingBox {
       position: relative;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 0px;
+      height: 60px;
+
       button {
         background-color: $buttonBackColor;
         border: 8px solid $buttonColor;
@@ -84,17 +90,17 @@
       }
 
       .sortList {
-        top: 60px;
-        left: 0;
         position: absolute;
         display: none;
-        height: 0%;
-        animation: displaySort 0.5s;
+        animation: displaySort 0.3s;
       }
       #clickedSortInput {
         display: flex;
-        height: 100%;
+        height: 120%;
         overflow: hidden;
+        top: 0;
+        margin-left: 80px;
+        gap: 10px;
       }
 
       @keyframes displaySort {
