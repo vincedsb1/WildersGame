@@ -3,8 +3,8 @@
 
   .discoverHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 90px;
     background-color: $buttonBackColor;
@@ -15,7 +15,15 @@
     font-family: $mainTypo;
     margin-bottom: 2.5vh;
 
+    a {
+      color: inherit;
+    }
+    .retour {
+      font-size: 3em;
+    }
+
     p {
+      width: 100%;
       font-size: calc(1em + 1vw);
       text-align: center;
     }
@@ -50,7 +58,7 @@
     img {
       margin: 5px 0;
       width: 50%;
-      max-width: 200px;
+      max-width: 180px;
       border-radius: 8px;
     }
     .descPara {
