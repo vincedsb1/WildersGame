@@ -1,15 +1,19 @@
 import PropTypes from "prop-types";
 
 function SearchButton({ setSearchIsClicked, searchIsClicked }) {
+  const handleClick = () => {
+    setSearchIsClicked(!searchIsClicked);
+  };
+
   return (
     <div className="SearchBar">
       <div
-        className="magnifyingGlass"
+        className={searchIsClicked ? "  clicked" : "magnifyingGlass"}
         role="button"
         aria-label="Search Movie"
         tabIndex={0}
-        onKeyDown={() => setSearchIsClicked(!searchIsClicked)}
-        onClick={() => setSearchIsClicked(!searchIsClicked)}
+        onKeyDown={handleClick}
+        onClick={handleClick}
       />
     </div>
   );

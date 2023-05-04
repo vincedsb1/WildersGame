@@ -5,7 +5,6 @@ import Pseudo from "./Pseudo/Pseudo";
 import Difficulty from "./Difficulty/Difficulty";
 import Genre from "./Genre/Genre";
 import AvatarGallery from "./Avatar/AvatarGallery";
-import AvatarPlaceholder from "../../assets/avatarPlaceholder.svg";
 
 function GameMode({
   setMode,
@@ -22,6 +21,12 @@ function GameMode({
     setIsOpen(!isOpen);
   };
 
+  const handleClickBody = () => {
+    if (isOpen) {
+      setIsOpen(!isOpen);
+    }
+  };
+
   const [genreClass, setGenreClass] = useState("genreContainer");
   const [diffClass, setDiffClass] = useState("difficultyContainerHidden");
 
@@ -31,7 +36,11 @@ function GameMode({
   };
 
   return (
-    <div className="mainContainer">
+    <div
+      className="mainContainer"
+      role="presentation"
+      onClick={handleClickBody}
+    >
       <div className="gameMode">
         <div className="mainTitleModeContainer">
           <div className="mainTitleMode">
@@ -53,7 +62,10 @@ function GameMode({
             role="button"
             tabIndex="0"
           >
-            <img src={selectedAvatar || AvatarPlaceholder} alt="" />
+            <img
+              src={selectedAvatar || "https://zupimages.net/up/23/18/bzys.jpg"}
+              alt=""
+            />
 
             {isOpen && (
               <AvatarGallery

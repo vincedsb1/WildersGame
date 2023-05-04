@@ -1,6 +1,7 @@
 .filters {
   .SearchBar {
-    position: relative;
+    position: absolute;
+    right: 40px;
 
     .magnifyingGlass {
       height: 60px;
@@ -31,7 +32,7 @@
 
   #clickedInput {
     display: block;
-    width: 70%;
+    width: 400px;
   }
 
   @keyframes displaySearch {
@@ -41,5 +42,40 @@
     100% {
       width: 70%;
     }
+  }
+}
+
+.clicked {
+  background-image: url("https://www.xn--icne-wqa.com/images/icones/2/6/checkmark.png");
+  height: 60px;
+  width: 60px;
+  z-index: 2;
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $buttonBackColor;
+  border: 8px solid $buttonColor;
+  border-radius: 20px;
+}
+
+// @media screen and (max-width: 790px) and (min-width: 350px) {
+//   #clickedInput {
+//     width: 10px;
+//   }
+// }
+@media screen and (max-width: 600px) {
+  .SearchBar {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  input {
+    position: static;
+    display: block;
+    width: 50%;
+  }
+
+  #clickedInput {
+    width: 50%;
   }
 }

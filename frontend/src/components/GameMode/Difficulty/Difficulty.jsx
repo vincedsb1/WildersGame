@@ -8,7 +8,7 @@ function Difficulty({ setMode }) {
 
   return (
     <div className="difficultyTitle">
-      <p>Choose your level</p>
+      <p>Your level</p>
       <div className="difficulty">
         <button type="button" id="difficulty" onClick={() => handleClick(20)}>
           Easy 🐣
