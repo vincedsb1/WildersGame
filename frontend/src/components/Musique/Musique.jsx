@@ -50,17 +50,31 @@ function Musique({ isMuted, setIsMuted, volume, setVolume }) {
               // onKeyDown={handleMusicOn}
               role="presentation"
             />
-            <video
-              ref={audioRef}
-              id="where"
-              src={musicFile}
-              loop
-              autoPlay
-              onTimeUpdate={handleUpdateVolume}
-              muted={isMuted}
-            >
-              <track kind="captions" />
-            </video>
+            {navigator.userAgent.indexOf("Chrome") !== -1 ? (
+              <video
+                ref={audioRef}
+                id="where"
+                src={musicFile}
+                loop
+                autoPlay
+                onTimeUpdate={handleUpdateVolume}
+                muted={isMuted}
+              >
+                <track kind="captions" />
+              </video>
+            ) : (
+              <audio
+                ref={audioRef}
+                id="where"
+                src={musicFile}
+                loop
+                autoPlay
+                onTimeUpdate={handleUpdateVolume}
+                muted={isMuted}
+              >
+                <track kind="captions" />
+              </audio>
+            )}
           </div>
         </div>
       </div>
