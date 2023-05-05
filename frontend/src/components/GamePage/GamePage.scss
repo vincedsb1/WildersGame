@@ -95,7 +95,15 @@
       font-size: 2em;
     }
   }
-  // .Musique {
-  //   padding: 7%;
-  // }
+}
+
+@media screen and (max-height: 400px) and (max-width: 800px) {
+  .GamePage {
+    .header {
+      min-height: 40px;
+    }
+    p {
+      font-size: 0.7em;
+    }
+  }
 }

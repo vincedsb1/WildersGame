@@ -85,3 +85,19 @@
     }
   }
 }
+
+@media screen and (max-height: 400px) and (max-width: 800px) {
+  .Countdown {
+    .Countdown-numbers {
+      font-size: 50px;
+    }
+    .Circle1 {
+      width: 88px;
+      height: 88px;
+    }
+    .Circle2 {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
