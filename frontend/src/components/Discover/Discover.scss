@@ -173,5 +173,38 @@
         }
       }
     }
+    .MovieDetails {
+      h1 {
+        font-size: 1em;
+      }
+      .datePara {
+        font-size: 1em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .discoverPage {
+    .MovieDetails {
+      h1 {
+        font-size: 1em;
+      }
+      .datePara {
+        font-size: 1em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+      img {
+        display: none;
+      }
+    }
   }
 }
