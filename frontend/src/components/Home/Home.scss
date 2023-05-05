@@ -138,3 +138,9 @@ a:link {
     }
   }
 }
+
+@media screen and (max-height: 400px) and (max-width: 800px) {
+  .boiteFanion {
+    display: none;
+  }
+}
