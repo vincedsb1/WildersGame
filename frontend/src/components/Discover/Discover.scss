@@ -173,6 +173,20 @@
         }
       }
     }
+    .MovieDetails {
+      h1 {
+        font-size: 1em;
+      }
+      .datePara {
+        font-size: 1em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+      img {
+        display: none;
+      }
+    }
   }
 }
 
