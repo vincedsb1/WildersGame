@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     height: 13%;
-    // background-color: lightgoldenrodyellow;
   }
 
   .h1GameMode {
@@ -26,14 +25,13 @@
     transform: rotate(-8.5deg);
     margin-bottom: -15px;
   }
-  //##
+
   .avatarPseudo {
     height: 37%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background-color: #783c8f;
 
     p {
       color: white;
@@ -129,12 +127,11 @@
       padding: 0% 0 2% 0;
     }
   }
-  //##
+
   .genreTitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: limegreen;
 
     p {
       padding: 5% 0 0 0;
@@ -246,55 +243,11 @@
     }
   }
 }
-//##
-// @media screen and (max-width: 700px) and (min-height: 500px) and (max-height: 700px) {
-// @media screen and (max-height: 700px) {
-//   .gameMode {
-//     padding-top: 15%;
-//     background-color: lightblue;
-//     .avatarPseudo {
-//       height: 20%;
 
-//       input {
-//         height: 50px;
-//       }
-//     }
-//     .avatarButton {
-//       width: 90px;
-//       height: 90px;
-//     }
-//     .pseudo p {
-//       font-size: 1.3em;
-//     }
-//     .difficultyContainer,
-//     .genreContainer {
-//       height: 30%;
-
-//       p {
-//         font-size: 1.2rem;
-//       }
-//     }
-//     #difficulty,
-//     #genre {
-//       height: 50px;
-//       border-bottom: 6px solid $buttonColor;
-//       font-size: 1em;
-//       margin: 2%;
-//       width: 110px;
-//     }
-//     .genre {
-//       width: 70%;
-//     }
-//   }
-// }
-
-@media screen and (max-height: 449px) {
+@media screen and (max-height: 450px) {
   .gameMode {
-    // padding-top: 5%;
-
     .mainTitleModeContainer {
       height: 20%;
-      // background-color: lightcoral;
     }
     .avatarPseudo {
       height: 35%;
@@ -334,15 +287,14 @@
   }
 }
 
-@media screen and (min-height: 450px) and (max-height: 700px) {
+@media screen and (min-height: 451px) and (max-height: 700px) {
   .gameMode {
-    // padding-top: 5%;
+
     .genreTitle {
       margin: 10% 0 0 0;
     }
     .mainTitleModeContainer {
       height: 20%;
-      // background-color: lightcoral;
     }
     .avatarPseudo {
       height: 35%;
@@ -388,3 +340,43 @@
     margin: 5% 0 0 0;
   }
 }
+
+
+@media screen and (max-height: 400px) and (max-width: 750px) {
+  .gameMode {
+    .mainTitleModeContainer {
+      height: 10%;
+
+      .mainTitleMode {
+        display: none;
+      }
+    }
+    .pseudo {
+      padding: 2px;
+      margin: 2px;
+      .pseudo {
+        padding: 2px;
+        margin: 2px;
+        input {
+          height: 35px;
+          width: 50vw;
+          max-width: 200px;
+          font-size: 1rem;
+        }
+      }
+    }
+    .avatarPseudo {
+      .avatarButton {
+        min-width: 70px;
+        min-height: 70px;
+      }
+    }
+    .difficultyContainer {
+      .difficultyTitle {
+        p {
+        }
+      }
+    }
+  }
+}
+
